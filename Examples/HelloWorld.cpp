@@ -54,18 +54,4 @@ int main() {
                 break;
         }
     }
-
-    return 0;
 }
-
-// #if defined(PLATFORM_WINDOWS)
-//     appWindow = new ArkVector::Win32AppWindow({800, 600});
-// #elif defined(PLATFORM_LINUX)
-//     appWindow = new ArkVector::X11AppWindow({800, 600});
-// #elif defined(PLATFORM_APPLE)
-//     appWindow = nullptr;
-// #endif
-//
-//     appWindow->Initialize(nullptr);
-//     appWindow->Run();
-//     delete appWindow;
