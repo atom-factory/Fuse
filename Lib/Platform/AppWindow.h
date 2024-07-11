@@ -11,10 +11,18 @@ namespace ArkVector {
     class IAppWindow {
     public:
         explicit IAppWindow(const Size<u32>& windowSize) : m_WindowSize(windowSize) {}
-        virtual ~IAppWindow()                 = default;
-        virtual void Initialize(void* parent) = 0;
-        virtual void Run()                    = 0;
-        virtual void Shutdown()               = 0;
+        virtual ~IAppWindow() = default;
+        virtual void Initialize() {}
+        virtual void Shutdown() = 0;
+
+        template<typename T>
+        T* As() {
+            return dynamic_cast<T*>(this);
+        }
+
+        Size<u32>& GetSize() {
+            return m_WindowSize;
+        }
 
     protected:
         Size<u32> m_WindowSize;

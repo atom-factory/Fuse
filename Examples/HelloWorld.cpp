@@ -4,6 +4,7 @@
 
 #include "Platform.h"
 #include "Platform/AppWindow.h"
+#include <X11/Xlib.h>
 
 #if defined(PLATFORM_WINDOWS)
     #include "Platform/Win32AppWindow.h"
@@ -13,20 +14,55 @@
 #endif
 
 int main() {
-    ArkVector::IAppWindow* appWindow = nullptr;
+    ArkVector::X11AppWindow* appWindow = nullptr;
 
-#if defined(PLATFORM_WINDOWS)
-    appWindow = new ArkVector::Win32AppWindow({800, 600});
-#elif defined(PLATFORM_LINUX)
+    auto display = XOpenDisplay(nullptr);
+    auto screen  = DefaultScreen(display);
+    auto window  = XCreateSimpleWindow(display,
+                                      RootWindow(display, screen),
+                                      10,
+                                      10,
+                                      800,
+                                      600,
+                                      1,
+                                      BlackPixel(display, screen),
+                                      WhitePixel(display, screen));
+    XSelectInput(display, window, ExposureMask | KeyPressMask | StructureNotifyMask);
+    XMapWindow(display, window);
+
     appWindow = new ArkVector::X11AppWindow({800, 600});
-#elif defined(PLATFORM_APPLE)
-    appWindow = nullptr;
-#endif
+    appWindow->Initialize(display, window, screen);
 
-    appWindow->Initialize(nullptr);
-    appWindow->Run();
-    appWindow->Shutdown();
-    delete appWindow;
+    XEvent event;
+    for (;;) {
+        XNextEvent(display, &event);
+
+        switch (event.type) {
+            case Expose: {
+                appWindow->OnPaint();
+            } break;
+            case ConfigureNotify: {
+                appWindow->OnResize();
+            } break;
+            case DestroyNotify: {
+                XCloseDisplay(display);
+            } break;
+            default:
+                break;
+        }
+    }
 
     return 0;
 }
+
+// #if defined(PLATFORM_WINDOWS)
+//     appWindow = new ArkVector::Win32AppWindow({800, 600});
+// #elif defined(PLATFORM_LINUX)
+//     appWindow = new ArkVector::X11AppWindow({800, 600});
+// #elif defined(PLATFORM_APPLE)
+//     appWindow = nullptr;
+// #endif
+//
+//     appWindow->Initialize(nullptr);
+//     appWindow->Run();
+//     delete appWindow;

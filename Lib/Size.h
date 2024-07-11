@@ -29,6 +29,7 @@ namespace ArkVector {
         Size<newT> To();
 
         Offset AsOffset();
+        void Set(T x, T y);
 
         T Width;
         T Height;
@@ -81,5 +82,10 @@ namespace ArkVector {
     template<typename T>
     Offset Size<T>::AsOffset() {
         return Offset(Width, Height);
+    }
+    template<typename T>
+    void Size<T>::Set(T x, T y) {
+        Width  = x;
+        Height = y;
     }
 }  // namespace ArkVector

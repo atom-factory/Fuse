@@ -10,7 +10,8 @@ include_directories(
         Lib
 )
 
-add_library(ArkVector STATIC)
+add_library(ArkVector STATIC
+        Lib/Backends/Backend.h)
 target_sources(ArkVector PRIVATE
         Lib/Types.h
         Lib/ArkVector.h

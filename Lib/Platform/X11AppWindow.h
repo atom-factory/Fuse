@@ -13,9 +13,9 @@ namespace ArkVector {
         explicit X11AppWindow(const Size<u32>& windowSize)
             : IAppWindow(windowSize), m_pDisplay(nullptr) {}
 
-        void Initialize(void* parent) override;
-        void Run() override;
-        void Shutdown() override;
+        void Initialize(Display* display, Window parent, i32 screen);
+        void OnResize() const;
+        void OnPaint() const;
 
         [[nodiscard]] Display* GetDisplay() const {
             return m_pDisplay;
@@ -24,6 +24,13 @@ namespace ArkVector {
         Window& GetWindow() {
             return m_Window;
         }
+
+        [[nodiscard]] int GetScreen() const {
+            return m_Screen;
+        }
+
+    protected:
+        void Shutdown() override;
 
     private:
         Display* m_pDisplay;
