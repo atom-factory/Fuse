@@ -20,6 +20,13 @@ add_library(ArkVector STATIC
         Lib/Offset.h
         Lib/Converters.h
         Lib/Maths.h
+        Lib/Backends/Direct2DBackend.cpp
+        Lib/Backends/Direct2DBackend.h
+        Lib/Backends/OpenGLBackend.cpp
+        Lib/Backends/OpenGLBackend.h
+        Lib/Platform/AppWindow.h
+        Lib/Platform/Win32AppWindow.cpp
+        Lib/Platform/Win32AppWindow.h
 )
 
 add_executable(HelloWorld Examples/HelloWorld.cpp)
