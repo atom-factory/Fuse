@@ -39,7 +39,7 @@ namespace ArkVector {
                                  &childAttrs);
 
         XStoreName(m_pDisplay, m_Window, "X11 Window - ArkVector");
-        XSelectInput(m_pDisplay, m_Window, ExposureMask | KeyPressMask | StructureNotifyMask);
+        XSelectInput(m_pDisplay, m_Window, ExposureMask | KeyPressMask);
         XMapWindow(m_pDisplay, m_Window);
 
         g_Backend = new X11Backend();

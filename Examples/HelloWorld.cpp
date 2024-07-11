@@ -42,6 +42,9 @@ int main() {
                 appWindow->OnPaint();
             } break;
             case ConfigureNotify: {
+                const auto newWidth  = event.xconfigure.width;
+                const auto newHeight = event.xconfigure.height;
+                appWindow->GetSize().Set(newWidth, newHeight);
                 appWindow->OnResize();
             } break;
             case DestroyNotify: {
