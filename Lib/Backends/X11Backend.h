@@ -5,9 +5,5 @@
 #pragma once
 
 namespace ArkVector {
-
-class OpenGLBackend {
-
-};
-
-} // ArkVector
+    class X11Backend {};
+}  // namespace ArkVector

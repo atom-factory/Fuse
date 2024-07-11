@@ -8,6 +8,7 @@
 #include <memory>
 #include <optional>
 #include <string>
+#include <limits>
 
 using u8   = uint8_t;
 using u16  = uint16_t;
@@ -43,3 +44,5 @@ constexpr T Infinity() {
 
 constexpr i64 MAX_SIZE   = 100000;
 constexpr f32 MAX_SIZE_F = 100000.f;
+
+#define None nullptr
