@@ -10,11 +10,7 @@ include_directories(
         Lib
 )
 
-add_library(ArkVector STATIC
-        Lib/Backends/Backend.h
-        Lib/Platform/AppWindow.cpp
-        Lib/Platform/NSAppWindow.cpp
-        Lib/Platform/NSAppWindow.h)
+add_library(ArkVector STATIC)
 target_sources(ArkVector PRIVATE
         Lib/Types.h
         Lib/ArkVector.h
@@ -26,6 +22,7 @@ target_sources(ArkVector PRIVATE
         Lib/Converters.h
         Lib/Maths.h
         Lib/Platform/AppWindow.h
+        Lib/Backends/Backend.h
 )
 
 if (WIN32)
