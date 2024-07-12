@@ -8,8 +8,6 @@
 #include <cassert>
 
 namespace ArkVector {
-    Direct2DBackend* g_Backend = nullptr;
-
     void Win32PluginView::Initialize(HWND parent, int nCmdShow) {
         m_Instance = ::GetModuleHandle(nullptr);
 
@@ -39,11 +37,14 @@ namespace ArkVector {
 
         ::SetWindowLongPtrA(m_Handle, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
 
+        m_Backend = new Direct2DBackend;
+
         ::ShowWindow(m_Handle, nCmdShow);
         ::UpdateWindow(m_Handle);
     }
 
     void Win32PluginView::Shutdown() {
+        delete m_Backend;
         if (m_Handle) {
             ::DestroyWindow(m_Handle);
             m_Handle = nullptr;
@@ -51,6 +52,7 @@ namespace ArkVector {
     }
 
     void Win32PluginView::OnPaint() {}
+
     void Win32PluginView::OnResize(const Size<u32>& newSize) {
         IPluginView::OnResize(newSize);
         if (m_Handle) {
@@ -66,9 +68,9 @@ namespace ArkVector {
 
     LRESULT Win32PluginView::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         const LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);
-        const auto appWindow    = reinterpret_cast<Win32PluginView*>(userData);
+        const auto view         = reinterpret_cast<Win32PluginView*>(userData);
 
-        if (!appWindow) {
+        if (!view) {
             return DefWindowProc(hwnd, msg, wParam, lParam);
         }
 
@@ -78,7 +80,7 @@ namespace ArkVector {
         switch (msg) {
             case WM_DESTROY:
             case WM_CLOSE:
-                appWindow->m_Handle = nullptr;
+                view->m_Handle = nullptr;
                 return 0;
             case WM_PAINT: {
                 hdc = BeginPaint(hwnd, &ps);
