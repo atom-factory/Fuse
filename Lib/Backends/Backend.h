@@ -20,6 +20,12 @@ namespace ArkVector {
             return dynamic_cast<T*>(this);
         }
 
+        virtual void DrawRect() {}
+        virtual void DrawLine() {}
+        virtual void DrawEllipse() {}
+        virtual void DrawPath() {}
+        virtual void DrawString() {}
+
     protected:
         virtual void Shutdown() = 0;
     };

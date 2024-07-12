@@ -19,6 +19,12 @@ namespace ArkVector {
         void OnResize(const Size<u32>& size) override;
         void OnPaint(const Size<u32>& size) override;
 
+        void DrawRect() override;
+        void DrawEllipse() override;
+        void DrawLine() override;
+        void DrawPath() override;
+        void DrawString() override;
+
     private:
         Cairo::RefPtr<Cairo::XlibSurface> m_pSurface;
         Cairo::RefPtr<Cairo::Context> m_pContext;
