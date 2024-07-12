@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "Component.h"
 #include "PluginView.h"
 #include "Traits.h"
 
@@ -19,7 +20,7 @@ namespace ArkVector {
 
         virtual ~IPluginCanvas() = default;
 
-        virtual void Draw() = 0;
+        virtual IComponent* Draw() = 0;
 
     protected:
         IPluginView* m_View;
