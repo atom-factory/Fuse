@@ -51,6 +51,20 @@ namespace ArkVector {
         }
     }
 
+    void Win32AppWindow::OnPaint() {}
+    void Win32AppWindow::OnResize(const Size<u32>& newSize) {
+        IAppWindow::OnResize(newSize);
+        if (m_Handle) {
+            ::SetWindowPos(m_Handle,
+                           nullptr,
+                           0,
+                           0,
+                           newSize.Width,
+                           newSize.Height,
+                           SWP_NOZORDER | SWP_NOACTIVATE);
+        }
+    }
+
     LRESULT Win32AppWindow::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         const LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);
         const auto appWindow    = reinterpret_cast<Win32AppWindow*>(userData);
@@ -67,12 +81,6 @@ namespace ArkVector {
             case WM_CLOSE:
                 appWindow->m_Handle = nullptr;
                 return 0;
-            case WM_SIZE: {
-                const UINT width  = LOWORD(lParam);
-                const UINT height = HIWORD(lParam);
-                appWindow->m_WindowSize.Set(width, height);
-                return 0;
-            }
             case WM_PAINT: {
                 hdc = BeginPaint(hwnd, &ps);
 

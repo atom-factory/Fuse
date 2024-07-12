@@ -20,6 +20,12 @@ namespace ArkVector {
         virtual void Initialize() {}
         virtual void Shutdown() = 0;
 
+        virtual void OnResize(const Size<u32>& newSize) {
+            m_WindowSize = newSize;
+        }
+
+        virtual void OnPaint() = 0;
+
         template<typename T>
         T* As() {
             return dynamic_cast<T*>(this);

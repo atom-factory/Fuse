@@ -60,10 +60,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
         return -1;
     }
 
-    Attached(nCmdShow);
-
     ::ShowWindow(g_hwnd, nCmdShow);
     ::UpdateWindow(g_hwnd);
+
+    Attached(nCmdShow);
 
     MSG msg = {};
     while (msg.message != WM_QUIT) {
@@ -91,10 +91,16 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             EndPaint(hwnd, &ps);
             return 0;
         }
-        case WM_DISPLAYCHANGE: {
-            ::InvalidateRect(hwnd, nullptr, FALSE);
-            return 0;
+        case WM_SIZE: {
+            if (g_appWindow != nullptr) {
+                RECT rect;
+                GetClientRect(hwnd, &rect);
+                auto width  = static_cast<u32>(rect.right - rect.left);
+                auto height = static_cast<u32>(rect.bottom - rect.top);
+                g_appWindow->OnResize({width, height});
+            }
         }
+            return 0;
         case WM_DESTROY:
             Removed();
             ::DestroyWindow(hwnd);
