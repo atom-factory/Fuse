@@ -11,7 +11,10 @@ include_directories(
 )
 
 add_library(ArkVector STATIC
-        Lib/Backends/Backend.h)
+        Lib/Backends/Backend.h
+        Lib/Platform/AppWindow.cpp
+        Lib/Platform/NSAppWindow.cpp
+        Lib/Platform/NSAppWindow.h)
 target_sources(ArkVector PRIVATE
         Lib/Types.h
         Lib/ArkVector.h

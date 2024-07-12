@@ -49,7 +49,7 @@ namespace ArkVector {
         assert(m_Handle != nullptr);
     }
 
-    void Win32AppWindow::Run() {
+    void Win32AppWindow::Run() const {
         ::ShowWindow(m_Handle, SW_SHOW);
         ::UpdateWindow(m_Handle);
 

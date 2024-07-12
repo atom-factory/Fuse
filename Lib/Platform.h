@@ -24,6 +24,7 @@ void SafeRelease(Interface** ppInterface) {
 }
 #elif defined(__linux__)
     #define PLATFORM_LINUX
+    #include <X11/Xlib.h>
 #elif defined(__APPLE__)
     #define PLATFORM_APPLE
 #endif
