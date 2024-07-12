@@ -12,12 +12,12 @@ namespace ArkVector {
     public:
         explicit Win32AppWindow(const Size<u32>& windowSize) : IAppWindow(windowSize) {}
 
-        void Initialize(HWND parent);
+        void Initialize(HWND parent, int nCmdShow);
         void Shutdown() override;
 
-    private:
         static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
+    private:
         HWND m_Handle        = nullptr;
         HINSTANCE m_Instance = nullptr;
     };

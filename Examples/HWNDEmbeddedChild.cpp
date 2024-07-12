@@ -16,7 +16,7 @@ HWND g_hwnd;
 Win32AppWindow* g_appWindow;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-void Attached();
+void Attached(int nCmdShow);
 void Removed();
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
@@ -60,7 +60,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
         return -1;
     }
 
-    Attached();
+    Attached(nCmdShow);
 
     ::ShowWindow(g_hwnd, nCmdShow);
     ::UpdateWindow(g_hwnd);
@@ -73,7 +73,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
         }
     }
 
-    return 0;
+    return static_cast<int>(msg.wParam);
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -91,6 +91,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             EndPaint(hwnd, &ps);
             return 0;
         }
+        case WM_DISPLAYCHANGE: {
+            ::InvalidateRect(hwnd, nullptr, FALSE);
+            return 0;
+        }
         case WM_DESTROY:
             Removed();
             ::DestroyWindow(hwnd);
@@ -101,9 +105,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     }
 }
 
-void Attached() {
-    g_appWindow = IAppWindow::Create({WINDOW_WIDTH, WINDOW_HEIGHT})->As<Win32AppWindow>();
-    g_appWindow->Initialize(g_hwnd);
+void Attached(int nCmdShow) {
+    const auto appWindow = IAppWindow::Create({WINDOW_WIDTH, WINDOW_HEIGHT});
+    g_appWindow          = appWindow->As<Win32AppWindow>();
+    g_appWindow->Initialize(g_hwnd, nCmdShow);
 }
 
 void Removed() {

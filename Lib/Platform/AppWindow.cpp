@@ -13,11 +13,11 @@
 #endif
 
 namespace ArkVector {
-    std::unique_ptr<IAppWindow> IAppWindow::Create(const Size<u32>& windowSize) {
+    IAppWindow* IAppWindow::Create(const Size<u32>& windowSize) {
 #if defined(PLATFORM_WINDOWS)
-        return std::make_unique<Win32AppWindow>(windowSize);
+        return new Win32AppWindow(windowSize);
 #elif defined(PLATFORM_LINUX)
-        return std::make_unique<X11AppWindow>(windowSize);
+        return new X11AppWindow(windowSize);
 #elif defined(PLATFORM_APPLE)
         return nullptr;
 #endif

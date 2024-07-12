@@ -11,7 +11,7 @@
 namespace ArkVector {
     Direct2DBackend* g_Backend = nullptr;
 
-    void Win32AppWindow::Initialize(const HWND parent) {
+    void Win32AppWindow::Initialize(const HWND parent, int nCmdShow) {
         m_Instance = ::GetModuleHandle(nullptr);
 
         WNDCLASSA wc     = {};
@@ -32,13 +32,15 @@ namespace ArkVector {
                                      parent,
                                      nullptr,
                                      m_Instance,
-                                     nullptr);
+                                     this);
 
         if (!m_Handle) {
             throw std::runtime_error("Failed to create window.");
         }
 
-        ::ShowWindow(m_Handle, SW_SHOW);
+        ::SetWindowLongPtrA(m_Handle, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
+
+        ::ShowWindow(m_Handle, nCmdShow);
         ::UpdateWindow(m_Handle);
     }
 
@@ -50,12 +52,12 @@ namespace ArkVector {
     }
 
     LRESULT Win32AppWindow::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-        // const LONG_PTR userData = ::GetWindowLongPtr(hwnd, GWLP_USERDATA);
-        // const auto appWindow    = reinterpret_cast<Win32AppWindow*>(userData);
+        const LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);
+        const auto appWindow    = reinterpret_cast<Win32AppWindow*>(userData);
 
-        // if (!appWindow) {
-        //     return DefWindowProc(hwnd, msg, wParam, lParam);
-        // }
+        if (!appWindow) {
+            return DefWindowProc(hwnd, msg, wParam, lParam);
+        }
 
         PAINTSTRUCT ps;
         HDC hdc;
@@ -63,11 +65,12 @@ namespace ArkVector {
         switch (msg) {
             case WM_DESTROY:
             case WM_CLOSE:
-                // m_Handle = nullptr;
+                appWindow->m_Handle = nullptr;
                 return 0;
             case WM_SIZE: {
                 const UINT width  = LOWORD(lParam);
                 const UINT height = HIWORD(lParam);
+                appWindow->m_WindowSize.Set(width, height);
                 return 0;
             }
             case WM_PAINT: {

@@ -29,7 +29,7 @@ namespace ArkVector {
             return m_WindowSize;
         }
 
-        static std::unique_ptr<IAppWindow> Create(const Size<u32>& windowSize);
+        static IAppWindow* Create(const Size<u32>& windowSize);
 
     protected:
         Size<u32> m_WindowSize;
