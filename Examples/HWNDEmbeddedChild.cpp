@@ -13,6 +13,7 @@ static constexpr int WINDOW_HEIGHT = 600;
 
 HINSTANCE g_hInstance;
 HWND g_hwnd;
+Win32AppWindow* g_appWindow;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 void Attached();
@@ -21,7 +22,8 @@ void Removed();
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     g_hInstance = hInstance;
 
-    WNDCLASSEXA wndClass;
+    WNDCLASSEXA wndClass   = {};
+    wndClass.cbSize        = sizeof(WNDCLASSEXA);
     wndClass.style         = CS_HREDRAW | CS_VREDRAW;
     wndClass.lpfnWndProc   = WndProc;
     wndClass.cbClsExtra    = 0;
@@ -33,7 +35,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     wndClass.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
     wndClass.lpszMenuName  = nullptr;
     wndClass.lpszClassName = "ArkVectorWindowClass";
-    wndClass.cbSize        = sizeof(WNDCLASSEXA);
 
     RegisterClassExA(&wndClass);
 
@@ -45,7 +46,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     g_hwnd = ::CreateWindowExA(NULL,
                                "ArkVectorWindowClass",
                                "ArkVector Window",
-                               WS_OVERLAPPEDWINDOW,
+                               WS_OVERLAPPEDWINDOW | WS_VISIBLE,
                                static_cast<i32>(posX),
                                static_cast<i32>(posY),
                                WINDOW_WIDTH,
@@ -58,6 +59,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     if (!g_hwnd) {
         return -1;
     }
+
+    Attached();
 
     ::ShowWindow(g_hwnd, nCmdShow);
     ::UpdateWindow(g_hwnd);
@@ -77,12 +80,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     PAINTSTRUCT ps;
     HDC hdc;
     switch (msg) {
-        case WM_SHOWWINDOW:
-            Attached();
-            return 0;
         case WM_PAINT: {
             hdc = BeginPaint(hwnd, &ps);
-            FillRect(hdc, &(ps.rcPaint), nullptr);
+
+            // Set the background color to blue
+            HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
+            FillRect(hdc, &ps.rcPaint, hBrush);
+
+            DeleteObject(hBrush);
             EndPaint(hwnd, &ps);
             return 0;
         }
@@ -96,6 +101,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     }
 }
 
-void Attached() {}
+void Attached() {
+    g_appWindow = IAppWindow::Create({WINDOW_WIDTH, WINDOW_HEIGHT})->As<Win32AppWindow>();
+    g_appWindow->Initialize(g_hwnd);
+}
 
-void Removed() {}
+void Removed() {
+    g_appWindow->Shutdown();
+}

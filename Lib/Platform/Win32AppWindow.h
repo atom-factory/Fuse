@@ -12,8 +12,7 @@ namespace ArkVector {
     public:
         explicit Win32AppWindow(const Size<u32>& windowSize) : IAppWindow(windowSize) {}
 
-        void Initialize() override;
-        void Run() const;
+        void Initialize(HWND parent);
         void Shutdown() override;
 
     private:
