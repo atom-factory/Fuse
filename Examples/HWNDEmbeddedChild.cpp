@@ -4,118 +4,24 @@
 
 #include "Platform/Platform.h"
 #include "Platform/Win32PluginView.h"
+#include "HWNDParent.h"
 
 using namespace ArkVector;
 
 static constexpr int WINDOW_WIDTH  = 800;
 static constexpr int WINDOW_HEIGHT = 600;
 
-HINSTANCE g_hInstance;
-HWND g_hwnd;
-Win32PluginView* g_view;
-
-LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-void Attached(int nCmdShow);
-void Removed();
+Win32PluginView* g_View;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
-    g_hInstance = hInstance;
+    HWNDParent::CreateParentWindow(hInstance, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    WNDCLASSEXA wndClass   = {};
-    wndClass.cbSize        = sizeof(WNDCLASSEXA);
-    wndClass.style         = CS_HREDRAW | CS_VREDRAW;
-    wndClass.lpfnWndProc   = WndProc;
-    wndClass.cbClsExtra    = 0;
-    wndClass.cbWndExtra    = 0;
-    wndClass.hInstance     = g_hInstance;
-    wndClass.hIcon         = ::LoadIcon(nullptr, IDI_APPLICATION);
-    wndClass.hIconSm       = wndClass.hIcon;
-    wndClass.hCursor       = ::LoadCursor(nullptr, IDC_ARROW);
-    wndClass.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
-    wndClass.lpszMenuName  = nullptr;
-    wndClass.lpszClassName = "ArkVectorWindowClass";
-
-    RegisterClassExA(&wndClass);
-
-    const u32 scrWidth  = ::GetSystemMetrics(SM_CXSCREEN);
-    const u32 scrHeight = ::GetSystemMetrics(SM_CYSCREEN);
-    const u32 posX      = (scrWidth - WINDOW_WIDTH) / 2;
-    const u32 posY      = (scrHeight - WINDOW_HEIGHT) / 2;
-
-    g_hwnd = ::CreateWindowExA(NULL,
-                               "ArkVectorWindowClass",
-                               "ArkVector Window",
-                               WS_OVERLAPPEDWINDOW | WS_VISIBLE,
-                               static_cast<i32>(posX),
-                               static_cast<i32>(posY),
-                               WINDOW_WIDTH,
-                               WINDOW_HEIGHT,
-                               nullptr,
-                               nullptr,
-                               g_hInstance,
-                               nullptr);
-
-    if (!g_hwnd) {
-        return -1;
-    }
-
-    ::ShowWindow(g_hwnd, nCmdShow);
-    ::UpdateWindow(g_hwnd);
-
-    Attached(nCmdShow);
-
-    MSG msg = {};
-    while (msg.message != WM_QUIT) {
-        if (::PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
-            ::TranslateMessage(&msg);
-            ::DispatchMessage(&msg);
-        }
-    }
-
-    return static_cast<int>(msg.wParam);
-}
-
-LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-    PAINTSTRUCT ps;
-    HDC hdc;
-    switch (msg) {
-        case WM_PAINT: {
-            hdc = BeginPaint(hwnd, &ps);
-
-            // Set the background color to blue
-            HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
-            FillRect(hdc, &ps.rcPaint, hBrush);
-
-            DeleteObject(hBrush);
-            EndPaint(hwnd, &ps);
-            return 0;
-        }
-        case WM_SIZE: {
-            if (g_view != nullptr) {
-                RECT rect;
-                GetClientRect(hwnd, &rect);
-                auto width  = static_cast<u32>(rect.right - rect.left);
-                auto height = static_cast<u32>(rect.bottom - rect.top);
-                g_view->OnResize({width, height});
-            }
-        }
-            return 0;
-        case WM_DESTROY:
-            Removed();
-            ::DestroyWindow(hwnd);
-            ::PostQuitMessage(0);
-            return 0;
-        default:
-            return ::DefWindowProc(hwnd, msg, wParam, lParam);
-    }
-}
-
-void Attached(int nCmdShow) {
     const auto view = IPluginView::Create({WINDOW_WIDTH, WINDOW_HEIGHT});
-    g_view          = view->As<Win32PluginView>();
-    g_view->Initialize(g_hwnd, nCmdShow);
-}
+    g_View          = view->As<Win32PluginView>();
+    g_View->Initialize(HWNDParent::g_Window, SW_SHOW);
 
-void Removed() {
-    g_view->Shutdown();
+    HWNDParent::g_View = g_View;
+    HWNDParent::Run();
+
+    return 0;
 }

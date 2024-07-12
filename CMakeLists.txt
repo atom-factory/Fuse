@@ -34,7 +34,7 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.h
     )
 
-    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDEmbeddedChild.cpp)
+    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDParent.h Examples/HWNDEmbeddedChild.cpp)
     target_link_libraries(HWNDEmbeddedChild PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE
