@@ -35,6 +35,9 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.cpp
             Lib/Backends/Direct2DBackend.h
     )
+
+    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDEmbeddedChild.cpp)
+    target_link_libraries(HWNDEmbeddedChild PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE
             Lib/Platform/X11AppWindow.cpp
@@ -48,18 +51,21 @@ elseif (UNIX AND NOT APPLE)
     pkg_check_modules(CAIROMM REQUIRED IMPORTED_TARGET cairomm-1.16)
 
     target_link_libraries(ArkVector PRIVATE X11 PkgConfig::CAIROMM)
+
+    add_executable(X11EmbeddedChild Examples/X11EmbeddedChild.cpp)
+    target_link_libraries(X11EmbeddedChild PRIVATE ArkVector)
 elseif (APPLE)
     target_sources(ArkVector PRIVATE
             Lib/Backends/X11Backend.cpp
             Lib/Backends/X11Backend.h
     )
-endif ()
 
-add_executable(HelloWorld Examples/HelloWorld.cpp)
-target_link_libraries(HelloWorld PRIVATE ArkVector)
+    add_executable(NSEmbeddedChild Examples/NSEmbeddedChild.cpp)
+    target_link_libraries(NSEmbeddedChild PRIVATE ArkVector)
+endif ()
 
 if (MSVC)
     # Disable warning C4996
     target_compile_options(ArkVector PRIVATE /wd4996)
-    target_compile_options(HelloWorld PRIVATE /wd4996)
+    target_compile_options(HWNDEmbeddedChild PRIVATE /wd4996)
 endif ()
