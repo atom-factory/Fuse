@@ -20,6 +20,7 @@ namespace ArkVector {
 
         virtual ~IPluginCanvas() = default;
 
+        virtual void AttachToParent() {}
         virtual IComponent* Draw() = 0;
 
     protected:
