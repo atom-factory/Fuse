@@ -5,7 +5,6 @@
 #pragma once
 
 #include "Size.h"
-#include "Platform/AppWindow.h"
 
 namespace ArkVector {
     class IBackend {
@@ -17,6 +16,7 @@ namespace ArkVector {
 
         template<typename T>
         T* As() {
+            static_assert(std::is_base_of_v<IBackend, T>, "T must be implement IBackend");
             return dynamic_cast<T*>(this);
         }
 

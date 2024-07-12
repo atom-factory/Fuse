@@ -6,7 +6,7 @@
 
 namespace ArkVector {
 
-class NSAppWindow {
+class NSPluginView {
 
 };
 

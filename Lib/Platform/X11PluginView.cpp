@@ -2,7 +2,7 @@
 // Created: 7/11/24.
 //
 
-#include "X11AppWindow.h"
+#include "X11PluginView.h"
 
 #include "Backends/Backend.h"
 #include "Backends/X11Backend.h"
@@ -13,7 +13,7 @@
 namespace ArkVector {
     X11Backend* g_Backend;
 
-    void X11AppWindow::Initialize(Display* display, const Window parent, const i32 screen) {
+    void X11PluginView::Initialize(Display* display, const Window parent, const i32 screen) {
         m_pDisplay = display;
         if (!m_pDisplay) {
             std::cerr << "Unable to open X display" << std::endl;
@@ -46,15 +46,15 @@ namespace ArkVector {
         g_Backend->Init(m_pDisplay, m_Window, m_Screen, m_WindowSize);
     }
 
-    void X11AppWindow::OnResize() const {
+    void X11PluginView::OnResize() const {
         g_Backend->OnResize(m_WindowSize);
     }
 
-    void X11AppWindow::OnPaint() const {
+    void X11PluginView::OnPaint() const {
         g_Backend->OnPaint(m_WindowSize);
     }
 
-    void X11AppWindow::Shutdown() {
+    void X11PluginView::Shutdown() {
         g_Backend->Shutdown();
         delete g_Backend;
         XCloseDisplay(m_pDisplay);

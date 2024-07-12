@@ -15,20 +15,21 @@ target_sources(ArkVector PRIVATE
         Lib/Types.h
         Lib/ArkVector.h
         Lib/ArkVector.cpp
-        Lib/Platform.h
+        Lib/Platform/Platform.h
         Lib/Size.h
         Lib/Offset.cpp
         Lib/Offset.h
         Lib/Converters.h
         Lib/Maths.h
-        Lib/Platform/AppWindow.h
-        Lib/Backends/Backend.h
+        Lib/Interfaces/PluginView.h
+        Lib/Interfaces/Backend.h
+        Lib/Interfaces/PluginView.cpp
 )
 
 if (WIN32)
     target_sources(ArkVector PRIVATE
-            Lib/Platform/Win32AppWindow.cpp
-            Lib/Platform/Win32AppWindow.h
+            Lib/Platform/Win32PluginView.cpp
+            Lib/Platform/Win32PluginView.h
             Lib/Backends/Direct2DBackend.cpp
             Lib/Backends/Direct2DBackend.h
     )
@@ -37,8 +38,8 @@ if (WIN32)
     target_link_libraries(HWNDEmbeddedChild PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE
-            Lib/Platform/X11AppWindow.cpp
-            Lib/Platform/X11AppWindow.h
+            Lib/Platform/X11PluginView.cpp
+            Lib/Platform/X11PluginView.h
             Lib/Backends/X11Backend.cpp
             Lib/Backends/X11Backend.h
     )

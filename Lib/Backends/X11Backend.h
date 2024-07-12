@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "Backend.h"
-#include "Platform/X11AppWindow.h"
+#include "Interfaces/Backend.h"
+#include "Platform/X11PluginView.h"
 
 #include <cairomm/context.h>
 #include <cairomm/refptr.h>

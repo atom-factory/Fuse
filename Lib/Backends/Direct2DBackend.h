@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "Platform.h"
-#include "Backend.h"
+#include "Platform/Platform.h"
+#include "Interfaces/Backend.h"
 
 namespace ArkVector {
     class Direct2DBackend final : public IBackend {

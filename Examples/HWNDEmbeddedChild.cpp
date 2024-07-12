@@ -2,9 +2,8 @@
 // Created: 7/10/2024.
 //
 
-#include "Platform.h"
-#include "Platform/AppWindow.h"
-#include "Platform/Win32AppWindow.h"
+#include "Platform/Platform.h"
+#include "Platform/Win32PluginView.h"
 
 using namespace ArkVector;
 
@@ -13,7 +12,7 @@ static constexpr int WINDOW_HEIGHT = 600;
 
 HINSTANCE g_hInstance;
 HWND g_hwnd;
-Win32AppWindow* g_appWindow;
+Win32PluginView* g_view;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 void Attached(int nCmdShow);
@@ -92,12 +91,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             return 0;
         }
         case WM_SIZE: {
-            if (g_appWindow != nullptr) {
+            if (g_view != nullptr) {
                 RECT rect;
                 GetClientRect(hwnd, &rect);
                 auto width  = static_cast<u32>(rect.right - rect.left);
                 auto height = static_cast<u32>(rect.bottom - rect.top);
-                g_appWindow->OnResize({width, height});
+                g_view->OnResize({width, height});
             }
         }
             return 0;
@@ -112,11 +111,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 }
 
 void Attached(int nCmdShow) {
-    const auto appWindow = IAppWindow::Create({WINDOW_WIDTH, WINDOW_HEIGHT});
-    g_appWindow          = appWindow->As<Win32AppWindow>();
-    g_appWindow->Initialize(g_hwnd, nCmdShow);
+    const auto view = IPluginView::Create({WINDOW_WIDTH, WINDOW_HEIGHT});
+    g_view          = view->As<Win32PluginView>();
+    g_view->Initialize(g_hwnd, nCmdShow);
 }
 
 void Removed() {
-    g_appWindow->Shutdown();
+    g_view->Shutdown();
 }

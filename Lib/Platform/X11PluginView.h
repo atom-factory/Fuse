@@ -4,14 +4,14 @@
 
 #pragma once
 
-#include "AppWindow.h"
-#include <X11/Xlib.h>
+#include "PluginView.h"
+#include "Platform.h"
 
 namespace ArkVector {
-    class X11AppWindow final : public IAppWindow {
+    class X11PluginView final : public IPluginView {
     public:
-        explicit X11AppWindow(const Size<u32>& windowSize)
-            : IAppWindow(windowSize), m_pDisplay(nullptr) {}
+        explicit X11PluginView(const Size<u32>& windowSize)
+            : IPluginView(windowSize), m_pDisplay(nullptr) {}
 
         void Initialize(Display* display, Window parent, i32 screen);
         void OnResize() const;

@@ -5,12 +5,12 @@
 #pragma once
 
 #include "Platform.h"
-#include "AppWindow.h"
+#include "Interfaces/PluginView.h"
 
 namespace ArkVector {
-    class Win32AppWindow final : public IAppWindow {
+    class Win32PluginView final : public IPluginView {
     public:
-        explicit Win32AppWindow(const Size<u32>& windowSize) : IAppWindow(windowSize) {}
+        explicit Win32PluginView(const Size<u32>& windowSize) : IPluginView(windowSize) {}
 
         void Initialize(HWND parent, int nCmdShow);
         void Shutdown() override;

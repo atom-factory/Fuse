@@ -2,20 +2,21 @@
 // Created: 7/12/2024.
 //
 
-#include "AppWindow.h"
+#include "Platform/Platform.h"
+#include "PluginView.h"
 
 #if defined(PLATFORM_WINDOWS)
-    #include "Win32AppWindow.h"
+    #include "Platform/Win32PluginView.h"
 #elif defined(PLATFORM_LINUX)
-    #include "X11AppWindow.h"
+    #include "Platform/X11PluginView.h"
 #elif defined(PLATFORM_APPLE)
-    #include "NSAppWindow.h"
+    #include "Platform/NSAPluginView.h"
 #endif
 
 namespace ArkVector {
-    IAppWindow* IAppWindow::Create(const Size<u32>& windowSize) {
+    IPluginView* IPluginView::Create(const Size<u32>& windowSize) {
 #if defined(PLATFORM_WINDOWS)
-        return new Win32AppWindow(windowSize);
+        return new Win32PluginView(windowSize);
 #elif defined(PLATFORM_LINUX)
         return new X11AppWindow(windowSize);
 #elif defined(PLATFORM_APPLE)

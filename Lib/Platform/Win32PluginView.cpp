@@ -2,8 +2,7 @@
 // Created: 7/11/2024.
 //
 
-#include "Win32AppWindow.h"
-
+#include "Win32PluginView.h"
 #include "Backends/Direct2DBackend.h"
 
 #include <cassert>
@@ -11,7 +10,7 @@
 namespace ArkVector {
     Direct2DBackend* g_Backend = nullptr;
 
-    void Win32AppWindow::Initialize(const HWND parent, int nCmdShow) {
+    void Win32PluginView::Initialize(HWND parent, int nCmdShow) {
         m_Instance = ::GetModuleHandle(nullptr);
 
         WNDCLASSA wc     = {};
@@ -44,16 +43,16 @@ namespace ArkVector {
         ::UpdateWindow(m_Handle);
     }
 
-    void Win32AppWindow::Shutdown() {
+    void Win32PluginView::Shutdown() {
         if (m_Handle) {
             ::DestroyWindow(m_Handle);
             m_Handle = nullptr;
         }
     }
 
-    void Win32AppWindow::OnPaint() {}
-    void Win32AppWindow::OnResize(const Size<u32>& newSize) {
-        IAppWindow::OnResize(newSize);
+    void Win32PluginView::OnPaint() {}
+    void Win32PluginView::OnResize(const Size<u32>& newSize) {
+        IPluginView::OnResize(newSize);
         if (m_Handle) {
             ::SetWindowPos(m_Handle,
                            nullptr,
@@ -65,9 +64,9 @@ namespace ArkVector {
         }
     }
 
-    LRESULT Win32AppWindow::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+    LRESULT Win32PluginView::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         const LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);
-        const auto appWindow    = reinterpret_cast<Win32AppWindow*>(userData);
+        const auto appWindow    = reinterpret_cast<Win32PluginView*>(userData);
 
         if (!appWindow) {
             return DefWindowProc(hwnd, msg, wParam, lParam);

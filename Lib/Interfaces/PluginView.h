@@ -4,19 +4,16 @@
 
 #pragma once
 
-#include "Platform.h"
 #include "Types.h"
 #include "Size.h"
+#include "Backend.h"
 
 namespace ArkVector {
-    class Win32AppWindow;
-    class X11AppWindow;
-    class NSAppWindow;
-
-    class IAppWindow {
+    class IPluginView {
     public:
-        explicit IAppWindow(const Size<u32>& windowSize) : m_WindowSize(windowSize) {}
-        virtual ~IAppWindow() = default;
+        explicit IPluginView(const Size<u32>& windowSize)
+            : m_WindowSize(windowSize), m_Backend(nullptr) {}
+        virtual ~IPluginView() = default;
         virtual void Initialize() {}
         virtual void Shutdown() = 0;
 
@@ -28,6 +25,7 @@ namespace ArkVector {
 
         template<typename T>
         T* As() {
+            static_assert(std::is_base_of_v<IPluginView, T>, "T must be implement IPluginView");
             return dynamic_cast<T*>(this);
         }
 
@@ -35,9 +33,10 @@ namespace ArkVector {
             return m_WindowSize;
         }
 
-        static IAppWindow* Create(const Size<u32>& windowSize);
+        static IPluginView* Create(const Size<u32>& windowSize);
 
     protected:
         Size<u32> m_WindowSize;
+        IBackend* m_Backend;
     };
 }  // namespace ArkVector
