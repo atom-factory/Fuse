@@ -16,7 +16,7 @@ namespace ArkVector {
 
         template<typename T>
         T* As() {
-            static_assert(std::is_base_of_v<IBackend, T>, "T must be implement IBackend");
+            static_assert(std::is_base_of_v<IBackend, T>, "T must implement IBackend");
             return dynamic_cast<T*>(this);
         }
 

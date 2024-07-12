@@ -25,7 +25,7 @@ namespace ArkVector {
 
         template<typename T>
         T* As() {
-            static_assert(std::is_base_of_v<IPluginView, T>, "T must be implement IPluginView");
+            static_assert(std::is_base_of_v<IPluginView, T>, "T must implement IPluginView");
             return dynamic_cast<T*>(this);
         }
 
