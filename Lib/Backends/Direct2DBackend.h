@@ -22,5 +22,9 @@ namespace ArkVector {
 
     protected:
         void Shutdown() override;
+
+    private:
+        ID2D1Factory* m_Factory               = nullptr;
+        ID2D1HwndRenderTarget* m_RenderTarget = nullptr;
     };
 }  // namespace ArkVector
