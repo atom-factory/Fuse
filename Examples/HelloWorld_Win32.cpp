@@ -3,7 +3,7 @@
 //
 
 #include "Platform/Platform.h"
-#include "Platform/Win32PluginView.h"
+#include "CanvasHelloWorld.h"
 #include "HWNDParent.h"
 
 using namespace ArkVector;
@@ -11,16 +11,16 @@ using namespace ArkVector;
 static constexpr int WINDOW_WIDTH  = 800;
 static constexpr int WINDOW_HEIGHT = 600;
 
-Win32PluginView* g_View;
+static CanvasHelloWorld* g_Canvas;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     HWNDParent::CreateParentWindow(hInstance, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    const auto view = IPluginView::Create({WINDOW_WIDTH, WINDOW_HEIGHT});
-    g_View          = view->As<Win32PluginView>();
-    g_View->Initialize(HWNDParent::g_Window, SW_SHOW);
+    // Create our canvas
+    g_Canvas = new CanvasHelloWorld;
+    // Attach our canvas to our parent window
+    g_Canvas->AttachToParent(HWNDParent::g_Window);
 
-    HWNDParent::g_View = g_View;
     HWNDParent::Run();
 
     return 0;

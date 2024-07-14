@@ -37,7 +37,9 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.h
     )
 
-    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDParent.h Examples/HWNDEmbeddedChild.cpp)
+    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDParent.h Examples/HelloWorld_Win32.cpp
+            Examples/CanvasHelloWorld.cpp
+            Examples/CanvasHelloWorld.h)
     target_link_libraries(HWNDEmbeddedChild PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE
@@ -53,7 +55,7 @@ elseif (UNIX AND NOT APPLE)
 
     target_link_libraries(ArkVector PRIVATE X11 PkgConfig::CAIROMM)
 
-    add_executable(X11EmbeddedChild Examples/X11EmbeddedChild.cpp)
+    add_executable(X11EmbeddedChild Examples/HelloWorld_Linux.cpp)
     target_link_libraries(X11EmbeddedChild PRIVATE ArkVector)
 elseif (APPLE)
     target_sources(ArkVector PRIVATE
@@ -61,7 +63,7 @@ elseif (APPLE)
             Lib/Backends/X11Backend.h
     )
 
-    add_executable(NSEmbeddedChild Examples/NSEmbeddedChild.cpp)
+    add_executable(NSEmbeddedChild Examples/HelloWorld_Apple.cpp)
     target_link_libraries(NSEmbeddedChild PRIVATE ArkVector)
 endif ()
 

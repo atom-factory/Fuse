@@ -7,6 +7,7 @@
 #include "Types.h"
 #include "Size.h"
 #include "Backend.h"
+#include "Component.h"
 
 namespace ArkVector {
     class IPluginView {
@@ -21,7 +22,7 @@ namespace ArkVector {
             m_WindowSize = newSize;
         }
 
-        virtual void OnPaint() = 0;
+        virtual void OnPaint(IComponent* root) = 0;
 
         template<typename T>
         T* As() {

@@ -3,9 +3,19 @@
 //
 
 #pragma once
+
+#include "Platform/Platform.h"
 #include "Component.h"
 #include "PluginView.h"
 #include "Traits.h"
+
+#if defined(PLATFORM_WINDOWS)
+    #include "Platform/Win32PluginView.h"
+#elif defined(PLATFORM_LINUX)
+    #include "Platform/X11PluginView.h"
+#elif defined(PLATFORM_APPLE)
+    #include "Platform/NSPluginView.h"
+#endif
 
 namespace ArkVector {
     /// Root interface of an ArkVector UI app
@@ -20,7 +30,19 @@ namespace ArkVector {
 
         virtual ~IPluginCanvas() = default;
 
-        virtual void AttachToParent() {}
+        virtual i32 AttachToParent(void* parent) {
+#if defined(PLATFORM_WINDOWS)
+            auto _parent = (HWND)parent;
+            auto view    = m_View->As<Win32PluginView>();
+            view->Initialize(_parent, SW_SHOW);
+            return 0;
+#elif defined(PLATFORM_LINUX)
+#elif defined(PLATFORM_APPLE)
+#endif
+
+            return -1;
+        }
+
         virtual IComponent* Draw() = 0;
 
     protected:

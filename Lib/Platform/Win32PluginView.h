@@ -14,7 +14,7 @@ namespace ArkVector {
 
         void Initialize(HWND parent, int nCmdShow);
         void Shutdown() override;
-        void OnPaint() override;
+        void OnPaint(IComponent* root) override;
         void OnResize(const Size<u32>& newSize) override;
 
         static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);

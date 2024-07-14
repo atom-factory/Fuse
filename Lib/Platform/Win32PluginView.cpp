@@ -24,8 +24,8 @@ namespace ArkVector {
                                      WS_CHILD | WS_VISIBLE,
                                      0,
                                      0,
-                                     m_WindowSize.Width,
-                                     m_WindowSize.Height,
+                                     static_cast<i32>(m_WindowSize.Width),
+                                     static_cast<i32>(m_WindowSize.Height),
                                      parent,
                                      nullptr,
                                      m_Instance,
@@ -51,7 +51,16 @@ namespace ArkVector {
         }
     }
 
-    void Win32PluginView::OnPaint() {}
+    void Win32PluginView::OnPaint(IComponent* root) {
+        // TODO: Render the component tree
+
+        PAINTSTRUCT ps;
+        auto hdc      = ::BeginPaint(m_Handle, &ps);
+        HBRUSH hBrush = ::CreateSolidBrush(RGB(0, 125, 255));
+        ::FillRect(hdc, &ps.rcPaint, hBrush);
+        ::DeleteObject(hBrush);
+        ::EndPaint(m_Handle, &ps);
+    }
 
     void Win32PluginView::OnResize(const Size<u32>& newSize) {
         IPluginView::OnResize(newSize);
@@ -74,23 +83,13 @@ namespace ArkVector {
             return DefWindowProc(hwnd, msg, wParam, lParam);
         }
 
-        PAINTSTRUCT ps;
-        HDC hdc;
-
         switch (msg) {
             case WM_DESTROY:
             case WM_CLOSE:
                 view->m_Handle = nullptr;
                 return 0;
             case WM_PAINT: {
-                hdc = BeginPaint(hwnd, &ps);
-
-                // Set the background color to blue
-                HBRUSH hBrush = CreateSolidBrush(RGB(0, 125, 255));
-                FillRect(hdc, &ps.rcPaint, hBrush);
-
-                DeleteObject(hBrush);
-                EndPaint(hwnd, &ps);
+                view->OnPaint(nullptr);
                 return 0;
             }
             default:
