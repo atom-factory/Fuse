@@ -38,6 +38,8 @@ namespace ArkVector {
         ::SetWindowLongPtrA(m_Handle, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
 
         m_Backend = new Direct2DBackend;
+        m_Backend->SetOwner(this);
+        m_Backend->Init();
 
         ::ShowWindow(m_Handle, nCmdShow);
         ::UpdateWindow(m_Handle);
@@ -45,6 +47,9 @@ namespace ArkVector {
 
     void Win32PluginView::Shutdown() {
         // TODO: cleanup backend ptr or make unique
+        // if (m_Backend) {
+        //     m_Backend = nullptr;
+        // }
         if (m_Handle) {
             ::DestroyWindow(m_Handle);
             m_Handle = nullptr;

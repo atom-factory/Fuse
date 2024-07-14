@@ -16,6 +16,10 @@ namespace ArkVector {
         void Shutdown() override;
         void OnResize(const Size<u32>& newSize) override;
 
+        HWND GetHandle() const {
+            return m_Handle;
+        }
+
         static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
     private:
