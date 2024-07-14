@@ -10,14 +10,10 @@ include_directories(
         Lib
 )
 
-add_library(ArkVector STATIC
-        Lib/Interfaces/PluginCanvas.h
-        Lib/Interfaces/Component.h
-        Lib/Traits.h)
+add_library(ArkVector STATIC)
 target_sources(ArkVector PRIVATE
         Lib/Types.h
         Lib/ArkVector.h
-        Lib/ArkVector.cpp
         Lib/Platform/Platform.h
         Lib/Size.h
         Lib/Offset.cpp
@@ -27,6 +23,9 @@ target_sources(ArkVector PRIVATE
         Lib/Interfaces/PluginView.h
         Lib/Interfaces/Backend.h
         Lib/Interfaces/PluginView.cpp
+        Lib/Interfaces/PluginCanvas.h
+        Lib/Interfaces/Component.h
+        Lib/Traits.h
 )
 
 if (WIN32)
@@ -37,10 +36,10 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.h
     )
 
-    add_executable(HWNDEmbeddedChild WIN32 Examples/HWNDParent.h Examples/HelloWorld_Win32.cpp
+    add_executable(HelloWorld WIN32 Examples/HWNDParent.h Examples/HelloWorld_Win32.cpp
             Examples/CanvasHelloWorld.cpp
             Examples/CanvasHelloWorld.h)
-    target_link_libraries(HWNDEmbeddedChild PRIVATE ArkVector)
+    target_link_libraries(HelloWorld PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE
             Lib/Platform/X11PluginView.cpp
@@ -70,5 +69,5 @@ endif ()
 if (MSVC)
     # Disable warning C4996
     target_compile_options(ArkVector PRIVATE /wd4996)
-    target_compile_options(HWNDEmbeddedChild PRIVATE /wd4996)
+    target_compile_options(HelloWorld PRIVATE /wd4996)
 endif ()

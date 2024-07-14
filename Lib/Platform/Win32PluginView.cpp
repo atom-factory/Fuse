@@ -51,17 +51,6 @@ namespace ArkVector {
         }
     }
 
-    void Win32PluginView::OnPaint(IComponent* root) {
-        // TODO: Render the component tree
-
-        PAINTSTRUCT ps;
-        auto hdc      = ::BeginPaint(m_Handle, &ps);
-        HBRUSH hBrush = ::CreateSolidBrush(RGB(0, 125, 255));
-        ::FillRect(hdc, &ps.rcPaint, hBrush);
-        ::DeleteObject(hBrush);
-        ::EndPaint(m_Handle, &ps);
-    }
-
     void Win32PluginView::OnResize(const Size<u32>& newSize) {
         IPluginView::OnResize(newSize);
         if (m_Handle) {
@@ -83,13 +72,21 @@ namespace ArkVector {
             return DefWindowProc(hwnd, msg, wParam, lParam);
         }
 
+        PAINTSTRUCT ps;
+        HDC hdc;
+
         switch (msg) {
             case WM_DESTROY:
             case WM_CLOSE:
                 view->m_Handle = nullptr;
                 return 0;
             case WM_PAINT: {
-                view->OnPaint(nullptr);
+                view->OnPaint();
+                hdc           = ::BeginPaint(hwnd, &ps);
+                HBRUSH hBrush = ::CreateSolidBrush(RGB(0, 125, 255));
+                ::FillRect(hdc, &ps.rcPaint, hBrush);
+                ::DeleteObject(hBrush);
+                ::EndPaint(hwnd, &ps);
                 return 0;
             }
             default:

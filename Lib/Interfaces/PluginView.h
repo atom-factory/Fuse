@@ -10,10 +10,12 @@
 #include "Component.h"
 
 namespace ArkVector {
+    class IPluginCanvas;
+
     class IPluginView {
     public:
         explicit IPluginView(const Size<u32>& windowSize)
-            : m_WindowSize(windowSize), m_Backend(nullptr) {}
+            : m_WindowSize(windowSize), m_Backend(nullptr), m_OwningCanvas(nullptr) {}
         virtual ~IPluginView() = default;
         virtual void Initialize() {}
         virtual void Shutdown() = 0;
@@ -22,12 +24,16 @@ namespace ArkVector {
             m_WindowSize = newSize;
         }
 
-        virtual void OnPaint(IComponent* root) = 0;
+        virtual void OnPaint() const;
 
         template<typename T>
         T* As() {
             static_assert(std::is_base_of_v<IPluginView, T>, "T must implement IPluginView");
             return dynamic_cast<T*>(this);
+        }
+
+        void SetOwner(IPluginCanvas* owner) {
+            m_OwningCanvas = owner;
         }
 
         Size<u32>& GetSize() {
@@ -36,8 +42,13 @@ namespace ArkVector {
 
         static IPluginView* Create(const Size<u32>& windowSize);
 
+        [[nodiscard]] IBackend* GetBackend() const {
+            return m_Backend;
+        }
+
     protected:
         Size<u32> m_WindowSize;
         IBackend* m_Backend;
+        IPluginCanvas* m_OwningCanvas;
     };
 }  // namespace ArkVector

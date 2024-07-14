@@ -20,8 +20,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     g_Canvas = new CanvasHelloWorld;
     // Attach our canvas to our parent window
     g_Canvas->AttachToParent(HWNDParent::g_Window);
+    HWNDParent::g_View = g_Canvas->GetView()->As<Win32PluginView>();
 
     HWNDParent::Run();
 
+    delete g_Canvas;
     return 0;
 }

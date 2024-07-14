@@ -26,6 +26,7 @@ namespace ArkVector {
             if (!m_View) {
                 throw std::exception("Failed to create plugin view");
             }
+            m_View->SetOwner(this);
         }
 
         virtual ~IPluginCanvas() = default;
@@ -44,6 +45,14 @@ namespace ArkVector {
         }
 
         virtual IComponent* Draw() = 0;
+
+        [[nodiscard]] IPluginView* GetView() const {
+            return m_View;
+        }
+
+        [[nodiscard]] IBackend* GetBackend() const {
+            return m_View->GetBackend();
+        }
 
     protected:
         IPluginView* m_View;

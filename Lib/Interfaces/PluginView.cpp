@@ -4,6 +4,7 @@
 
 #include "Platform/Platform.h"
 #include "PluginView.h"
+#include "PluginCanvas.h"
 
 #if defined(PLATFORM_WINDOWS)
     #include "Platform/Win32PluginView.h"
@@ -14,6 +15,10 @@
 #endif
 
 namespace ArkVector {
+    void IPluginView::OnPaint() const {
+        auto root = m_OwningCanvas->Draw();
+    }
+
     IPluginView* IPluginView::Create(const Size<u32>& windowSize) {
 #if defined(PLATFORM_WINDOWS)
         return new Win32PluginView(windowSize);
