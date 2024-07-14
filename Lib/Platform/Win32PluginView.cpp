@@ -44,7 +44,7 @@ namespace ArkVector {
     }
 
     void Win32PluginView::Shutdown() {
-        delete m_Backend;
+        // TODO: cleanup backend ptr or make unique
         if (m_Handle) {
             ::DestroyWindow(m_Handle);
             m_Handle = nullptr;

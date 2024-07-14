@@ -17,6 +17,11 @@
 namespace ArkVector {
     void IPluginView::OnPaint() const {
         auto root = m_OwningCanvas->Draw();
+        if (!root) {
+            return;
+        }
+
+        root->Draw(GetBackend());
     }
 
     IPluginView* IPluginView::Create(const Size<u32>& windowSize) {

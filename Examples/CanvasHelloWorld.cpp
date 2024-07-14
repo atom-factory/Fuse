@@ -3,9 +3,10 @@
 //
 
 #include "CanvasHelloWorld.h"
+#include "Box.h"
 
 namespace ArkVector {
     IComponent* CanvasHelloWorld::Draw() {
-        return nullptr;
+        return new Components::Box;
     }
 }  // namespace ArkVector

@@ -26,6 +26,8 @@ target_sources(ArkVector PRIVATE
         Lib/Interfaces/PluginCanvas.h
         Lib/Interfaces/Component.h
         Lib/Traits.h
+        Lib/Box.h
+        Lib/Box.cpp
 )
 
 if (WIN32)
