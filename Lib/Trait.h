@@ -4,8 +4,8 @@
 
 #pragma once
 
-namespace ArkVector::Traits {
+namespace ArkVector::Trait {
     class TSingleChild {};
     class TMultiChild {};
     class TNotify {};
-}  // namespace ArkVector::Traits
+}  // namespace ArkVector::Trait

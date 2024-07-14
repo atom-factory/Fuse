@@ -4,7 +4,7 @@
 
 #include "Box.h"
 
-namespace ArkVector::Components {
+namespace ArkVector::Component {
     void Box::Draw(IBackend* backend) {
         backend->DrawRect();
         // Yup, that's literally it...

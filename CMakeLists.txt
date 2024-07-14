@@ -25,7 +25,7 @@ target_sources(ArkVector PRIVATE
         Lib/Interfaces/PluginView.cpp
         Lib/Interfaces/PluginCanvas.h
         Lib/Interfaces/Component.h
-        Lib/Traits.h
+        Lib/Trait.h
         Lib/Box.h
         Lib/Box.cpp
 )

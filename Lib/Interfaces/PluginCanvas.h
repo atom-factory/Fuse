@@ -7,7 +7,7 @@
 #include "Platform/Platform.h"
 #include "Component.h"
 #include "PluginView.h"
-#include "Traits.h"
+#include "Trait.h"
 
 #if defined(PLATFORM_WINDOWS)
     #include "Platform/Win32PluginView.h"
@@ -19,7 +19,7 @@
 
 namespace ArkVector {
     /// Root interface of an ArkVector UI app
-    class IPluginCanvas : public Traits::TNotify {
+    class IPluginCanvas : public Trait::TNotify {
     public:
         IPluginCanvas() {
             m_View = IPluginView::Create({800, 600});

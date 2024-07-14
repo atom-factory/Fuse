@@ -7,6 +7,6 @@
 
 namespace ArkVector {
     IComponent* CanvasHelloWorld::Draw() {
-        return new Components::Box;
+        return new Component::Box;
     }
 }  // namespace ArkVector

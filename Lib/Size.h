@@ -74,15 +74,18 @@ namespace ArkVector {
         T bSqrd = Width * Width;
         return std::sqrt(aSqrd + bSqrd);
     }
+
     template<typename T>
     template<typename newT>
     Size<newT> Size<T>::To() {
         return Size<newT>(static_cast<newT>(Width), static_cast<newT>(Height));
     }
+
     template<typename T>
     Offset Size<T>::AsOffset() {
         return Offset(Width, Height);
     }
+
     template<typename T>
     void Size<T>::Set(T x, T y) {
         Width  = x;
