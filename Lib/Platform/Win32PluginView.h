@@ -10,8 +10,7 @@
 namespace ArkVector {
     class Win32PluginView final : public IPluginView {
     public:
-        explicit Win32PluginView(const Size<u32>& windowSize, HWND parent)
-            : IPluginView(windowSize, parent) {}
+        explicit Win32PluginView(HWND parent) : IPluginView(parent) {}
 
         void Initialize(HWND parent, int nCmdShow);
         void Shutdown() override;

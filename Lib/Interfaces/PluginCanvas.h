@@ -21,8 +21,8 @@ namespace ArkVector {
     /// Root interface of an ArkVector UI app
     class IPluginCanvas : public Traits::TNotify {
     public:
-        explicit IPluginCanvas(const Size<u32>& size, void* parent) {
-            m_View = IPluginView::Create(size, parent);
+        explicit IPluginCanvas(void* parent) {
+            m_View = IPluginView::Create(parent);
             if (!m_View) {
                 throw std::exception("Failed to create plugin view");
             }
@@ -53,6 +53,8 @@ namespace ArkVector {
         [[nodiscard]] IBackend* GetBackend() const {
             return m_View->GetBackend();
         }
+
+        Color BackgroundColor;
 
     protected:
         IPluginView* m_View;

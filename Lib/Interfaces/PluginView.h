@@ -14,9 +14,8 @@ namespace ArkVector {
 
     class IPluginView {
     public:
-        explicit IPluginView(const Size<u32>& windowSize, void* parent)
-            : m_WindowSize(windowSize), m_Backend(nullptr), m_OwningCanvas(nullptr),
-              m_Parent(parent) {}
+        explicit IPluginView(void* parent)
+            : m_WindowSize({0, 0}), m_Backend(nullptr), m_OwningCanvas(nullptr), m_Parent(parent) {}
         virtual ~IPluginView() = default;
         virtual void Initialize() {}
         virtual void Shutdown() = 0;
@@ -25,7 +24,7 @@ namespace ArkVector {
             m_WindowSize = newSize;
         }
 
-        virtual void OnPaint() const;
+        virtual void OnPaint(const Color& backgroundColor) const;
 
         template<typename T>
         T* As() {
@@ -41,7 +40,7 @@ namespace ArkVector {
             return m_WindowSize;
         }
 
-        static IPluginView* Create(const Size<u32>& windowSize, void* parent);
+        static IPluginView* Create(void* parent);
 
         [[nodiscard]] IBackend* GetBackend() const {
             return m_Backend;

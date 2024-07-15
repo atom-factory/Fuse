@@ -13,6 +13,9 @@ namespace ArkVector {
         void Init() override;
         void OnResize(const Size<u32>& size) override;
 
+        void BeginDrawing(const Color& clearColor) override;
+        void EndDrawing() override;
+
         void
         DrawRect(const Size<u32>& size, const Offset& position, const Color& fillColor) override;
         void DrawEllipse() override;

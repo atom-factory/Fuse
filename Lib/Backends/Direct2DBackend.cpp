@@ -44,6 +44,19 @@ namespace ArkVector {
         }
     }
 
+    void Direct2DBackend::BeginDrawing(const Color& clearColor) {
+        if (m_RenderTarget) {
+            m_RenderTarget->BeginDraw();
+            m_RenderTarget->Clear(D2D1::ColorF(clearColor.Value()));
+        }
+    }
+
+    void Direct2DBackend::EndDrawing() {
+        if (m_RenderTarget) {
+            m_RenderTarget->EndDraw();
+        }
+    }
+
     void Direct2DBackend::DrawRect(const Size<u32>& size,
                                    const Offset& position,
                                    const Color& fillColor) {
@@ -51,23 +64,12 @@ namespace ArkVector {
             ID2D1SolidColorBrush* brush = nullptr;
             auto hr =
               m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
-            if (FAILED(hr)) {
-                throw std::runtime_error("Failed to create brush");
-            }
-
-            m_RenderTarget->BeginDraw();
-            // m_RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 
             m_RenderTarget->FillRectangle(D2D1::RectF(position.X,
                                                       position.Y,
                                                       static_cast<f32>(size.Width),
                                                       static_cast<f32>(size.Height)),
                                           brush);
-
-            hr = m_RenderTarget->EndDraw();
-            if (FAILED(hr)) {
-                throw std::runtime_error("Failed to draw render target");
-            }
         }
     }
 

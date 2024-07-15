@@ -17,6 +17,9 @@ namespace ArkVector {
         virtual void Init() {}
         virtual void OnResize(const Size<u32>& size) = 0;
 
+        virtual void BeginDrawing(const Color& clearColor) {}
+        virtual void EndDrawing() {}
+
         template<typename T>
         T* As() {
             static_assert(std::is_base_of_v<IBackend, T>, "T must implement IBackend");
@@ -27,7 +30,7 @@ namespace ArkVector {
             m_OwningView = owner;
         }
 
-        IPluginView* GetOwner() const {
+        [[nodiscard]] IPluginView* GetOwner() const {
             return m_OwningView;
         }
 

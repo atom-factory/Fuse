@@ -17,7 +17,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     HWNDParent::CreateParentWindow(hInstance, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     // Create our canvas
-    g_Canvas           = new CanvasHelloWorld({WINDOW_WIDTH, WINDOW_HEIGHT}, HWNDParent::g_Window);
+    g_Canvas           = new CanvasHelloWorld(HWNDParent::g_Window);
     HWNDParent::g_View = g_Canvas->GetView()->As<Win32PluginView>();
 
     HWNDParent::Run();

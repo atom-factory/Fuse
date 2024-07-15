@@ -9,6 +9,11 @@
 
 namespace ArkVector {
     void Win32PluginView::Initialize(HWND parent, int nCmdShow) {
+        RECT rc;
+        ::GetClientRect(parent, &rc);
+        m_WindowSize.Width  = rc.right - rc.left;
+        m_WindowSize.Height = rc.bottom - rc.top;
+
         m_Instance = ::GetModuleHandle(nullptr);
 
         WNDCLASSA wc     = {};
@@ -79,19 +84,12 @@ namespace ArkVector {
         }
 
         switch (msg) {
-            case WM_SHOWWINDOW: {
-                RECT rc;
-                ::GetClientRect((HWND)view->m_Parent, &rc);
-                view->OnResize(
-                  {static_cast<u32>(rc.right - rc.left), static_cast<u32>(rc.bottom - rc.top)});
-            }
-                return 0;
             case WM_DESTROY:
             case WM_CLOSE:
                 view->m_Handle = nullptr;
                 return 0;
             case WM_PAINT: {
-                view->OnPaint();
+                view->OnPaint(Color(0xFF01030C));
                 return 0;
             }
             default:

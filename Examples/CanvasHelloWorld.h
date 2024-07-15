@@ -10,8 +10,8 @@ namespace ArkVector {
 
     class CanvasHelloWorld final : public IPluginCanvas {
     public:
-        explicit CanvasHelloWorld(const Size<u32>& size, void* parent)
-            : IPluginCanvas(size, parent) {
+        explicit CanvasHelloWorld(void* parent) : IPluginCanvas(parent) {
+            this->BackgroundColor = Color(0xFF01030C);
             this->IPluginCanvas::AttachToParent(parent);
         }
         IComponent* Draw() override;
