@@ -67,6 +67,7 @@ namespace ArkVector {
                            newSize.Height,
                            SWP_NOZORDER | SWP_NOACTIVATE);
         }
+        m_Backend->OnResize(newSize);
     }
 
     LRESULT Win32PluginView::MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -77,9 +78,6 @@ namespace ArkVector {
             return DefWindowProc(hwnd, msg, wParam, lParam);
         }
 
-        PAINTSTRUCT ps;
-        HDC hdc;
-
         switch (msg) {
             case WM_DESTROY:
             case WM_CLOSE:
@@ -87,11 +85,6 @@ namespace ArkVector {
                 return 0;
             case WM_PAINT: {
                 view->OnPaint();
-                hdc           = ::BeginPaint(hwnd, &ps);
-                HBRUSH hBrush = ::CreateSolidBrush(RGB(0, 125, 255));
-                ::FillRect(hdc, &ps.rcPaint, hBrush);
-                ::DeleteObject(hBrush);
-                ::EndPaint(hwnd, &ps);
                 return 0;
             }
             default:

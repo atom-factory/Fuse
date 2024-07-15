@@ -9,6 +9,12 @@
 
 namespace ArkVector {
     void Direct2DBackend::Init() {
+        if (!m_OwningView) {
+            throw std::runtime_error(
+              "Direct2DBackend::Init: m_OwningView is null. Ensure SetOwner() "
+              "was called before initializing.");
+        }
+
         auto hr = ::D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_Factory);
         if (FAILED(hr)) {
             throw std::runtime_error("Failed to create Direct2D Factory");
@@ -28,29 +34,38 @@ namespace ArkVector {
         }
     }
 
-    void Direct2DBackend::OnResize(const Size<u32>& size) {}
+    void Direct2DBackend::OnResize(const Size<u32>& size) {
+        if (m_RenderTarget) {
+            auto hr = m_RenderTarget->Resize(D2D1_SIZE_U(size.Width, size.Height));
+            if (FAILED(hr)) {
+                throw std::runtime_error("Failed to resize render target");
+            }
+        }
+    }
 
     void Direct2DBackend::DrawRect() {
-        ID2D1SolidColorBrush* brush = nullptr;
-        auto hr = m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red), &brush);
-        if (FAILED(hr)) {
-            throw std::runtime_error("Failed to create brush");
-        }
+        if (m_RenderTarget) {
+            ID2D1SolidColorBrush* brush = nullptr;
+            auto hr =
+              m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red), &brush);
+            if (FAILED(hr)) {
+                throw std::runtime_error("Failed to create brush");
+            }
 
-        auto view = m_OwningView->As<Win32PluginView>();
-        RECT rc;
-        ::GetClientRect(view->GetHandle(), &rc);
-        D2D1_RECT_F rect = D2D1::RectF(static_cast<FLOAT>(rc.left + 100),
-                                       static_cast<FLOAT>(rc.top + 100),
-                                       static_cast<FLOAT>(rc.right - 100),
-                                       static_cast<FLOAT>(rc.bottom - 100));
+            m_RenderTarget->BeginDraw();
+            m_RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CornflowerBlue));
 
-        m_RenderTarget->BeginDraw();
-        m_RenderTarget->DrawRectangle(&rect, brush);
+            const auto rect = m_OwningView->GetSize();
+            m_RenderTarget->FillRectangle(D2D1::RectF(100.0f,
+                                                      100.0f,
+                                                      static_cast<f32>(rect.Width) - 100.f,
+                                                      static_cast<f32>(rect.Height) - 100.f),
+                                          brush);
 
-        hr = m_RenderTarget->EndDraw();
-        if (FAILED(hr)) {
-            throw std::runtime_error("Failed to draw render target");
+            hr = m_RenderTarget->EndDraw();
+            if (FAILED(hr)) {
+                throw std::runtime_error("Failed to draw render target");
+            }
         }
     }
 

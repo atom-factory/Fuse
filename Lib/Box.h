@@ -4,12 +4,15 @@
 
 #pragma once
 
+#include "Traits.h"
 #include "Interfaces/Component.h"
 #include "Interfaces/Backend.h"
 
-namespace ArkVector::Component {
+using namespace ArkVector::Traits;
 
-    class Box final : public IComponent {
+namespace ArkVector::Component {
+    class Box final : public IComponent,
+                      public TSingleChild {
     public:
         void Draw(IBackend* backend) override;
     };
