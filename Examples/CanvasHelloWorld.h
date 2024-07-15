@@ -10,6 +10,10 @@ namespace ArkVector {
 
     class CanvasHelloWorld final : public IPluginCanvas {
     public:
+        explicit CanvasHelloWorld(const Size<u32>& size, void* parent)
+            : IPluginCanvas(size, parent) {
+            this->IPluginCanvas::AttachToParent(parent);
+        }
         IComponent* Draw() override;
     };
 

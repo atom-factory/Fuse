@@ -4,9 +4,8 @@
 
 #pragma once
 
-#include "Traits.h"
 #include "Interfaces/Component.h"
-#include "Interfaces/Backend.h"
+#include "Traits.h"
 
 using namespace ArkVector::Traits;
 

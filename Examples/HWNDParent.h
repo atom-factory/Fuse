@@ -42,7 +42,7 @@ namespace HWNDParent {
         g_Window = ::CreateWindowExA(NULL,
                                      "ArkVectorParentWindowClass",
                                      "ArkVector Window",
-                                     WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+                                     WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
                                      static_cast<i32>(posX),
                                      static_cast<i32>(posY),
                                      width,

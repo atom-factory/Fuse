@@ -24,9 +24,9 @@ namespace ArkVector {
         root->Draw(GetBackend());
     }
 
-    IPluginView* IPluginView::Create(const Size<u32>& windowSize) {
+    IPluginView* IPluginView::Create(const Size<u32>& windowSize, void* parent) {
 #if defined(PLATFORM_WINDOWS)
-        return new Win32PluginView(windowSize);
+        return new Win32PluginView(windowSize, (HWND)parent);
 #elif defined(PLATFORM_LINUX)
         return new X11AppWindow(windowSize);
 #elif defined(PLATFORM_APPLE)

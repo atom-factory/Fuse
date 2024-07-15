@@ -4,6 +4,7 @@
 
 #include "Direct2DBackend.h"
 
+#include "Color.h"
 #include "Interfaces/PluginView.h"
 #include "Platform/Win32PluginView.h"
 
@@ -43,23 +44,24 @@ namespace ArkVector {
         }
     }
 
-    void Direct2DBackend::DrawRect() {
+    void Direct2DBackend::DrawRect(const Size<u32>& size,
+                                   const Offset& position,
+                                   const Color& fillColor) {
         if (m_RenderTarget) {
             ID2D1SolidColorBrush* brush = nullptr;
             auto hr =
-              m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red), &brush);
+              m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
             if (FAILED(hr)) {
                 throw std::runtime_error("Failed to create brush");
             }
 
             m_RenderTarget->BeginDraw();
-            m_RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CornflowerBlue));
+            // m_RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 
-            const auto rect = m_OwningView->GetSize();
-            m_RenderTarget->FillRectangle(D2D1::RectF(100.0f,
-                                                      100.0f,
-                                                      static_cast<f32>(rect.Width) - 100.f,
-                                                      static_cast<f32>(rect.Height) - 100.f),
+            m_RenderTarget->FillRectangle(D2D1::RectF(position.X,
+                                                      position.Y,
+                                                      static_cast<f32>(size.Width),
+                                                      static_cast<f32>(size.Height)),
                                           brush);
 
             hr = m_RenderTarget->EndDraw();

@@ -4,7 +4,9 @@
 
 #pragma once
 
+#include "Color.h"
 #include "Size.h"
+#include "Offset.h"
 
 namespace ArkVector {
     class IPluginView;
@@ -25,7 +27,12 @@ namespace ArkVector {
             m_OwningView = owner;
         }
 
-        virtual void DrawRect() {}
+        IPluginView* GetOwner() const {
+            return m_OwningView;
+        }
+
+        virtual void
+        DrawRect(const Size<u32>& size, const Offset& position, const Color& fillColor) {}
         virtual void DrawLine() {}
         virtual void DrawEllipse() {}
         virtual void DrawPath() {}

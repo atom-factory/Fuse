@@ -28,6 +28,8 @@ target_sources(ArkVector PRIVATE
         Lib/Traits.h
         Lib/Box.h
         Lib/Box.cpp
+        Lib/Color.h
+        Lib/Color.cpp
 )
 
 if (WIN32)
@@ -38,9 +40,14 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.h
     )
 
-    add_executable(HelloWorld WIN32 Examples/HWNDParent.h Examples/HelloWorld_Win32.cpp
+    add_executable(HelloWorld WIN32
+            Examples/HWNDParent.h
+            Examples/HelloWorld_Win32.cpp
             Examples/CanvasHelloWorld.cpp
-            Examples/CanvasHelloWorld.h)
+            Examples/CanvasHelloWorld.h
+            Examples/CustomComponent.h
+            Examples/CustomComponent.cpp
+    )
     target_link_libraries(HelloWorld PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     target_sources(ArkVector PRIVATE

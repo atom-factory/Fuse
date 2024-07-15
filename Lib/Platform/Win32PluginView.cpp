@@ -79,6 +79,13 @@ namespace ArkVector {
         }
 
         switch (msg) {
+            case WM_SHOWWINDOW: {
+                RECT rc;
+                ::GetClientRect((HWND)view->m_Parent, &rc);
+                view->OnResize(
+                  {static_cast<u32>(rc.right - rc.left), static_cast<u32>(rc.bottom - rc.top)});
+            }
+                return 0;
             case WM_DESTROY:
             case WM_CLOSE:
                 view->m_Handle = nullptr;

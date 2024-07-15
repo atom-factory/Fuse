@@ -21,8 +21,8 @@ namespace ArkVector {
     /// Root interface of an ArkVector UI app
     class IPluginCanvas : public Traits::TNotify {
     public:
-        IPluginCanvas() {
-            m_View = IPluginView::Create({800, 600});
+        explicit IPluginCanvas(const Size<u32>& size, void* parent) {
+            m_View = IPluginView::Create(size, parent);
             if (!m_View) {
                 throw std::exception("Failed to create plugin view");
             }
