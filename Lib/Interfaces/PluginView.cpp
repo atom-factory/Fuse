@@ -17,7 +17,7 @@
 namespace ArkVector {
     void IPluginView::OnPaint(const Color& backgroundColor) const {
         const auto backend = GetBackend();
-        backend->BeginDrawing(m_OwningCanvas->BackgroundColor);
+        backend->BeginDrawing(backgroundColor);
 
         const auto root = m_OwningCanvas->Draw();
         if (root) {
@@ -29,7 +29,7 @@ namespace ArkVector {
 
     IPluginView* IPluginView::Create(void* parent) {
 #if defined(PLATFORM_WINDOWS)
-        return new Win32PluginView((HWND)parent);
+        return new Win32PluginView(static_cast<HWND>(parent));
 #elif defined(PLATFORM_LINUX)
         return new X11AppWindow(windowSize);
 #elif defined(PLATFORM_APPLE)

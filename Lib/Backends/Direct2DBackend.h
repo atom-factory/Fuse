@@ -13,7 +13,7 @@ namespace ArkVector {
         void Init() override;
         void OnResize(const Size<u32>& size) override;
 
-        void BeginDrawing(const Color& clearColor) override;
+        void BeginDrawing(Color clearColor) override;
         void EndDrawing() override;
 
         void

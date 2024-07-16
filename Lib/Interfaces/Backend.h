@@ -17,7 +17,7 @@ namespace ArkVector {
         virtual void Init() {}
         virtual void OnResize(const Size<u32>& size) = 0;
 
-        virtual void BeginDrawing(const Color& clearColor) {}
+        virtual void BeginDrawing(const Color clearColor) {}
         virtual void EndDrawing() {}
 
         template<typename T>

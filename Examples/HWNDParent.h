@@ -42,7 +42,7 @@ namespace HWNDParent {
         g_Window = ::CreateWindowExA(NULL,
                                      "ArkVectorParentWindowClass",
                                      "ArkVector Window",
-                                     WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
+                                     WS_OVERLAPPEDWINDOW | WS_CAPTION | WS_SYSMENU,
                                      static_cast<i32>(posX),
                                      static_cast<i32>(posY),
                                      width,
@@ -73,20 +73,7 @@ namespace HWNDParent {
     }
 
     static LRESULT WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-        PAINTSTRUCT ps;
-        HDC hdc;
         switch (msg) {
-            case WM_PAINT: {
-                hdc = BeginPaint(hwnd, &ps);
-
-                // Set the background color to blue
-                HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 0));
-                FillRect(hdc, &ps.rcPaint, hBrush);
-
-                DeleteObject(hBrush);
-                EndPaint(hwnd, &ps);
-                return 0;
-            }
             case WM_SIZE: {
                 if (g_View != nullptr) {
                     RECT rect;

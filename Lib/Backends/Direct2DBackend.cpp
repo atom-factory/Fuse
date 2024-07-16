@@ -44,7 +44,7 @@ namespace ArkVector {
         }
     }
 
-    void Direct2DBackend::BeginDrawing(const Color& clearColor) {
+    void Direct2DBackend::BeginDrawing(const Color clearColor) {
         if (m_RenderTarget) {
             m_RenderTarget->BeginDraw();
             m_RenderTarget->Clear(D2D1::ColorF(clearColor.Value()));
