@@ -85,9 +85,13 @@ elseif (UNIX AND NOT APPLE)
                 Lib/Backends/CairoBackend.cpp
                 Lib/Backends/CairoBackend.h
         )
-        target_link_libraries(ArkVector PRIVATE wayland-client)
 
-        add_executable(HelloWorld.Wayland ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_Wayland.cpp)
+        pkg_check_modules(WAYLAND_EGL REQUIRED wayland-egl)
+        pkg_check_modules(EGL REQUIRED egl)
+        target_link_libraries(ArkVector PRIVATE wayland-client wayland-egl egl)
+
+        add_executable(HelloWorld.Wayland ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_Wayland.cpp
+                Examples/WaylandParent.h)
         target_link_libraries(HelloWorld.Wayland PRIVATE ArkVector)
     elseif (DEFINED ENV{DISPLAY})
         message(STATUS "X11 is the active windowing system")
@@ -101,11 +105,16 @@ elseif (UNIX AND NOT APPLE)
         )
         target_link_libraries(ArkVector PRIVATE X11)
 
-        add_executable(HelloWorld.X11 ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_X11.cpp)
+        add_executable(HelloWorld.X11 ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_X11.cpp
+                Examples/X11Parent.h)
         target_link_libraries(HelloWorld.X11 PRIVATE ArkVector)
     else ()
         message(STATUS "No active windowing system detected")
     endif ()
+
+    # Link Cairo for all linux platforms
+    pkg_check_modules(CairoMM REQUIRED cairomm-1.16)
+    target_link_libraries(ArkVector PRIVATE cairomm)
 elseif (APPLE)
 endif ()
 

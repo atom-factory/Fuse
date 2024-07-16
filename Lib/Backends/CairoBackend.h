@@ -5,28 +5,9 @@
 #pragma once
 
 #include "Interfaces/Backend.h"
-#include "Platform/X11PluginView.h"
 
-#include <cairomm/context.h>
-#include <cairomm/refptr.h>
-#include <cairomm/xlib_surface.h>
+// #include <cairomm/context.h>
+// #include <cairomm/refptr.h>
+// #include <cairomm/xlib_surface.h>
 
-namespace ArkVector {
-    class X11Backend final : public IBackend {
-    public:
-        void Init(Display* pDisplay, Window window, i32 screen, const Size<u32>& size);
-        void Shutdown() override;
-        void OnResize(const Size<u32>& size) override;
-        void OnPaint(const Size<u32>& size) override;
-
-        void DrawRect() override;
-        void DrawEllipse() override;
-        void DrawLine() override;
-        void DrawPath() override;
-        void DrawString() override;
-
-    private:
-        Cairo::RefPtr<Cairo::XlibSurface> m_pSurface;
-        Cairo::RefPtr<Cairo::Context> m_pContext;
-    };
-}  // namespace ArkVector
+namespace ArkVector {} // namespace ArkVector

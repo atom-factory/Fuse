@@ -41,7 +41,7 @@ namespace ArkVector {
         explicit IPluginCanvas(void* parent) {
             m_View = IPluginView::Create(parent);
             if (!m_View) {
-                throw std::exception("Failed to create plugin view");
+                throw std::runtime_error("Failed to create plugin view");
             }
             m_View->SetOwner(this);
         }
@@ -49,14 +49,14 @@ namespace ArkVector {
         virtual ~IPluginCanvas() = default;
 
         virtual i32 AttachToParent(void* parent) {
-#if defined(PLATFORM_WINDOWS)
+            #if defined(PLATFORM_WINDOWS)
             auto _parent = (HWND)parent;
             auto view    = m_View->As<Win32PluginView>();
             view->Initialize(_parent, SW_SHOW);
             return 0;
-#elif defined(PLATFORM_LINUX)
-#elif defined(PLATFORM_APPLE)
-#endif
+            #elif defined(PLATFORM_LINUX)
+            #elif defined(PLATFORM_APPLE)
+            #endif
 
             return -1;
         }
@@ -76,4 +76,4 @@ namespace ArkVector {
     protected:
         IPluginView* m_View;
     };
-}  // namespace ArkVector
+} // namespace ArkVector

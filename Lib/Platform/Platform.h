@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <exception>
+
 #if defined(_WIN32) || defined(_WIN64)
     #define PLATFORM_WINDOWS
     #define WIN32_LEAN_AND_MEAN
@@ -23,8 +25,13 @@ void SafeRelease(Interface** ppInterface) {
     }
 }
 #elif defined(__linux__)
-    #define PLATFORM_LINUX
-    #include <X11/Xlib.h>
+#if defined(USE_WAYLAND)
+#include <wayland-client.h>
+#include <wayland-egl.h>
+#include <EGL/egl.h>
+#elif defined(USE_X11)
+#include <X11/Xlib.h>
+#endif
 #elif defined(__APPLE__)
     #define PLATFORM_APPLE
 #endif
