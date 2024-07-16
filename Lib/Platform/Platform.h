@@ -25,6 +25,7 @@ void SafeRelease(Interface** ppInterface) {
     }
 }
 #elif defined(__linux__)
+#include <cairomm/cairomm.h>
 #if defined(USE_WAYLAND)
 #include <wayland-client.h>
 #include <wayland-egl.h>

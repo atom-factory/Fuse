@@ -73,7 +73,6 @@ elseif (UNIX AND NOT APPLE)
         message(STATUS "Wayland libraries not found")
     endif ()
 
-
     # Determine the active windowing system and set preprocessor defines
     if (DEFINED ENV{WAYLAND_DISPLAY})
         message(STATUS "Wayland is the active windowing system")
@@ -113,8 +112,9 @@ elseif (UNIX AND NOT APPLE)
     endif ()
 
     # Link Cairo for all linux platforms
-    pkg_check_modules(CairoMM REQUIRED cairomm-1.16)
-    target_link_libraries(ArkVector PRIVATE cairomm)
+    pkg_check_modules(CAIROMM REQUIRED cairomm-1.16)
+    include_directories(${CAIROMM_INCLUDE_DIRS})
+    target_link_libraries(ArkVector PRIVATE ${CAIROMM_LIBRARIES})
 elseif (APPLE)
 endif ()
 
