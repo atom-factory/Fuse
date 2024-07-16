@@ -86,8 +86,9 @@ elseif (UNIX AND NOT APPLE)
         )
 
         pkg_check_modules(WAYLAND_EGL REQUIRED wayland-egl)
+        pkg_check_modules(WAYLAND_PROTO REQUIRED wayland-protocols)
         pkg_check_modules(EGL REQUIRED egl)
-        target_link_libraries(ArkVector PRIVATE wayland-client wayland-egl egl)
+        target_link_libraries(ArkVector PRIVATE wayland-client wayland-egl wayland-protocols egl)
 
         add_executable(HelloWorld.Wayland ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_Wayland.cpp
                 Examples/WaylandParent.h)
