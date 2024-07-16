@@ -26,6 +26,7 @@ target_sources(ArkVector PRIVATE
         Lib/Offset.cpp
         Lib/Color.h
         Lib/Color.cpp
+        Lib/Platform/Platform.h
         # Interfaces
         ${INTERFACES}
         # Components
