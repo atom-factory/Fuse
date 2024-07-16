@@ -51,21 +51,32 @@ if (WIN32)
     )
     target_link_libraries(HelloWorld PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
-    target_sources(ArkVector PRIVATE
-            Lib/Platform/X11PluginView.cpp
-            Lib/Platform/X11PluginView.h
-            Lib/Backends/X11Backend.cpp
-            Lib/Backends/X11Backend.h
-    )
+    # Check for X11
+    find_package(X11 QUIET)
+    if (X11_FOUND)
+        message(STATUS "X11 libraries found")
+    else ()
+        message(STATUS "X11 libraries not found")
+    endif ()
 
-    find_package(X11 REQUIRED)
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(CAIROMM REQUIRED IMPORTED_TARGET cairomm-1.16)
+    # Check for Wayland
+    find_package(PkgConfig)
+    pkg_check_modules(WAYLAND_CLIENT QUIET wayland-client)
 
-    target_link_libraries(ArkVector PRIVATE X11 PkgConfig::CAIROMM)
+    if (WAYLAND_CLIENT_FOUND)
+        message(STATUS "Wayland libraries found")
+    else ()
+        message(STATUS "Wayland libraries not found")
+    endif ()
 
-    add_executable(X11EmbeddedChild Examples/HelloWorld_Linux.cpp)
-    target_link_libraries(X11EmbeddedChild PRIVATE ArkVector)
+    # Determine the active windowing system
+    if (DEFINED ENV{WAYLAND_DISPLAY})
+        message(STATUS "Wayland is the active windowing system")
+    elseif (DEFINED ENV{DISPLAY})
+        message(STATUS "X11 is the active windowing system")
+    else ()
+        message(FATAL_ERROR "No active windowing system detected")
+    endif ()
 elseif (APPLE)
     #    target_sources(ArkVector PRIVATE
     #            Lib/Backends/X11Backend.cpp
