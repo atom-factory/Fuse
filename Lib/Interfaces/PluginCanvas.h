@@ -18,7 +18,24 @@
 #endif
 
 namespace ArkVector {
-    /// Root interface of an ArkVector UI app
+    /**
+     * @brief Root interface of an ArkVector-rendered plugin.
+     *
+     * The constructor takes a void ptr to the parent window handle (`HWND` on Windows, `Window` on
+     * X11, etc.)
+     *
+     * Example Implementation:
+     * @code{.cpp}
+     * class MyCanvas final : public IPluginCanvas {
+     * public:
+     *     explicit MyCanvas(void* parent) : IPluginCanvas(parent) {
+     *         this->BackgroundColor = Color(0xFF000000); // black background
+     *         this->IPluginCanvas::AttachToParent(parent); // attach canvas to parent
+     *     }
+     *     IComponent* Draw() override;
+     * };
+     * @endcode
+     */
     class IPluginCanvas : public Traits::TNotify {
     public:
         explicit IPluginCanvas(void* parent) {

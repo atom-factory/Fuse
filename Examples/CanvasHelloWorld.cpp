@@ -3,7 +3,7 @@
 //
 
 #include "CanvasHelloWorld.h"
-#include "Box.h"
+#include "Components/Box.h"
 
 namespace ArkVector {
     IComponent* CanvasHelloWorld::Draw() {

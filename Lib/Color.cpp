@@ -118,7 +118,8 @@ namespace ArkVector {
     }
 
     f32 Color::LinearizeComponent(const f32 c) {
-        // https: stackoverflow.com/questions/61138110/what-is-the-correct-gamma-correction-function
+        /// @see
+        /// https:stackoverflow.com/questions/61138110/what-is-the-correct-gamma-correction-function
         if (c <= 0.04045f) {
             return c / 12.92f;
         }
