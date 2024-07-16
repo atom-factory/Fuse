@@ -33,6 +33,13 @@ target_sources(ArkVector PRIVATE
         ${COMPONENTS}
 )
 
+file(GLOB EXAMPLE_SOURCE
+        Examples/CanvasHelloWorld.cpp
+        Examples/CanvasHelloWorld.h
+        Examples/CustomComponent.h
+        Examples/CustomComponent.cpp
+)
+
 if (WIN32)
     target_sources(ArkVector PRIVATE
             Lib/Platform/Win32PluginView.cpp
@@ -41,15 +48,12 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.h
     )
 
-    add_executable(HelloWorld WIN32
+    add_executable(HelloWorld.Win32 WIN32
             Examples/HWNDParent.h
             Examples/HelloWorld_Win32.cpp
-            Examples/CanvasHelloWorld.cpp
-            Examples/CanvasHelloWorld.h
-            Examples/CustomComponent.h
-            Examples/CustomComponent.cpp
+            ${EXAMPLE_SOURCE}
     )
-    target_link_libraries(HelloWorld PRIVATE ArkVector)
+    target_link_libraries(HelloWorld.Win32 PRIVATE ArkVector)
 elseif (UNIX AND NOT APPLE)
     # Check for X11
     find_package(X11 QUIET)
@@ -69,22 +73,40 @@ elseif (UNIX AND NOT APPLE)
         message(STATUS "Wayland libraries not found")
     endif ()
 
-    # Determine the active windowing system
+
+    # Determine the active windowing system and set preprocessor defines
     if (DEFINED ENV{WAYLAND_DISPLAY})
         message(STATUS "Wayland is the active windowing system")
+        add_definitions(-DUSE_WAYLAND)
+
+        target_sources(ArkVector PRIVATE
+                Lib/Platform/WaylandPluginView.cpp
+                Lib/Platform/WaylandPluginView.h
+                Lib/Backends/CairoBackend.cpp
+                Lib/Backends/CairoBackend.h
+        )
+        target_link_libraries(ArkVector PRIVATE wayland-client)
+
+        add_executable(HelloWorld.Wayland ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_Wayland.cpp)
+        target_link_libraries(HelloWorld.Wayland PRIVATE ArkVector)
     elseif (DEFINED ENV{DISPLAY})
         message(STATUS "X11 is the active windowing system")
+        add_definitions(-DUSE_X11)
+
+        target_sources(ArkVector PRIVATE
+                Lib/Platform/X11PluginView.cpp
+                Lib/Platform/X11PluginView.h
+                Lib/Backends/CairoBackend.cpp
+                Lib/Backends/CairoBackend.h
+        )
+        target_link_libraries(ArkVector PRIVATE X11)
+
+        add_executable(HelloWorld.X11 ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_X11.cpp)
+        target_link_libraries(HelloWorld.X11 PRIVATE ArkVector)
     else ()
-        message(FATAL_ERROR "No active windowing system detected")
+        message(STATUS "No active windowing system detected")
     endif ()
 elseif (APPLE)
-    #    target_sources(ArkVector PRIVATE
-    #            Lib/Backends/X11Backend.cpp
-    #            Lib/Backends/X11Backend.h
-    #    )
-
-    add_executable(NSEmbeddedChild Examples/HelloWorld_Apple.cpp)
-    target_link_libraries(NSEmbeddedChild PRIVATE ArkVector)
 endif ()
 
 if (MSVC)
