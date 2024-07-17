@@ -10,7 +10,7 @@ var class_fuse_1_1_i_backend =
     [ "DrawString", "class_fuse_1_1_i_backend.html#abcae4a39f0ddddddb4b2a302fb8bcffb", null ],
     [ "EndDrawing", "class_fuse_1_1_i_backend.html#a3b3ee33f6572d68e4c7fcb9b9440712a", null ],
     [ "GetOwner", "class_fuse_1_1_i_backend.html#a75f930db2e706960f6243217ddfd0110", null ],
-    [ "Init", "class_fuse_1_1_i_backend.html#a453a50598d8f52672041b73faeb6d4aa", null ],
+    [ "Initialize", "class_fuse_1_1_i_backend.html#ac407cb37af19df4e4f307bb084af98b6", null ],
     [ "OnResize", "class_fuse_1_1_i_backend.html#a64fa5922282795a6257aeb4542c5bc38", null ],
     [ "SetOwner", "class_fuse_1_1_i_backend.html#a8df76ba37b8fa369ef463ccc142e1491", null ],
     [ "Shutdown", "class_fuse_1_1_i_backend.html#acdbe5458f41bf6c4bc97da0e46865c1d", null ],

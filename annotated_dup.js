@@ -9,6 +9,7 @@ var annotated_dup =
         [ "TMultiChild", "class_fuse_1_1_traits_1_1_t_multi_child.html", "class_fuse_1_1_traits_1_1_t_multi_child" ],
         [ "TNotify", "class_fuse_1_1_traits_1_1_t_notify.html", null ]
       ] ],
+      [ "CairoBackend", "class_fuse_1_1_cairo_backend.html", "class_fuse_1_1_cairo_backend" ],
       [ "Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", "class_fuse_1_1_direct2_d_backend" ],
       [ "BaseColor", "struct_fuse_1_1_base_color.html", "struct_fuse_1_1_base_color" ],
       [ "Color", "class_fuse_1_1_color.html", "class_fuse_1_1_color" ],

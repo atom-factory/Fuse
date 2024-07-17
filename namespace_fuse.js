@@ -14,6 +14,7 @@ var namespace_fuse =
       [ "Lerp", "namespace_fuse_1_1_math.html#a93b07e91cc74886c4dfc8c609a589748", null ]
     ] ],
     [ "Traits", "namespace_fuse_1_1_traits.html", "namespace_fuse_1_1_traits" ],
+    [ "CairoBackend", "class_fuse_1_1_cairo_backend.html", "class_fuse_1_1_cairo_backend" ],
     [ "Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", "class_fuse_1_1_direct2_d_backend" ],
     [ "BaseColor", "struct_fuse_1_1_base_color.html", "struct_fuse_1_1_base_color" ],
     [ "Color", "class_fuse_1_1_color.html", "class_fuse_1_1_color" ],

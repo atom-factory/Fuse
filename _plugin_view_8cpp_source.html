@@ -100,40 +100,51 @@ $(document).ready(function(){initNavTree('_plugin_view_8cpp_source.html',''); in
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#if defined(PLATFORM_WINDOWS)</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="_win32_plugin_view_8h.html">Platform/Win32PluginView.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="_x11_plugin_view_8h.html">Platform/X11PluginView.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_APPLE)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #include &quot;Platform/NSAPluginView.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse.html">Fuse</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">IPluginView::OnPaint</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_color.html">Color</a>&amp; backgroundColor)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> backend = <a class="code" href="class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca">GetBackend</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        backend-&gt;BeginDrawing(backgroundColor);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> root = <a class="code" href="class_fuse_1_1_i_plugin_view.html#a255a7b036d7a38ce26d76bf4602de9c0">m_OwningCanvas</a>-&gt;<a class="code" href="class_fuse_1_1_i_plugin_canvas.html#ac7898cc00c83dbd65682941055db7377">Draw</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (root) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            root-&gt;<a class="code" href="class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce">Draw</a>(backend);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        backend-&gt;EndDrawing();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">   30</a></span>&#160;    <a class="code" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a>* <a class="code" href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">IPluginView::Create</a>(<span class="keywordtype">void</span>* parent) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if defined(PLATFORM_WINDOWS)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html">Win32PluginView</a>(<span class="keyword">static_cast&lt;</span>HWND<span class="keyword">&gt;</span>(parent));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_LINUX)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> X11AppWindow(windowSize);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_APPLE)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #if defined(USE_X11)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="_x11_plugin_view_8h.html">Platform/X11PluginView.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #elif defined(USE_WAYLAND)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="_wayland_plugin_view_8h.html">Platform/WaylandPluginView.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_APPLE)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #include &quot;Platform/NSAPluginView.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse.html">Fuse</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">   22</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">IPluginView::OnPaint</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_color.html">Color</a>&amp; backgroundColor)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> backend = <a class="code" href="class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca">GetBackend</a>()) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            backend-&gt;BeginDrawing(backgroundColor);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_fuse_1_1_i_plugin_view.html#a255a7b036d7a38ce26d76bf4602de9c0">m_OwningCanvas</a>) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> root = <a class="code" href="class_fuse_1_1_i_plugin_view.html#a255a7b036d7a38ce26d76bf4602de9c0">m_OwningCanvas</a>-&gt;<a class="code" href="class_fuse_1_1_i_plugin_canvas.html#ac7898cc00c83dbd65682941055db7377">Draw</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">if</span> (root) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    root-&gt;<a class="code" href="class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce">Draw</a>(backend);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            backend-&gt;EndDrawing();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">   37</a></span>&#160;    <a class="code" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a>* <a class="code" href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">IPluginView::Create</a>(<span class="keywordtype">void</span>* parent) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if defined(PLATFORM_WINDOWS)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html">Win32PluginView</a>(<span class="keyword">static_cast&lt;</span>HWND<span class="keyword">&gt;</span>(parent));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    #if defined(USE_X11)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html">X11PluginView</a>((Window*)parent, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    #elif defined(USE_WAYLAND)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_fuse_1_1_wayland_plugin_view.html">WaylandPluginView</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#elif defined(PLATFORM_APPLE)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
 <div class="ttc" id="a_platform_8h_html"><div class="ttname"><a href="_platform_8h.html">Platform.h</a></div></div>
 <div class="ttc" id="a_plugin_canvas_8h_html"><div class="ttname"><a href="_plugin_canvas_8h.html">PluginCanvas.h</a></div></div>
 <div class="ttc" id="a_plugin_view_8h_html"><div class="ttname"><a href="_plugin_view_8h.html">PluginView.h</a></div></div>
+<div class="ttc" id="a_wayland_plugin_view_8h_html"><div class="ttname"><a href="_wayland_plugin_view_8h.html">WaylandPluginView.h</a></div></div>
 <div class="ttc" id="a_win32_plugin_view_8h_html"><div class="ttname"><a href="_win32_plugin_view_8h.html">Win32PluginView.h</a></div></div>
 <div class="ttc" id="a_x11_plugin_view_8h_html"><div class="ttname"><a href="_x11_plugin_view_8h.html">X11PluginView.h</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_color_html"><div class="ttname"><a href="class_fuse_1_1_color.html">Fuse::Color</a></div><div class="ttdoc">A 32 bit color value in ARGB format.</div><div class="ttdef"><b>Definition:</b> <a href="_color_8h_source.html#l00025">Color.h:25</a></div></div>
@@ -141,11 +152,13 @@ $(document).ready(function(){initNavTree('_plugin_view_8cpp_source.html',''); in
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_ac7898cc00c83dbd65682941055db7377"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#ac7898cc00c83dbd65682941055db7377">Fuse::IPluginCanvas::Draw</a></div><div class="ttdeci">virtual IComponent * Draw()=0</div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html">Fuse::IPluginView</a></div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00015">PluginView.h:15</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a255a7b036d7a38ce26d76bf4602de9c0"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a255a7b036d7a38ce26d76bf4602de9c0">Fuse::IPluginView::m_OwningCanvas</a></div><div class="ttdeci">IPluginCanvas * m_OwningCanvas</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00052">PluginView.h:52</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a4066c5384b9dac5ca61a1ac73f0c08c9"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">Fuse::IPluginView::Create</a></div><div class="ttdeci">static IPluginView * Create(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8cpp_source.html#l00030">PluginView.cpp:30</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a77ebe822e0446efc98da480f3c783571"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">Fuse::IPluginView::OnPaint</a></div><div class="ttdeci">virtual void OnPaint(const Color &amp;backgroundColor) const</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8cpp_source.html#l00018">PluginView.cpp:18</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a4066c5384b9dac5ca61a1ac73f0c08c9"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">Fuse::IPluginView::Create</a></div><div class="ttdeci">static IPluginView * Create(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8cpp_source.html#l00037">PluginView.cpp:37</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a77ebe822e0446efc98da480f3c783571"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">Fuse::IPluginView::OnPaint</a></div><div class="ttdeci">virtual void OnPaint(const Color &amp;backgroundColor) const</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8cpp_source.html#l00022">PluginView.cpp:22</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a7fab01758f216c1d1b7ef6fdf8d04eca"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca">Fuse::IPluginView::GetBackend</a></div><div class="ttdeci">IBackend * GetBackend() const</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00045">PluginView.h:45</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_wayland_plugin_view_html"><div class="ttname"><a href="class_fuse_1_1_wayland_plugin_view.html">Fuse::WaylandPluginView</a></div><div class="ttdef"><b>Definition:</b> <a href="_wayland_plugin_view_8h_source.html#l00011">WaylandPluginView.h:11</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html">Fuse::Win32PluginView</a></div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8h_source.html#l00011">Win32PluginView.h:11</a></div></div>
-<div class="ttc" id="anamespace_fuse_html"><div class="ttname"><a href="namespace_fuse.html">Fuse</a></div><div class="ttdef"><b>Definition:</b> <a href="_cairo_backend_8cpp_source.html#l00008">CairoBackend.cpp:8</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html">Fuse::X11PluginView</a></div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8h_source.html#l00011">X11PluginView.h:11</a></div></div>
+<div class="ttc" id="anamespace_fuse_html"><div class="ttname"><a href="namespace_fuse.html">Fuse</a></div><div class="ttdef"><b>Definition:</b> <a href="_cairo_backend_8cpp_source.html#l00011">CairoBackend.cpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
