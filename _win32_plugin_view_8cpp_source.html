@@ -134,67 +134,66 @@ $(document).ready(function(){initNavTree('_win32_plugin_view_8cpp_source.html','
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ::SetWindowLongPtrA(m_Handle, GWLP_USERDATA, <span class="keyword">reinterpret_cast&lt;</span>LONG_PTR<span class="keyword">&gt;</span>(<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a> = <span class="keyword">new</span> <a class="code" href="class_fuse_1_1_direct2_d_backend.html">Direct2DBackend</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a>-&gt;<a class="code" href="class_fuse_1_1_i_backend.html#a8df76ba37b8fa369ef463ccc142e1491">SetOwner</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a>-&gt;Init();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ::ShowWindow(m_Handle, nCmdShow);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ::UpdateWindow(m_Handle);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">Win32PluginView::Shutdown</a>() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// TODO: cleanup backend ptr or make unique</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// if (m_Backend) {</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//     m_Backend = nullptr;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// }</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (m_Handle) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            ::DestroyWindow(m_Handle);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            m_Handle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">Win32PluginView::OnResize</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a>&amp; newSize) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">IPluginView::OnResize</a>(newSize);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (m_Handle) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            ::SetWindowPos(m_Handle,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                           <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a>-&gt;<a class="code" href="class_fuse_1_1_i_backend.html#ac407cb37af19df4e4f307bb084af98b6">Initialize</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ::ShowWindow(m_Handle, nCmdShow);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ::UpdateWindow(m_Handle);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">   52</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">Win32PluginView::Shutdown</a>() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// TODO: cleanup backend ptr or make unique</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// if (m_Backend) {</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//     m_Backend = nullptr;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// }</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (m_Handle) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            ::DestroyWindow(m_Handle);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            m_Handle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">   63</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">Win32PluginView::OnResize</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a>&amp; newSize) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">IPluginView::OnResize</a>(newSize);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (m_Handle) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            ::SetWindowPos(m_Handle,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                           <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                           0,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                           0,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                           0,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                           newSize.<a class="code" href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Width</a>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                           newSize.<a class="code" href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Height</a>,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           SWP_NOZORDER | SWP_NOACTIVATE);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a>-&gt;<a class="code" href="class_fuse_1_1_i_backend.html#a64fa5922282795a6257aeb4542c5bc38">OnResize</a>(newSize);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">   78</a></span>&#160;    LRESULT <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">Win32PluginView::MessageHandler</a>(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> view         = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="class_fuse_1_1_win32_plugin_view.html">Win32PluginView</a>*<span class="keyword">&gt;</span>(userData);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (!view) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">switch</span> (msg) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">case</span> WM_DESTROY:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">case</span> WM_CLOSE:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                view-&gt;m_Handle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">case</span> WM_PAINT: {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                view-&gt;OnPaint(<a class="code" href="class_fuse_1_1_color.html">Color</a>(0xFF1A1C29));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                           newSize.<a class="code" href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Width</a>,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                           newSize.<a class="code" href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Height</a>,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                           SWP_NOZORDER | SWP_NOACTIVATE);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">m_Backend</a>-&gt;<a class="code" href="class_fuse_1_1_i_backend.html#a64fa5922282795a6257aeb4542c5bc38">OnResize</a>(newSize);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">   77</a></span>&#160;    LRESULT <a class="code" href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">Win32PluginView::MessageHandler</a>(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> LONG_PTR userData = ::GetWindowLongPtrA(hwnd, GWLP_USERDATA);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> view         = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="class_fuse_1_1_win32_plugin_view.html">Win32PluginView</a>*<span class="keyword">&gt;</span>(userData);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (!view) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">switch</span> (msg) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">case</span> WM_DESTROY:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">case</span> WM_CLOSE:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                view-&gt;m_Handle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">case</span> WM_PAINT: {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                view-&gt;OnPaint(<a class="code" href="class_fuse_1_1_color.html">Color</a>(0xFF1A1C29));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
 <div class="ttc" id="a_direct2_d_backend_8h_html"><div class="ttname"><a href="_direct2_d_backend_8h.html">Direct2DBackend.h</a></div></div>
 <div class="ttc" id="a_types_8h_html_aec41e5f8e4b7aef2540e84268692fa84"><div class="ttname"><a href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a></div><div class="ttdeci">int32_t i32</div><div class="ttdef"><b>Definition:</b> <a href="_types_8h_source.html#l00019">Types.h:19</a></div></div>
 <div class="ttc" id="a_win32_plugin_view_8h_html"><div class="ttname"><a href="_win32_plugin_view_8h.html">Win32PluginView.h</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_color_html"><div class="ttname"><a href="class_fuse_1_1_color.html">Fuse::Color</a></div><div class="ttdoc">A 32 bit color value in ARGB format.</div><div class="ttdef"><b>Definition:</b> <a href="_color_8h_source.html#l00025">Color.h:25</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_direct2_d_backend_html"><div class="ttname"><a href="class_fuse_1_1_direct2_d_backend.html">Fuse::Direct2DBackend</a></div><div class="ttdef"><b>Definition:</b> <a href="_direct2_d_backend_8h_source.html#l00011">Direct2DBackend.h:11</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_backend_html_a64fa5922282795a6257aeb4542c5bc38"><div class="ttname"><a href="class_fuse_1_1_i_backend.html#a64fa5922282795a6257aeb4542c5bc38">Fuse::IBackend::OnResize</a></div><div class="ttdeci">virtual void OnResize(const Size&lt; u32 &gt; &amp;size)=0</div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_backend_html_a8df76ba37b8fa369ef463ccc142e1491"><div class="ttname"><a href="class_fuse_1_1_i_backend.html#a8df76ba37b8fa369ef463ccc142e1491">Fuse::IBackend::SetOwner</a></div><div class="ttdeci">void SetOwner(IPluginView *owner)</div><div class="ttdef"><b>Definition:</b> <a href="_backend_8h_source.html#l00031">Backend.h:31</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_backend_html_ac407cb37af19df4e4f307bb084af98b6"><div class="ttname"><a href="class_fuse_1_1_i_backend.html#ac407cb37af19df4e4f307bb084af98b6">Fuse::IBackend::Initialize</a></div><div class="ttdeci">virtual void Initialize(IPluginView *owner)</div><div class="ttdef"><b>Definition:</b> <a href="_backend_8h_source.html#l00017">Backend.h:17</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a5d1fb19a031148724280053c891baec4"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a5d1fb19a031148724280053c891baec4">Fuse::IPluginView::m_Backend</a></div><div class="ttdeci">IBackend * m_Backend</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00051">PluginView.h:51</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a647c6de9561b87ff5c37b6c632ab820a"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">Fuse::IPluginView::OnResize</a></div><div class="ttdeci">virtual void OnResize(const Size&lt; u32 &gt; &amp;newSize)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00023">PluginView.h:23</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_ab08f266b25bbd1fd80b9e6b6e989bf6e"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">Fuse::IPluginView::m_WindowSize</a></div><div class="ttdeci">Size&lt; u32 &gt; m_WindowSize</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00050">PluginView.h:50</a></div></div>
@@ -203,9 +202,9 @@ $(document).ready(function(){initNavTree('_win32_plugin_view_8cpp_source.html','
 <div class="ttc" id="aclass_fuse_1_1_size_html_a19ae435684a01cb562b74afa5db3548d"><div class="ttname"><a href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Fuse::Size::Height</a></div><div class="ttdeci">T Height</div><div class="ttdef"><b>Definition:</b> <a href="_size_8h_source.html#l00035">Size.h:35</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_size_html_a5994d0f8f4141b6fd41f655d9ad53c71"><div class="ttname"><a href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Fuse::Size::Width</a></div><div class="ttdeci">T Width</div><div class="ttdef"><b>Definition:</b> <a href="_size_8h_source.html#l00034">Size.h:34</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html">Fuse::Win32PluginView</a></div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8h_source.html#l00011">Win32PluginView.h:11</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a140acf63fd126eb26b8702e1e72a2a23"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">Fuse::Win32PluginView::Shutdown</a></div><div class="ttdeci">void Shutdown() override</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00053">Win32PluginView.cpp:53</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a41d75e5aeda4766a365fc9a2740f17a3"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">Fuse::Win32PluginView::OnResize</a></div><div class="ttdeci">void OnResize(const Size&lt; u32 &gt; &amp;newSize) override</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00064">Win32PluginView.cpp:64</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a64f1b10f7ff0d2c94227e3101da9507a"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">Fuse::Win32PluginView::MessageHandler</a></div><div class="ttdeci">static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00078">Win32PluginView.cpp:78</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a140acf63fd126eb26b8702e1e72a2a23"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a140acf63fd126eb26b8702e1e72a2a23">Fuse::Win32PluginView::Shutdown</a></div><div class="ttdeci">void Shutdown() override</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00052">Win32PluginView.cpp:52</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a41d75e5aeda4766a365fc9a2740f17a3"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a41d75e5aeda4766a365fc9a2740f17a3">Fuse::Win32PluginView::OnResize</a></div><div class="ttdeci">void OnResize(const Size&lt; u32 &gt; &amp;newSize) override</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00063">Win32PluginView.cpp:63</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_win32_plugin_view_html_a64f1b10f7ff0d2c94227e3101da9507a"><div class="ttname"><a href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">Fuse::Win32PluginView::MessageHandler</a></div><div class="ttdeci">static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition:</b> <a href="_win32_plugin_view_8cpp_source.html#l00077">Win32PluginView.cpp:77</a></div></div>
 <div class="ttc" id="anamespace_fuse_html"><div class="ttname"><a href="namespace_fuse.html">Fuse</a></div><div class="ttdef"><b>Definition:</b> <a href="_cairo_backend_8cpp_source.html#l00011">CairoBackend.cpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
