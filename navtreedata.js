@@ -25,6 +25,9 @@
 var NAVTREE =
 [
   [ "Fuse", "index.html", [
+    [ "README", "md__r_e_a_d_m_e.html", [
+      [ "Fuse", "md__r_e_a_d_m_e.html#autotoc_md0", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
