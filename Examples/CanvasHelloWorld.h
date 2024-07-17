@@ -11,7 +11,7 @@ namespace Fuse {
     class CanvasHelloWorld final : public IPluginCanvas {
     public:
         explicit CanvasHelloWorld(void* parent) : IPluginCanvas(parent) {
-            this->BackgroundColor = Color(0xFF01030C);
+            this->BackgroundColor = Color(0xFF11121B);
             this->IPluginCanvas::AttachToParent(parent);
         }
 
