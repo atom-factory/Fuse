@@ -9,33 +9,43 @@
 #if defined(PLATFORM_WINDOWS)
     #include "Platform/Win32PluginView.h"
 #elif defined(PLATFORM_LINUX)
-    #include "Platform/X11PluginView.h"
+    #if defined(USE_X11)
+        #include "Platform/X11PluginView.h"
+    #elif defined(USE_WAYLAND)
+        #include "Platform/WaylandPluginView.h"
+    #endif
 #elif defined(PLATFORM_APPLE)
     #include "Platform/NSAPluginView.h"
 #endif
 
 namespace Fuse {
     void IPluginView::OnPaint(const Color& backgroundColor) const {
-        const auto backend = GetBackend();
-        backend->BeginDrawing(backgroundColor);
+        if (const auto backend = GetBackend()) {
+            backend->BeginDrawing(backgroundColor);
 
-        const auto root = m_OwningCanvas->Draw();
-        if (root) {
-            root->Draw(backend);
+            if (m_OwningCanvas) {
+                const auto root = m_OwningCanvas->Draw();
+                if (root) {
+                    root->Draw(backend);
+                }
+            }
+
+            backend->EndDrawing();
         }
-
-        backend->EndDrawing();
     }
 
     IPluginView* IPluginView::Create(void* parent) {
 #if defined(PLATFORM_WINDOWS)
         return new Win32PluginView(static_cast<HWND>(parent));
 #elif defined(PLATFORM_LINUX)
-        return new X11AppWindow(windowSize);
+    #if defined(USE_X11)
+        return new X11PluginView((Window*)parent, nullptr);
+    #elif defined(USE_WAYLAND)
+        return new WaylandPluginView(nullptr);
+    #endif
 #elif defined(PLATFORM_APPLE)
         return nullptr;
 #endif
-
         return nullptr;
     }
 

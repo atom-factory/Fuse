@@ -14,7 +14,9 @@ namespace Fuse {
     class IBackend {
     public:
         virtual ~IBackend() = default;
-        virtual void Init() {}
+        virtual void Initialize(IPluginView* owner) {
+            SetOwner(owner);
+        }
         virtual void OnResize(const Size<u32>& size) = 0;
 
         virtual void BeginDrawing(const Color clearColor) {}

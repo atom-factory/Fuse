@@ -41,6 +41,7 @@ file(GLOB EXAMPLE_SOURCE
 )
 
 if (WIN32)
+    add_definitions(-DPLATFORM_WINDOWS)
     target_sources(Fuse PRIVATE
             Lib/Platform/Win32PluginView.cpp
             Lib/Platform/Win32PluginView.h
@@ -55,6 +56,7 @@ if (WIN32)
     )
     target_link_libraries(HelloWorld.Win32 PRIVATE Fuse)
 elseif (UNIX AND NOT APPLE)
+    add_definitions(-DPLATFORM_LINUX)
     # Check for X11
     find_package(X11 QUIET)
     if (X11_FOUND)
@@ -117,6 +119,7 @@ elseif (UNIX AND NOT APPLE)
     include_directories(${CAIROMM_INCLUDE_DIRS})
     target_link_libraries(Fuse PRIVATE ${CAIROMM_LIBRARIES})
 elseif (APPLE)
+    add_definitions(-DPLATFORM_APPLE)
 endif ()
 
 if (MSVC)

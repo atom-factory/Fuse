@@ -49,14 +49,21 @@ namespace Fuse {
         virtual ~IPluginCanvas() = default;
 
         virtual i32 AttachToParent(void* parent) {
-            #if defined(PLATFORM_WINDOWS)
+#if defined(PLATFORM_WINDOWS)
             auto _parent = (HWND)parent;
             auto view    = m_View->As<Win32PluginView>();
             view->Initialize(_parent, SW_SHOW);
             return 0;
-            #elif defined(PLATFORM_LINUX)
-            #elif defined(PLATFORM_APPLE)
-            #endif
+#elif defined(PLATFORM_LINUX)
+    #if defined(USE_X11)
+            auto _parent = *(Window*)parent;
+            auto view    = m_View->As<X11PluginView>();
+            view->Initialize();
+            return 0;
+    #elif defined(USE_WAYLAND)
+    #endif
+#elif defined(PLATFORM_APPLE)
+#endif
 
             return -1;
         }
@@ -76,4 +83,4 @@ namespace Fuse {
     protected:
         IPluginView* m_View;
     };
-} // namespace Fuse
+}  // namespace Fuse
