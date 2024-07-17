@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width_335',['Width',['../class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71',1,'Fuse::Size']]]
+  ['style_353',['Style',['../struct_fuse_1_1_stroke.html#afc6084fb3768dfd0d2ca1ab7d673d5d9',1,'Fuse::Stroke']]]
 ];

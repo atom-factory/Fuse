@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_336',['X',['../class_fuse_1_1_offset.html#aae9e0eeb782bd28042e3b6ff8e5fe8e1',1,'Fuse::Offset']]]
+  ['thickness_354',['Thickness',['../struct_fuse_1_1_stroke.html#a169d79712adc97e7e55daf3a36c0c652',1,'Fuse::Stroke']]]
 ];

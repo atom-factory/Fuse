@@ -27,5 +27,12 @@ var namespace_fuse =
     [ "WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", "class_fuse_1_1_wayland_plugin_view" ],
     [ "Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", "class_fuse_1_1_win32_plugin_view" ],
     [ "X11PluginView", "class_fuse_1_1_x11_plugin_view.html", "class_fuse_1_1_x11_plugin_view" ],
-    [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
+    [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ],
+    [ "Stroke", "struct_fuse_1_1_stroke.html", "struct_fuse_1_1_stroke" ],
+    [ "EStrokeStyle", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76ea", [
+      [ "Solid", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76eaae41480b6bbfbf7407974a88d3d34f4fa", null ],
+      [ "Dashed", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76eaaeb656e41b6da91494775ecf47a51da91", null ],
+      [ "Dotted", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76eaa90c09393a4c0970bc9a6703ad527781c", null ],
+      [ "Double", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76eaad909d38d705ce75386dd86e611a82f5b", null ]
+    ] ]
 ];

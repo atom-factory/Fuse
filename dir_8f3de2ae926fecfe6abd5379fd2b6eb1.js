@@ -16,6 +16,7 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Size.h", "_size_8h.html", [
       [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
     ] ],
+    [ "Stroke.h", "_stroke_8h.html", "_stroke_8h" ],
     [ "Traits.h", "_traits_8h.html", [
       [ "TSingleChild", "class_fuse_1_1_traits_1_1_t_single_child.html", "class_fuse_1_1_traits_1_1_t_single_child" ],
       [ "TMultiChild", "class_fuse_1_1_traits_1_1_t_multi_child.html", "class_fuse_1_1_traits_1_1_t_multi_child" ],

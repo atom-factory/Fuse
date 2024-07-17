@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_320',['g',['../struct_fuse_1_1_base_color.html#a5bedbbf5eab6906ffdbb24651cd113fa',1,'Fuse::BaseColor']]]
+  ['color_338',['Color',['../struct_fuse_1_1_stroke.html#a21b458165eaacad6418319dd27cba0d5',1,'Fuse::Stroke']]]
 ];

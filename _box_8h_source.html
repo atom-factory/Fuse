@@ -97,38 +97,47 @@ $(document).ready(function(){initNavTree('_box_8h_source.html',''); initResizabl
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_color_8h.html">Color.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_size_8h.html">Size.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Interfaces/Component.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traits_8h.html">Traits.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespace_fuse_1_1_traits.html">Fuse::Traits</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse_1_1_component.html">Fuse::Component</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_fuse_1_1_component_1_1_box.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_fuse_1_1_component_1_1_box.html">Box</a> final : <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_i_component.html">IComponent</a>,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                      <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_traits_1_1_t_single_child.html">TSingleChild</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_fuse_1_1_component_1_1_box.html">Box</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a>&amp; size, <span class="keyword">const</span> <a class="code" href="class_fuse_1_1_offset.html">Offset</a>&amp; position, <span class="keyword">const</span> <a class="code" href="class_fuse_1_1_color.html">Color</a>&amp; fillColor);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> Draw(<a class="code" href="class_fuse_1_1_i_backend.html">IBackend</a>* backend) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a> m_Size;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_fuse_1_1_offset.html">Offset</a> m_Position;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_fuse_1_1_color.html">Color</a> m_FillColor;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}  <span class="comment">// namespace Fuse::Component</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_stroke_8h.html">Stroke.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Interfaces/Component.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traits_8h.html">Traits.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespace_fuse_1_1_traits.html">Fuse::Traits</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse_1_1_component.html">Fuse::Component</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_fuse_1_1_component_1_1_box.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_fuse_1_1_component_1_1_box.html">Box</a> final : <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_i_component.html">IComponent</a>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                      <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_traits_1_1_t_single_child.html">TSingleChild</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_fuse_1_1_component_1_1_box.html">Box</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a>&amp; size,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                     <span class="keyword">const</span> <a class="code" href="class_fuse_1_1_offset.html">Offset</a>&amp; position,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                     <span class="keyword">const</span> <a class="code" href="class_fuse_1_1_color.html">Color</a>&amp; fillColor,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                     <span class="keyword">const</span> <a class="code" href="struct_fuse_1_1_stroke.html">Stroke</a>&amp; stroke = {},</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                     <span class="keywordtype">bool</span> rounded         = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> Draw(<a class="code" href="class_fuse_1_1_i_backend.html">IBackend</a>* backend) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a> m_Size;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_fuse_1_1_offset.html">Offset</a> m_Position;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_fuse_1_1_color.html">Color</a> m_FillColor;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="struct_fuse_1_1_stroke.html">Stroke</a> m_Stroke;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> m_Rounded;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}  <span class="comment">// namespace Fuse::Component</span></div>
 <div class="ttc" id="a_color_8h_html"><div class="ttname"><a href="_color_8h.html">Color.h</a></div></div>
 <div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
 <div class="ttc" id="a_size_8h_html"><div class="ttname"><a href="_size_8h.html">Size.h</a></div></div>
+<div class="ttc" id="a_stroke_8h_html"><div class="ttname"><a href="_stroke_8h.html">Stroke.h</a></div></div>
 <div class="ttc" id="a_traits_8h_html"><div class="ttname"><a href="_traits_8h.html">Traits.h</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_color_html"><div class="ttname"><a href="class_fuse_1_1_color.html">Fuse::Color</a></div><div class="ttdoc">A 32 bit color value in ARGB format.</div><div class="ttdef"><b>Definition:</b> <a href="_color_8h_source.html#l00025">Color.h:25</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_component_1_1_box_html"><div class="ttname"><a href="class_fuse_1_1_component_1_1_box.html">Fuse::Component::Box</a></div><div class="ttdef"><b>Definition:</b> <a href="_box_8h_source.html#l00015">Box.h:16</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_backend_html"><div class="ttname"><a href="class_fuse_1_1_i_backend.html">Fuse::IBackend</a></div><div class="ttdef"><b>Definition:</b> <a href="_backend_8h_source.html#l00014">Backend.h:14</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_component_1_1_box_html"><div class="ttname"><a href="class_fuse_1_1_component_1_1_box.html">Fuse::Component::Box</a></div><div class="ttdef"><b>Definition:</b> <a href="_box_8h_source.html#l00016">Box.h:17</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_backend_html"><div class="ttname"><a href="class_fuse_1_1_i_backend.html">Fuse::IBackend</a></div><div class="ttdef"><b>Definition:</b> <a href="_backend_8h_source.html#l00015">Backend.h:15</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_component_html"><div class="ttname"><a href="class_fuse_1_1_i_component.html">Fuse::IComponent</a></div><div class="ttdef"><b>Definition:</b> <a href="_component_8h_source.html#l00012">Component.h:12</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_offset_html"><div class="ttname"><a href="class_fuse_1_1_offset.html">Fuse::Offset</a></div><div class="ttdef"><b>Definition:</b> <a href="_offset_8h_source.html#l00010">Offset.h:10</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_size_html"><div class="ttname"><a href="class_fuse_1_1_size.html">Fuse::Size&lt; u32 &gt;</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_traits_1_1_t_single_child_html"><div class="ttname"><a href="class_fuse_1_1_traits_1_1_t_single_child.html">Fuse::Traits::TSingleChild</a></div><div class="ttdef"><b>Definition:</b> <a href="_traits_8h_source.html#l00015">Traits.h:15</a></div></div>
 <div class="ttc" id="anamespace_fuse_1_1_component_html"><div class="ttname"><a href="namespace_fuse_1_1_component.html">Fuse::Component</a></div><div class="ttdef"><b>Definition:</b> <a href="_box_8cpp_source.html#l00009">Box.cpp:9</a></div></div>
 <div class="ttc" id="anamespace_fuse_1_1_traits_html"><div class="ttname"><a href="namespace_fuse_1_1_traits.html">Fuse::Traits</a></div><div class="ttdef"><b>Definition:</b> <a href="_traits_8h_source.html#l00014">Traits.h:14</a></div></div>
+<div class="ttc" id="astruct_fuse_1_1_stroke_html"><div class="ttname"><a href="struct_fuse_1_1_stroke.html">Fuse::Stroke</a></div><div class="ttdef"><b>Definition:</b> <a href="_stroke_8h_source.html#l00018">Stroke.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

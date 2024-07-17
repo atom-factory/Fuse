@@ -107,8 +107,8 @@ Inheritance diagram for Fuse::Component::Box:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba1f28c1e178140219fc8e11de11b361"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#aba1f28c1e178140219fc8e11de11b361">Box</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;size, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;fillColor)</td></tr>
-<tr class="separator:aba1f28c1e178140219fc8e11de11b361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119eede5489bf68138da38cc2bb1f930"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#a119eede5489bf68138da38cc2bb1f930">Box</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;size, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;fillColor, const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;stroke={}, bool rounded=false)</td></tr>
+<tr class="separator:a119eede5489bf68138da38cc2bb1f930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e31a5f581b57e448ee315dd9ba391cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#a0e31a5f581b57e448ee315dd9ba391cd">Draw</a> (<a class="el" href="class_fuse_1_1_i_backend.html">IBackend</a> *backend) override</td></tr>
 <tr class="separator:a0e31a5f581b57e448ee315dd9ba391cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_fuse_1_1_i_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_fuse_1_1_i_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_fuse_1_1_i_component.html">Fuse::IComponent</a></td></tr>
@@ -131,10 +131,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_box_8h_source.html#l00015">15</a> of file <a class="el" href="_box_8h_source.html">Box.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_box_8h_source.html#l00016">16</a> of file <a class="el" href="_box_8h_source.html">Box.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aba1f28c1e178140219fc8e11de11b361"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1f28c1e178140219fc8e11de11b361">&#9670;&nbsp;</a></span>Box()</h2>
+<a id="a119eede5489bf68138da38cc2bb1f930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119eede5489bf68138da38cc2bb1f930">&#9670;&nbsp;</a></span>Box()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +158,19 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;&#160;</td>
-          <td class="paramname"><em>fillColor</em>&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;&#160;</td>
+          <td class="paramname"><em>stroke</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rounded</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -204,7 +216,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce">Fuse::IComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_box_8cpp_source.html#l00013">13</a> of file <a class="el" href="_box_8cpp_source.html">Box.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_box_8cpp_source.html#l00018">18</a> of file <a class="el" href="_box_8cpp_source.html">Box.cpp</a>.</p>
 
 </div>
 </div>

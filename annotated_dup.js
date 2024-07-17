@@ -2,7 +2,9 @@ var annotated_dup =
 [
     [ "Fuse", "namespace_fuse.html", [
       [ "Component", "namespace_fuse_1_1_component.html", [
-        [ "Box", "class_fuse_1_1_component_1_1_box.html", "class_fuse_1_1_component_1_1_box" ]
+        [ "Box", "class_fuse_1_1_component_1_1_box.html", "class_fuse_1_1_component_1_1_box" ],
+        [ "PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ],
+        [ "RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ]
       ] ],
       [ "Traits", "namespace_fuse_1_1_traits.html", [
         [ "TSingleChild", "class_fuse_1_1_traits_1_1_t_single_child.html", "class_fuse_1_1_traits_1_1_t_single_child" ],
@@ -22,8 +24,8 @@ var annotated_dup =
       [ "WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", "class_fuse_1_1_wayland_plugin_view" ],
       [ "Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", "class_fuse_1_1_win32_plugin_view" ],
       [ "X11PluginView", "class_fuse_1_1_x11_plugin_view.html", "class_fuse_1_1_x11_plugin_view" ],
-      [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
+      [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ],
+      [ "Stroke", "struct_fuse_1_1_stroke.html", "struct_fuse_1_1_stroke" ]
     ] ],
-    [ "InfinityHelper", "struct_infinity_helper.html", null ],
-    [ "PushButton", "class_push_button.html", null ]
+    [ "InfinityHelper", "struct_infinity_helper.html", null ]
 ];

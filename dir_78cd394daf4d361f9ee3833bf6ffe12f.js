@@ -6,6 +6,10 @@ var dir_78cd394daf4d361f9ee3833bf6ffe12f =
     ] ],
     [ "PushButton.cpp", "_push_button_8cpp.html", null ],
     [ "PushButton.h", "_push_button_8h.html", [
-      [ "PushButton", "class_push_button.html", null ]
+      [ "PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ]
+    ] ],
+    [ "RotaryKnob.cpp", "_rotary_knob_8cpp.html", null ],
+    [ "RotaryKnob.h", "_rotary_knob_8h.html", [
+      [ "RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ]
     ] ]
 ];

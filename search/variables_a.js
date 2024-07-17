@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_337',['Y',['../class_fuse_1_1_offset.html#ad674bc1109f618f7fd3c3c49776af92a',1,'Fuse::Offset']]]
+  ['value_355',['value',['../struct_infinity_helper.html#a2713bc12f771e2df6c3370e4be4f97e3',1,'InfinityHelper']]]
 ];

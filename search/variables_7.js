@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_334',['value',['../struct_infinity_helper.html#a2713bc12f771e2df6c3370e4be4f97e3',1,'InfinityHelper']]]
+  ['r_352',['r',['../struct_fuse_1_1_base_color.html#a5aad55af5eed5f83c62bf3ed0a62f1bc',1,'Fuse::BaseColor']]]
 ];
