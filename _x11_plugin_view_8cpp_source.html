@@ -95,73 +95,55 @@ $(document).ready(function(){initNavTree('_x11_plugin_view_8cpp_source.html','')
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_x11_plugin_view_8h.html">X11PluginView.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Backends/Backend.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Backends/X11Backend.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse.html">Fuse</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">   14</a></span>&#160;    X11Backend* <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#af50a90874edb180e9cf3d6e054b2a689">   16</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40">X11PluginView::Initialize</a>(Display* display, <span class="keyword">const</span> Window parent, <span class="keyword">const</span> <a class="code" href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a> screen) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        m_pDisplay = display;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">if</span> (!m_pDisplay) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open X display&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        m_Screen = screen;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        XSetWindowAttributes childAttrs;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        childAttrs.background_pixel = WhitePixel(m_pDisplay, m_Screen);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        childAttrs.event_mask       = ExposureMask | KeyPressMask;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        m_Window                    = XCreateWindow(m_pDisplay,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                 parent,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                 0,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                 0,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                 <a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>.<a class="code" href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Width</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                 <a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>.<a class="code" href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Height</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                 0,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                 CopyFromParent,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                 InputOutput,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 CopyFromParent,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                 CWBackPixel | CWEventMask,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                 &amp;childAttrs);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse.html">Fuse</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#a17bddba17893e3b4eebd16f5972212ba">    8</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#a17bddba17893e3b4eebd16f5972212ba">X11PluginView::Initialize</a>() {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        m_Display = XOpenDisplay(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">if</span> (!m_Display) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to open X display.&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> screen  = DefaultScreen(m_Display);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> parent = <span class="keyword">static_cast&lt;</span>Window*<span class="keyword">&gt;</span>(<a class="code" href="class_fuse_1_1_i_plugin_view.html#abbff1d04f912d6d9a07702f7292c3351">m_Parent</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        XSetWindowAttributes childAttributes;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        childAttributes.background_pixel = WhitePixel(m_Display, screen);  <span class="comment">// Background color</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        childAttributes.event_mask = ExposureMask | KeyPressMask;  <span class="comment">// Event mask for child window</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        m_Window = XCreateWindow(m_Display,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                 *parent,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                 0,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                 0,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                 <a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>.<a class="code" href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Width</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                 <a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>.<a class="code" href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Height</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                 1,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                 CopyFromParent,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                 InputOutput,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                 <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                 CWBackPixel | CWEventMask,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                 &amp;childAttributes);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        XMapWindow(m_Display, m_Window);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">   37</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">X11PluginView::Shutdown</a>() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        XDestroyWindow(m_Display, m_Window);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        XStoreName(m_pDisplay, m_Window, <span class="stringliteral">&quot;X11 Window - Fuse&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        XSelectInput(m_pDisplay, m_Window, ExposureMask | KeyPressMask);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        XMapWindow(m_pDisplay, m_Window);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a> = <span class="keyword">new</span> X11Backend();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>-&gt;Init(m_pDisplay, m_Window, m_Screen, <a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#aab7d0203bb95b230c8a8cef179729be8">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#aab7d0203bb95b230c8a8cef179729be8">X11PluginView::OnResize</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>-&gt;OnResize(<a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#a6eb5d7cbc38135e1fa891120a61a9c3e">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#a6eb5d7cbc38135e1fa891120a61a9c3e">X11PluginView::OnPaint</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>-&gt;OnPaint(<a class="code" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">m_WindowSize</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">X11PluginView::Shutdown</a>() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>-&gt;Shutdown();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">delete</span> <a class="code" href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">g_Backend</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        XCloseDisplay(m_pDisplay);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
-<div class="ttc" id="a_types_8h_html_aec41e5f8e4b7aef2540e84268692fa84"><div class="ttname"><a href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a></div><div class="ttdeci">int32_t i32</div><div class="ttdef"><b>Definition:</b> <a href="_types_8h_source.html#l00019">Types.h:19</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_fuse_1_1_x11_plugin_view.html#a17a2f3750052557c122dcc7da20f2ad1">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_fuse_1_1_x11_plugin_view.html#a17a2f3750052557c122dcc7da20f2ad1">X11PluginView::OnResize</a>(<span class="keyword">const</span> <a class="code" href="class_fuse_1_1_size.html">Size&lt;u32&gt;</a>&amp; newSize) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">IPluginView::OnResize</a>(newSize);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace Fuse</span></div>
 <div class="ttc" id="a_x11_plugin_view_8h_html"><div class="ttname"><a href="_x11_plugin_view_8h.html">X11PluginView.h</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_a647c6de9561b87ff5c37b6c632ab820a"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">Fuse::IPluginView::OnResize</a></div><div class="ttdeci">virtual void OnResize(const Size&lt; u32 &gt; &amp;newSize)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00023">PluginView.h:23</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_ab08f266b25bbd1fd80b9e6b6e989bf6e"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">Fuse::IPluginView::m_WindowSize</a></div><div class="ttdeci">Size&lt; u32 &gt; m_WindowSize</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00050">PluginView.h:50</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_acde5b6e9e6019524947f594ecce46e40"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40">Fuse::IPluginView::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00020">PluginView.h:20</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_view_html_abbff1d04f912d6d9a07702f7292c3351"><div class="ttname"><a href="class_fuse_1_1_i_plugin_view.html#abbff1d04f912d6d9a07702f7292c3351">Fuse::IPluginView::m_Parent</a></div><div class="ttdeci">void * m_Parent</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_view_8h_source.html#l00053">PluginView.h:53</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_size_html"><div class="ttname"><a href="class_fuse_1_1_size.html">Fuse::Size&lt; u32 &gt;</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_size_html_a19ae435684a01cb562b74afa5db3548d"><div class="ttname"><a href="class_fuse_1_1_size.html#a19ae435684a01cb562b74afa5db3548d">Fuse::Size::Height</a></div><div class="ttdeci">T Height</div><div class="ttdef"><b>Definition:</b> <a href="_size_8h_source.html#l00035">Size.h:35</a></div></div>
 <div class="ttc" id="aclass_fuse_1_1_size_html_a5994d0f8f4141b6fd41f655d9ad53c71"><div class="ttname"><a href="class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71">Fuse::Size::Width</a></div><div class="ttdeci">T Width</div><div class="ttdef"><b>Definition:</b> <a href="_size_8h_source.html#l00034">Size.h:34</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_a6eb5d7cbc38135e1fa891120a61a9c3e"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#a6eb5d7cbc38135e1fa891120a61a9c3e">Fuse::X11PluginView::OnPaint</a></div><div class="ttdeci">void OnPaint() const</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00053">X11PluginView.cpp:53</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_aa9116d13480970ef0b54dfe1e55d06b9"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">Fuse::X11PluginView::Shutdown</a></div><div class="ttdeci">void Shutdown() override</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00057">X11PluginView.cpp:57</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_aab7d0203bb95b230c8a8cef179729be8"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#aab7d0203bb95b230c8a8cef179729be8">Fuse::X11PluginView::OnResize</a></div><div class="ttdeci">void OnResize() const</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00049">X11PluginView.cpp:49</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_a17a2f3750052557c122dcc7da20f2ad1"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#a17a2f3750052557c122dcc7da20f2ad1">Fuse::X11PluginView::OnResize</a></div><div class="ttdeci">void OnResize(const Size&lt; u32 &gt; &amp;newSize) override</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00041">X11PluginView.cpp:41</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_a17bddba17893e3b4eebd16f5972212ba"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#a17bddba17893e3b4eebd16f5972212ba">Fuse::X11PluginView::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00008">X11PluginView.cpp:8</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_x11_plugin_view_html_aa9116d13480970ef0b54dfe1e55d06b9"><div class="ttname"><a href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">Fuse::X11PluginView::Shutdown</a></div><div class="ttdeci">void Shutdown() override</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00037">X11PluginView.cpp:37</a></div></div>
 <div class="ttc" id="anamespace_fuse_html"><div class="ttname"><a href="namespace_fuse.html">Fuse</a></div><div class="ttdef"><b>Definition:</b> <a href="_cairo_backend_8cpp_source.html#l00008">CairoBackend.cpp:8</a></div></div>
-<div class="ttc" id="anamespace_fuse_html_a6f340f71d88b518e0287e781f2efb6ba"><div class="ttname"><a href="namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba">Fuse::g_Backend</a></div><div class="ttdeci">X11Backend * g_Backend</div><div class="ttdef"><b>Definition:</b> <a href="_x11_plugin_view_8cpp_source.html#l00014">X11PluginView.cpp:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

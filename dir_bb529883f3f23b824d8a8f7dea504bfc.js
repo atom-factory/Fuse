@@ -13,7 +13,7 @@ var dir_bb529883f3f23b824d8a8f7dea504bfc =
     [ "Win32PluginView.h", "_win32_plugin_view_8h.html", [
       [ "Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", "class_fuse_1_1_win32_plugin_view" ]
     ] ],
-    [ "X11PluginView.cpp", "_x11_plugin_view_8cpp.html", "_x11_plugin_view_8cpp" ],
+    [ "X11PluginView.cpp", "_x11_plugin_view_8cpp.html", null ],
     [ "X11PluginView.h", "_x11_plugin_view_8h.html", [
       [ "X11PluginView", "class_fuse_1_1_x11_plugin_view.html", "class_fuse_1_1_x11_plugin_view" ]
     ] ]

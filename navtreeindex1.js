@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"namespace_fuse_1_1_converters.html#abcf91497cd2f8cf9ee2221b2ba8fe3cb":[0,0,0,2,3],
-"namespace_fuse_1_1_converters.html#ad2d1cb42c4db9d3d855d01ff187fa02e":[0,0,0,2,1],
 "namespace_fuse_1_1_converters.html#ad85ddda0a4d27db8cd09d48a8a13388c":[0,0,0,2,2],
 "namespace_fuse_1_1_math.html":[0,0,0,3],
 "namespace_fuse_1_1_math.html#a46c6a7f4a0f31958e5742bbe1113cdd5":[0,0,0,3,0],
@@ -9,7 +7,6 @@ var NAVTREEINDEX1 =
 "namespace_fuse_1_1_traits.html":[0,0,0,4],
 "namespacemembers.html":[0,1,0],
 "namespacemembers_func.html":[0,1,1],
-"namespacemembers_vars.html":[0,1,2],
 "namespaces.html":[0,0],
 "pages.html":[],
 "struct_fuse_1_1_base_color.html":[1,0,0,3],

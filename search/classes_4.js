@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nspluginview_182',['NSPluginView',['../class_fuse_1_1_n_s_plugin_view.html',1,'Fuse']]]
+  ['nspluginview_181',['NSPluginView',['../class_fuse_1_1_n_s_plugin_view.html',1,'Fuse']]]
 ];

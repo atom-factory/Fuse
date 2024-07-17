@@ -26,6 +26,5 @@ var namespace_fuse =
     [ "WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", "class_fuse_1_1_wayland_plugin_view" ],
     [ "Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", "class_fuse_1_1_win32_plugin_view" ],
     [ "X11PluginView", "class_fuse_1_1_x11_plugin_view.html", "class_fuse_1_1_x11_plugin_view" ],
-    [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ],
-    [ "g_Backend", "namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba", null ]
+    [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
 ];

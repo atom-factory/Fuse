@@ -1,6 +1,7 @@
 var _types_8h =
 [
     [ "InfinityHelper", "struct_infinity_helper.html", null ],
+    [ "None", "_types_8h.html#af4e8bc2d192090ff502229b33c24a389", null ],
     [ "f32", "_types_8h.html#ad34d88453d37b65a09797bad37f2f527", null ],
     [ "f64", "_types_8h.html#abc2f107791bd7c1d49ecf0f168c085a3", null ],
     [ "i16", "_types_8h.html#a977685259fe8059c48e92450967d46a8", null ],

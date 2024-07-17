@@ -87,7 +87,6 @@ $(document).ready(function(){initNavTree('class_fuse_1_1_x11_plugin_view.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_fuse_1_1_x11_plugin_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Fuse::X11PluginView Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -107,29 +106,23 @@ Inheritance diagram for Fuse::X11PluginView:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae3b8115beba0c237778abe1599d0b2c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#ae3b8115beba0c237778abe1599d0b2c1">X11PluginView</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;windowSize)</td></tr>
-<tr class="separator:ae3b8115beba0c237778abe1599d0b2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af50a90874edb180e9cf3d6e054b2a689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#af50a90874edb180e9cf3d6e054b2a689">Initialize</a> (Display *display, Window parent, <a class="el" href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a> screen)</td></tr>
-<tr class="separator:af50a90874edb180e9cf3d6e054b2a689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab7d0203bb95b230c8a8cef179729be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#aab7d0203bb95b230c8a8cef179729be8">OnResize</a> () const</td></tr>
-<tr class="separator:aab7d0203bb95b230c8a8cef179729be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb5d7cbc38135e1fa891120a61a9c3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#a6eb5d7cbc38135e1fa891120a61a9c3e">OnPaint</a> () const</td></tr>
-<tr class="separator:a6eb5d7cbc38135e1fa891120a61a9c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05540dbde70ee734185fe7a84ff2a4c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#a05540dbde70ee734185fe7a84ff2a4c3">X11PluginView</a> (Window *parent)</td></tr>
+<tr class="separator:a05540dbde70ee734185fe7a84ff2a4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17bddba17893e3b4eebd16f5972212ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#a17bddba17893e3b4eebd16f5972212ba">Initialize</a> () override</td></tr>
+<tr class="separator:a17bddba17893e3b4eebd16f5972212ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9116d13480970ef0b54dfe1e55d06b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">Shutdown</a> () override</td></tr>
+<tr class="separator:aa9116d13480970ef0b54dfe1e55d06b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a2f3750052557c122dcc7da20f2ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#a17a2f3750052557c122dcc7da20f2ad1">OnResize</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;newSize) override</td></tr>
+<tr class="separator:a17a2f3750052557c122dcc7da20f2ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99b6a044bb7fa6c9e1c7c4b8ddd15b1"><td class="memItemLeft" align="right" valign="top">Window&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#ae99b6a044bb7fa6c9e1c7c4b8ddd15b1">GetWindow</a> () const</td></tr>
+<tr class="separator:ae99b6a044bb7fa6c9e1c7c4b8ddd15b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af97c8e63b482909287e6b5aa45d7b846"><td class="memItemLeft" align="right" valign="top">Display *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#af97c8e63b482909287e6b5aa45d7b846">GetDisplay</a> () const</td></tr>
 <tr class="separator:af97c8e63b482909287e6b5aa45d7b846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94eef434597f9ccde0194576f101f6c"><td class="memItemLeft" align="right" valign="top">Window &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#ab94eef434597f9ccde0194576f101f6c">GetWindow</a> ()</td></tr>
-<tr class="separator:ab94eef434597f9ccde0194576f101f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f2e1306311f65594f7133ee99191e57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#a1f2e1306311f65594f7133ee99191e57">GetScreen</a> () const</td></tr>
-<tr class="separator:a1f2e1306311f65594f7133ee99191e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_fuse_1_1_i_plugin_view"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_fuse_1_1_i_plugin_view')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_fuse_1_1_i_plugin_view.html">Fuse::IPluginView</a></td></tr>
 <tr class="memitem:aaeeaa15785bc592625f56d177af222f5 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#aaeeaa15785bc592625f56d177af222f5">IPluginView</a> (void *parent)</td></tr>
 <tr class="separator:aaeeaa15785bc592625f56d177af222f5 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b06c529a3c66a474477673a8c0769c inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#a47b06c529a3c66a474477673a8c0769c">~IPluginView</a> ()=default</td></tr>
 <tr class="separator:a47b06c529a3c66a474477673a8c0769c inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde5b6e9e6019524947f594ecce46e40 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40">Initialize</a> ()</td></tr>
-<tr class="separator:acde5b6e9e6019524947f594ecce46e40 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a647c6de9561b87ff5c37b6c632ab820a inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">OnResize</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;newSize)</td></tr>
-<tr class="separator:a647c6de9561b87ff5c37b6c632ab820a inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ebe822e0446efc98da480f3c783571 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571">OnPaint</a> (const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;backgroundColor) const</td></tr>
 <tr class="separator:a77ebe822e0446efc98da480f3c783571 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69141441129bd545c10e58d488e95c53 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -141,11 +134,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a59cce5a2ea0d95ff13c8b721a6360486 inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fab01758f216c1d1b7ef6fdf8d04eca inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fuse_1_1_i_backend.html">IBackend</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca">GetBackend</a> () const</td></tr>
 <tr class="separator:a7fab01758f216c1d1b7ef6fdf8d04eca inherit pub_methods_class_fuse_1_1_i_plugin_view"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa9116d13480970ef0b54dfe1e55d06b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_x11_plugin_view.html#aa9116d13480970ef0b54dfe1e55d06b9">Shutdown</a> () override</td></tr>
-<tr class="separator:aa9116d13480970ef0b54dfe1e55d06b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -166,8 +154,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00011">11</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae3b8115beba0c237778abe1599d0b2c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3b8115beba0c237778abe1599d0b2c1">&#9670;&nbsp;</a></span>X11PluginView()</h2>
+<a id="a05540dbde70ee734185fe7a84ff2a4c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05540dbde70ee734185fe7a84ff2a4c3">&#9670;&nbsp;</a></span>X11PluginView()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,8 +166,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">Fuse::X11PluginView::X11PluginView </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>windowSize</em></td><td>)</td>
+          <td class="paramtype">Window *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -218,12 +206,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00020">20</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00023">23</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
 
 </div>
 </div>
-<a id="a1f2e1306311f65594f7133ee99191e57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f2e1306311f65594f7133ee99191e57">&#9670;&nbsp;</a></span>GetScreen()</h2>
+<a id="ae99b6a044bb7fa6c9e1c7c4b8ddd15b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99b6a044bb7fa6c9e1c7c4b8ddd15b1">&#9670;&nbsp;</a></span>GetWindow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,7 +220,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Fuse::X11PluginView::GetScreen </td>
+          <td class="memname">Window Fuse::X11PluginView::GetWindow </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -245,108 +233,66 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00028">28</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00019">19</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
 
 </div>
 </div>
-<a id="ab94eef434597f9ccde0194576f101f6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94eef434597f9ccde0194576f101f6c">&#9670;&nbsp;</a></span>GetWindow()</h2>
+<a id="a17bddba17893e3b4eebd16f5972212ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17bddba17893e3b4eebd16f5972212ba">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Window&amp; Fuse::X11PluginView::GetWindow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8h_source.html#l00024">24</a> of file <a class="el" href="_x11_plugin_view_8h_source.html">X11PluginView.h</a>.</p>
-
-</div>
-</div>
-<a id="af50a90874edb180e9cf3d6e054b2a689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af50a90874edb180e9cf3d6e054b2a689">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Fuse::X11PluginView::Initialize </td>
           <td>(</td>
-          <td class="paramtype">Display *&#160;</td>
-          <td class="paramname"><em>display</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Window&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a>&#160;</td>
-          <td class="paramname"><em>screen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00016">16</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a6eb5d7cbc38135e1fa891120a61a9c3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eb5d7cbc38135e1fa891120a61a9c3e">&#9670;&nbsp;</a></span>OnPaint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Fuse::X11PluginView::OnPaint </td>
-          <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00053">53</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
+<p>Reimplemented from <a class="el" href="class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40">Fuse::IPluginView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00008">8</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aab7d0203bb95b230c8a8cef179729be8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab7d0203bb95b230c8a8cef179729be8">&#9670;&nbsp;</a></span>OnResize()</h2>
+<a id="a17a2f3750052557c122dcc7da20f2ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a2f3750052557c122dcc7da20f2ad1">&#9670;&nbsp;</a></span>OnResize()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Fuse::X11PluginView::OnResize </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00049">49</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
+<p>Reimplemented from <a class="el" href="class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a">Fuse::IPluginView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00041">41</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,14 +314,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_plugin_view.html#acedfa14f026c1f9112f90b60db70ac7a">Fuse::IPluginView</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00057">57</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_x11_plugin_view_8cpp_source.html#l00037">37</a> of file <a class="el" href="_x11_plugin_view_8cpp_source.html">X11PluginView.cpp</a>.</p>
 
 </div>
 </div>
