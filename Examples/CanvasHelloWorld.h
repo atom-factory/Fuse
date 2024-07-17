@@ -6,7 +6,7 @@
 
 #include "Interfaces/PluginCanvas.h"
 
-namespace ArkVector {
+namespace Fuse {
 
     class CanvasHelloWorld final : public IPluginCanvas {
     public:
@@ -17,4 +17,4 @@ namespace ArkVector {
         IComponent* Draw() override;
     };
 
-}  // namespace ArkVector
+}  // namespace Fuse

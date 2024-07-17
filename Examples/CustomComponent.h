@@ -4,6 +4,6 @@
 
 #pragma once
 
-namespace ArkVector {
+namespace Fuse {
     class CustomComponent {};
-}  // namespace ArkVector
+}  // namespace Fuse

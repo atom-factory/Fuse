@@ -4,5 +4,5 @@
 
 #include "CustomComponent.h"
 
-namespace ArkVector {
-} // ArkVector
+namespace Fuse {
+} // Fuse

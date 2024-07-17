@@ -5,8 +5,8 @@
 #include "CanvasHelloWorld.h"
 #include "Components/Box.h"
 
-namespace ArkVector {
+namespace Fuse {
     IComponent* CanvasHelloWorld::Draw() {
         return new Component::Box({500, 200}, {50, 50}, Color(0xFF00CCFF));
     }
-}  // namespace ArkVector
+}  // namespace Fuse

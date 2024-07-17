@@ -11,7 +11,7 @@
 namespace HWNDParent {
     static inline HINSTANCE g_Instance;
     static inline HWND g_Window;
-    static inline ArkVector::Win32PluginView* g_View;
+    static inline Fuse::Win32PluginView* g_View;
 
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -30,7 +30,7 @@ namespace HWNDParent {
         wndClass.hCursor       = ::LoadCursor(nullptr, IDC_ARROW);
         wndClass.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
         wndClass.lpszMenuName  = nullptr;
-        wndClass.lpszClassName = "ArkVectorParentWindowClass";
+        wndClass.lpszClassName = "FuseParentWindowClass";
 
         RegisterClassExA(&wndClass);
 
@@ -40,8 +40,8 @@ namespace HWNDParent {
         const u32 posY      = (scrHeight - height) / 2;
 
         g_Window = ::CreateWindowExA(NULL,
-                                     "ArkVectorParentWindowClass",
-                                     "ArkVector Window",
+                                     "FuseParentWindowClass",
+                                     "Fuse Window",
                                      WS_OVERLAPPEDWINDOW | WS_CAPTION | WS_SYSMENU,
                                      static_cast<i32>(posX),
                                      static_cast<i32>(posY),

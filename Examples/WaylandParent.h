@@ -9,7 +9,7 @@
 #include "Platform/WaylandPluginView.h"
 
 namespace WaylandParent {
-    static inline ArkVector::WaylandPluginView* g_View;
+    static inline Fuse::WaylandPluginView* g_View;
 
     static wl_display* g_Display       = nullptr;
     static wl_compositor* g_Compositor = nullptr;

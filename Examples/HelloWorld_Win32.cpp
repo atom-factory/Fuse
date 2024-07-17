@@ -6,7 +6,7 @@
 #include "CanvasHelloWorld.h"
 #include "HWNDParent.h"
 
-using namespace ArkVector;
+using namespace Fuse;
 
 static constexpr int WINDOW_WIDTH  = 600;
 static constexpr int WINDOW_HEIGHT = 300;
