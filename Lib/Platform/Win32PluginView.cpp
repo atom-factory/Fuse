@@ -43,8 +43,7 @@ namespace Fuse {
         ::SetWindowLongPtrA(m_Handle, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
 
         m_Backend = new Direct2DBackend;
-        m_Backend->SetOwner(this);
-        m_Backend->Init();
+        m_Backend->Initialize(this);
 
         ::ShowWindow(m_Handle, nCmdShow);
         ::UpdateWindow(m_Handle);

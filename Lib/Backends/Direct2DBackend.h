@@ -10,7 +10,7 @@
 namespace Fuse {
     class Direct2DBackend final : public IBackend {
     public:
-        void Init() override;
+        void Initialize(IPluginView* owner) override;
         void OnResize(const Size<u32>& size) override;
 
         void BeginDrawing(Color clearColor) override;

@@ -9,7 +9,9 @@
 #include "Platform/Win32PluginView.h"
 
 namespace Fuse {
-    void Direct2DBackend::Init() {
+    void Direct2DBackend::Initialize(IPluginView* owner) {
+        IBackend::Initialize(owner);
+
         if (!m_OwningView) {
             throw std::runtime_error(
               "Direct2DBackend::Init: m_OwningView is null. Ensure SetOwner() "

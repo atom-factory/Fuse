@@ -15,11 +15,13 @@ namespace Fuse {
             this->IPluginCanvas::AttachToParent(parent);
         }
 
+#ifdef USE_X11
         explicit CanvasHelloWorld(void* parent, Display* display) : IPluginCanvas(parent) {
             this->BackgroundColor = Color(0xFF01030C);
             this->GetView()->As<X11PluginView>()->SetDisplay(display);
             this->IPluginCanvas::AttachToParent(parent);
         }
+#endif
 
         IComponent* Draw() override;
     };

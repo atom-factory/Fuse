@@ -41,7 +41,7 @@ namespace HWNDParent {
 
         g_Window = ::CreateWindowExA(NULL,
                                      "FuseParentWindowClass",
-                                     "Fuse Window",
+                                     "Win32 Window - Fuse",
                                      WS_OVERLAPPEDWINDOW | WS_CAPTION | WS_SYSMENU,
                                      static_cast<i32>(posX),
                                      static_cast<i32>(posY),
