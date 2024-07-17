@@ -20,9 +20,7 @@ namespace Fuse {
         }
 
         auto hr = ::D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_Factory);
-        if (FAILED(hr)) {
-            throw std::runtime_error("Failed to create Direct2D Factory");
-        }
+        CheckResult(hr, "Failed to create Direct2D Factory");
 
         const auto view = m_OwningView->As<Win32PluginView>();
         RECT rc;
@@ -33,17 +31,13 @@ namespace Fuse {
                                            D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top)),
           &m_RenderTarget);
 
-        if (FAILED(hr)) {
-            throw std::runtime_error("Failed to create render target");
-        }
+        CheckResult(hr, "Failed to create render target");
     }
 
     void Direct2DBackend::OnResize(const Size<u32>& size) {
         if (m_RenderTarget) {
-            auto hr = m_RenderTarget->Resize(D2D1_SIZE_U(size.Width, size.Height));
-            if (FAILED(hr)) {
-                throw std::runtime_error("Failed to resize render target");
-            }
+            const auto hr = m_RenderTarget->Resize(D2D1_SIZE_U(size.Width, size.Height));
+            CheckResult(hr, "Failed to resize render target");
         }
     }
 
@@ -56,9 +50,7 @@ namespace Fuse {
 
     void Direct2DBackend::EndDrawing() {
         if (m_RenderTarget) {
-            if (FAILED(m_RenderTarget->EndDraw())) {
-                throw std::runtime_error("D2D Render target failed to end drawing.");
-            }
+            CheckResult(m_RenderTarget->EndDraw(), "D2D EndDraw() method failed.");
         }
     }
 
@@ -71,14 +63,12 @@ namespace Fuse {
             ID2D1SolidColorBrush* brush = nullptr;
             auto hr =
               m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
-            if (FAILED(hr)) {
-                throw std::runtime_error("Failed to create D2D brush.");
-            }
+            CheckResult(hr, "Failed to create D2D brush.");
 
-            auto rect = D2D1::RectF(position.X,
-                                    position.Y,
-                                    static_cast<f32>(size.Width),
-                                    static_cast<f32>(size.Height));
+            const auto rect = D2D1::RectF(position.X,
+                                          position.Y,
+                                          static_cast<f32>(size.Width),
+                                          static_cast<f32>(size.Height));
 
             m_RenderTarget->FillRectangle(rect, brush);
 
@@ -86,9 +76,7 @@ namespace Fuse {
                 ID2D1SolidColorBrush* strokeBrush = nullptr;
                 hr = m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(stroke.Color.Value()),
                                                            &strokeBrush);
-                if (FAILED(hr)) {
-                    throw std::runtime_error("Failed to create D2D brush.");
-                }
+                CheckResult(hr, "Failed to create D2D brush.");
                 m_RenderTarget->DrawRectangle(rect, strokeBrush, stroke.Thickness, nullptr);
             }
         }

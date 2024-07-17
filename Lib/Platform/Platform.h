@@ -5,6 +5,7 @@
 #pragma once
 
 #include <exception>
+#include <stdexcept>
 
 #if defined(_WIN32) || defined(_WIN64)
     #define WIN32_LEAN_AND_MEAN
@@ -21,6 +22,12 @@ void SafeRelease(Interface** ppInterface) {
     if (*ppInterface != NULL) {
         (*ppInterface)->Release();
         (*ppInterface) = NULL;
+    }
+}
+
+inline void CheckResult(const HRESULT hr, const char* msg) {
+    if (FAILED(hr)) {
+        throw std::runtime_error(msg);
     }
 }
 #elif defined(__linux__)
