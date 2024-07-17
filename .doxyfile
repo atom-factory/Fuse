@@ -123,7 +123,8 @@ WARN_LOGFILE =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT = ./Lib
+INPUT = ./Lib \
+        README.md
 INPUT_ENCODING = UTF-8
 FILE_PATTERNS = *.c \
                 *.cc \
