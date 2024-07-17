@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['g_0',['g',['../struct_fuse_1_1_base_color.html#a5bedbbf5eab6906ffdbb24651cd113fa',1,'Fuse::BaseColor']]],
+  ['g_5fbackend_1',['g_Backend',['../namespace_fuse.html#a6f340f71d88b518e0287e781f2efb6ba',1,'Fuse']]],
+  ['getalphafromopacity_2',['GetAlphaFromOpacity',['../class_fuse_1_1_color.html#ae2b69708c976a0005098692b193acc09',1,'Fuse::Color']]],
+  ['getaspectratio_3',['GetAspectRatio',['../class_fuse_1_1_size.html#a355113500935313d7ecbd6fd124d382f',1,'Fuse::Size']]],
+  ['getbackend_4',['GetBackend',['../class_fuse_1_1_i_plugin_canvas.html#ae7417b62441897d5b04997aafc956c89',1,'Fuse::IPluginCanvas::GetBackend()'],['../class_fuse_1_1_i_plugin_view.html#aeef5d4e03866dc4193a12010304f2f32',1,'Fuse::IPluginView::GetBackend()']]],
+  ['getchild_5',['GetChild',['../class_fuse_1_1_i_component.html#a66b5601d2f7ab87bf6bac1061d683eb2',1,'Fuse::IComponent']]],
+  ['getchildren_6',['GetChildren',['../class_fuse_1_1_i_component.html#acf66b5f5a1202440ba3108a02d6e5869',1,'Fuse::IComponent']]],
+  ['getdisplay_7',['GetDisplay',['../class_fuse_1_1_x11_plugin_view.html#a4cbe9e04f62ba7e86bc89edaf6ec0e93',1,'Fuse::X11PluginView']]],
+  ['gethandle_8',['GetHandle',['../class_fuse_1_1_win32_plugin_view.html#a2979f3db062772fb7b66315088c862ba',1,'Fuse::Win32PluginView']]],
+  ['gethypotenuse_9',['GetHypotenuse',['../class_fuse_1_1_size.html#ad6cd17033ce3e2e7489b663cc1b00b2c',1,'Fuse::Size']]],
+  ['getowner_10',['GetOwner',['../class_fuse_1_1_i_backend.html#a73deb28f7c678247711e30819383896f',1,'Fuse::IBackend']]],
+  ['getscreen_11',['GetScreen',['../class_fuse_1_1_x11_plugin_view.html#a1f2e1306311f65594f7133ee99191e57',1,'Fuse::X11PluginView']]],
+  ['getsize_12',['GetSize',['../class_fuse_1_1_i_plugin_view.html#a67c83bd68f2370a96ad0d0e4f8f4cbd0',1,'Fuse::IPluginView']]],
+  ['getview_13',['GetView',['../class_fuse_1_1_i_plugin_canvas.html#a2c12cce90dc1c6610df383ad6b47c482',1,'Fuse::IPluginCanvas']]],
+  ['getwindow_14',['GetWindow',['../class_fuse_1_1_x11_plugin_view.html#afc038050bee05f127afb90d118465023',1,'Fuse::X11PluginView']]],
+  ['green_15',['Green',['../class_fuse_1_1_color.html#ae5c86e2bff01c8d88748c2a5ecb8e101',1,'Fuse::Color']]],
+  ['greyscale_16',['Greyscale',['../class_fuse_1_1_color.html#a420026a70473bd5e9c7bfc8b9c464720',1,'Fuse::Color']]]
+];
