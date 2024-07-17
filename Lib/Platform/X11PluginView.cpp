@@ -4,59 +4,41 @@
 
 #include "X11PluginView.h"
 
-#include "Backends/Backend.h"
-#include "Backends/X11Backend.h"
-
-#include <cstring>
-#include <iostream>
-
 namespace Fuse {
-    X11Backend* g_Backend;
-
-    void X11PluginView::Initialize(Display* display, const Window parent, const i32 screen) {
-        m_pDisplay = display;
-        if (!m_pDisplay) {
-            std::cerr << "Unable to open X display" << std::endl;
-            return;
+    void X11PluginView::Initialize() {
+        m_Display = XOpenDisplay(nullptr);
+        if (!m_Display) {
+            throw std::runtime_error("Failed to open X display.");
         }
 
-        m_Screen = screen;
+        const int screen  = DefaultScreen(m_Display);
+        const auto parent = static_cast<Window*>(m_Parent);
 
-        XSetWindowAttributes childAttrs;
-        childAttrs.background_pixel = WhitePixel(m_pDisplay, m_Screen);
-        childAttrs.event_mask       = ExposureMask | KeyPressMask;
-        m_Window                    = XCreateWindow(m_pDisplay,
-                                 parent,
+        XSetWindowAttributes childAttributes;
+        childAttributes.background_pixel = WhitePixel(m_Display, screen);  // Background color
+        childAttributes.event_mask = ExposureMask | KeyPressMask;  // Event mask for child window
+
+        m_Window = XCreateWindow(m_Display,
+                                 *parent,
                                  0,
                                  0,
                                  m_WindowSize.Width,
                                  m_WindowSize.Height,
-                                 0,
+                                 1,
                                  CopyFromParent,
                                  InputOutput,
-                                 CopyFromParent,
+                                 nullptr,
                                  CWBackPixel | CWEventMask,
-                                 &childAttrs);
+                                 &childAttributes);
 
-        XStoreName(m_pDisplay, m_Window, "X11 Window - Fuse");
-        XSelectInput(m_pDisplay, m_Window, ExposureMask | KeyPressMask);
-        XMapWindow(m_pDisplay, m_Window);
-
-        g_Backend = new X11Backend();
-        g_Backend->Init(m_pDisplay, m_Window, m_Screen, m_WindowSize);
-    }
-
-    void X11PluginView::OnResize() const {
-        g_Backend->OnResize(m_WindowSize);
-    }
-
-    void X11PluginView::OnPaint() const {
-        g_Backend->OnPaint(m_WindowSize);
+        XMapWindow(m_Display, m_Window);
     }
 
     void X11PluginView::Shutdown() {
-        g_Backend->Shutdown();
-        delete g_Backend;
-        XCloseDisplay(m_pDisplay);
+        XDestroyWindow(m_Display, m_Window);
+    }
+
+    void X11PluginView::OnResize(const Size<u32>& newSize) {
+        IPluginView::OnResize(newSize);
     }
 }  // namespace Fuse

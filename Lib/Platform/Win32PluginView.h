@@ -12,6 +12,7 @@ namespace Fuse {
     public:
         explicit Win32PluginView(HWND parent) : IPluginView(parent) {}
 
+        // TODO: parent isn't needed as an arg, can be accessed via this->m_Parent as void ptr
         void Initialize(HWND parent, int nCmdShow);
         void Shutdown() override;
         void OnResize(const Size<u32>& newSize) override;

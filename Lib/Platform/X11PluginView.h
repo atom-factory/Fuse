@@ -4,39 +4,30 @@
 
 #pragma once
 
-#include "PluginView.h"
 #include "Platform.h"
+#include "Interfaces/PluginView.h"
 
 namespace Fuse {
     class X11PluginView final : public IPluginView {
     public:
-        explicit X11PluginView(const Size<u32>& windowSize)
-            : IPluginView(windowSize), m_pDisplay(nullptr) {}
+        explicit X11PluginView(Window* parent) : IPluginView(parent) {}
 
-        void Initialize(Display* display, Window parent, i32 screen);
-        void OnResize() const;
-        void OnPaint() const;
+        void Initialize() override;
+        void Shutdown() override;
+        void OnResize(const Size<u32>& newSize) override;
 
-        [[nodiscard]] Display* GetDisplay() const {
-            return m_pDisplay;
-        }
-
-        Window& GetWindow() {
+        [[nodiscard]] Window GetWindow() const {
             return m_Window;
         }
 
-        [[nodiscard]] int GetScreen() const {
-            return m_Screen;
+        [[nodiscard]] Display* GetDisplay() const {
+            return m_Display;
         }
 
-    protected:
-        void Shutdown() override;
-
     private:
-        Display* m_pDisplay;
-        Window m_Window {};
-        XEvent m_Event {};
-        int m_Screen {};
+        Window m_Window    = {};
+        Display* m_Display = nullptr;
+        // XEvent m_Event     = {};
     };
 
 }  // namespace Fuse

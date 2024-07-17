@@ -45,4 +45,6 @@ constexpr T Infinity() {
 constexpr i64 MAX_SIZE   = 100000;
 constexpr f32 MAX_SIZE_F = 100000.f;
 
-#define None nullptr
+#ifndef None
+    #define None nullptr
+#endif

@@ -39,6 +39,10 @@ namespace Fuse {
                 const auto thisPtr = dynamic_cast<Traits::TMultiChild*>(this);
                 return thisPtr->m_Children;
             }
+
+            // Probably just gonna switch this function to return std::optional...
+            static std::vector<IComponent*> empty;
+            return empty;
         }
     };
 }  // namespace Fuse
