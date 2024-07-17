@@ -10,6 +10,7 @@
 
 namespace Fuse {
     class IPluginView;
+    struct Stroke;
 
     class IBackend {
     public:
@@ -36,8 +37,11 @@ namespace Fuse {
             return m_OwningView;
         }
 
-        virtual void
-        DrawRect(const Size<u32>& size, const Offset& position, const Color& fillColor) {}
+        virtual void DrawRect(const Size<u32>& size,
+                              const Offset& position,
+                              const Color& fillColor,
+                              const Stroke& stroke,
+                              const bool rounded) {}
         virtual void DrawLine() {}
         virtual void DrawEllipse() {}
         virtual void DrawPath() {}

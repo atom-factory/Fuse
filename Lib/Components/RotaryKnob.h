@@ -1,5 +1,5 @@
 // Author: Jake Rieger
-// Created: 7/15/2024.
+// Created: 7/17/2024.
 //
 
 #pragma once
@@ -10,5 +10,5 @@
 using namespace Fuse::Traits;
 
 namespace Fuse::Component {
-    class PushButton {};
+    class RotaryKnob {};
 }  // namespace Fuse::Component

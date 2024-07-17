@@ -7,15 +7,16 @@
 #include "Color.h"
 #include "Interfaces/PluginView.h"
 #include "Platform/Win32PluginView.h"
+#include "Stroke.h"
 
 namespace Fuse {
     void Direct2DBackend::Initialize(IPluginView* owner) {
         IBackend::Initialize(owner);
 
         if (!m_OwningView) {
-            throw std::runtime_error(
-              "Direct2DBackend::Init: m_OwningView is null. Ensure SetOwner() "
-              "was called before initializing.");
+            throw std::runtime_error("Direct2DBackend::Initialize: m_OwningView is null. Ensure "
+                                     "IBackend::Initialize(owner) "
+                                     "was called first in the Initialize() method.");
         }
 
         auto hr = ::D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_Factory);
@@ -23,7 +24,7 @@ namespace Fuse {
             throw std::runtime_error("Failed to create Direct2D Factory");
         }
 
-        auto view = m_OwningView->As<Win32PluginView>();
+        const auto view = m_OwningView->As<Win32PluginView>();
         RECT rc;
         ::GetClientRect(view->GetHandle(), &rc);
         hr = m_Factory->CreateHwndRenderTarget(
@@ -55,23 +56,41 @@ namespace Fuse {
 
     void Direct2DBackend::EndDrawing() {
         if (m_RenderTarget) {
-            m_RenderTarget->EndDraw();
+            if (FAILED(m_RenderTarget->EndDraw())) {
+                throw std::runtime_error("D2D Render target failed to end drawing.");
+            }
         }
     }
 
     void Direct2DBackend::DrawRect(const Size<u32>& size,
                                    const Offset& position,
-                                   const Color& fillColor) {
+                                   const Color& fillColor,
+                                   const Stroke& stroke,
+                                   const bool rounded) {
         if (m_RenderTarget) {
             ID2D1SolidColorBrush* brush = nullptr;
             auto hr =
               m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
+            if (FAILED(hr)) {
+                throw std::runtime_error("Failed to create D2D brush.");
+            }
 
-            m_RenderTarget->FillRectangle(D2D1::RectF(position.X,
-                                                      position.Y,
-                                                      static_cast<f32>(size.Width),
-                                                      static_cast<f32>(size.Height)),
-                                          brush);
+            auto rect = D2D1::RectF(position.X,
+                                    position.Y,
+                                    static_cast<f32>(size.Width),
+                                    static_cast<f32>(size.Height));
+
+            m_RenderTarget->FillRectangle(rect, brush);
+
+            if (stroke.Thickness > 0) {
+                ID2D1SolidColorBrush* strokeBrush = nullptr;
+                hr = m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(stroke.Color.Value()),
+                                                           &strokeBrush);
+                if (FAILED(hr)) {
+                    throw std::runtime_error("Failed to create D2D brush.");
+                }
+                m_RenderTarget->DrawRectangle(rect, strokeBrush, stroke.Thickness, nullptr);
+            }
         }
     }
 

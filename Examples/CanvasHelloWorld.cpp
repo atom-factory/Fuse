@@ -7,6 +7,11 @@
 
 namespace Fuse {
     IComponent* CanvasHelloWorld::Draw() {
-        return new Component::Box({500, 200}, {50, 50}, Color(0xFF00CCFF));
+        const auto box = new Component::Box({500, 200},
+                                            {50, 50},
+                                            Color(0xFF00CCFF),
+                                            Stroke(Color(0xFFFF0000), 4.f, EStrokeStyle::Solid));
+
+        return box;
     }
 }  // namespace Fuse

@@ -7,10 +7,15 @@
 #include "Interfaces/PluginView.h"
 
 namespace Fuse::Component {
-    Box::Box(const Size<u32>& size, const Offset& position, const Color& fillColor)
-        : m_Size(size), m_Position(position), m_FillColor(fillColor) {}
+    Box::Box(const Size<u32>& size,
+             const Offset& position,
+             const Color& fillColor,
+             const Stroke& stroke,
+             const bool rounded)
+        : m_Size(size), m_Position(position), m_FillColor(fillColor), m_Stroke(stroke),
+          m_Rounded(rounded) {}
 
     void Box::Draw(IBackend* backend) {
-        backend->DrawRect(m_Size, m_Position, m_FillColor);
+        backend->DrawRect(m_Size, m_Position, m_FillColor, m_Stroke, m_Rounded);
     }
 }  // namespace Fuse::Component

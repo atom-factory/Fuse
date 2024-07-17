@@ -16,8 +16,11 @@ namespace Fuse {
         void BeginDrawing(Color clearColor) override;
         void EndDrawing() override;
 
-        void
-        DrawRect(const Size<u32>& size, const Offset& position, const Color& fillColor) override;
+        void DrawRect(const Size<u32>& size,
+                      const Offset& position,
+                      const Color& fillColor,
+                      const Stroke& stroke,
+                      bool rounded) override;
         void DrawEllipse() override;
         void DrawLine() override;
         void DrawPath() override;
