@@ -7,7 +7,7 @@
 #include "Platform/Platform.h"
 #include "Interfaces/Backend.h"
 
-namespace ArkVector {
+namespace Fuse {
     class Direct2DBackend final : public IBackend {
     public:
         void Init() override;
@@ -30,4 +30,4 @@ namespace ArkVector {
         ID2D1Factory* m_Factory               = nullptr;
         ID2D1HwndRenderTarget* m_RenderTarget = nullptr;
     };
-}  // namespace ArkVector
+}  // namespace Fuse

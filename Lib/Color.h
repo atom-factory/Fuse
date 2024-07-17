@@ -6,7 +6,7 @@
 
 #include "Types.h"
 
-namespace ArkVector {
+namespace Fuse {
     /**
      * @brief Base color struct used to store float values of each color and alpha component.
      *
@@ -93,4 +93,4 @@ namespace ArkVector {
         inline static auto Transparent = Color(0x00000000);
     };  // namespace Colors
 
-}  // namespace ArkVector
+}  // namespace Fuse

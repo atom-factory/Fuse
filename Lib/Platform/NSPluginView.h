@@ -4,10 +4,10 @@
 
 #pragma once
 
-namespace ArkVector {
+namespace Fuse {
 
 class NSPluginView {
 
 };
 
-} // ArkVector
+} // Fuse

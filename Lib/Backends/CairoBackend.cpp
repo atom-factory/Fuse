@@ -5,4 +5,4 @@
 #include "CairoBackend.h"
 #include <cassert>
 
-namespace ArkVector {} // namespace ArkVector
+namespace Fuse {} // namespace Fuse

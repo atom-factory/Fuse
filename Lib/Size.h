@@ -9,7 +9,7 @@
 
 #include <complex>
 
-namespace ArkVector {
+namespace Fuse {
     /// TODO: Implement operator overloads
     template<typename T = int>
     class Size {
@@ -91,4 +91,4 @@ namespace ArkVector {
         Width  = x;
         Height = y;
     }
-}  // namespace ArkVector
+}  // namespace Fuse

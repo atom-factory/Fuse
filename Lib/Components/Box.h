@@ -9,9 +9,9 @@
 #include "Interfaces/Component.h"
 #include "Traits.h"
 
-using namespace ArkVector::Traits;
+using namespace Fuse::Traits;
 
-namespace ArkVector::Component {
+namespace Fuse::Component {
     class Box final : public IComponent,
                       public TSingleChild {
     public:
@@ -24,4 +24,4 @@ namespace ArkVector::Component {
         Color m_FillColor;
     };
 
-}  // namespace ArkVector::Component
+}  // namespace Fuse::Component

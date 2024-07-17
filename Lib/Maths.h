@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-namespace ArkVector::Math {
+namespace Fuse::Math {
     template<typename T>
     constexpr bool IsFinite(T val) {
         static_assert(std::is_arithmetic_v<T>, "T must be arithmetic type");
@@ -29,4 +29,4 @@ namespace ArkVector::Math {
 
         return static_cast<T>(a * (1.0 - t) + b * t);
     }
-}  // namespace ArkVector::Math
+}  // namespace Fuse::Math

@@ -9,7 +9,7 @@
 #include "Backend.h"
 #include "Component.h"
 
-namespace ArkVector {
+namespace Fuse {
     class IPluginCanvas;
 
     class IPluginView {
@@ -52,4 +52,4 @@ namespace ArkVector {
         IPluginCanvas* m_OwningCanvas;
         void* m_Parent;
     };
-}  // namespace ArkVector
+}  // namespace Fuse

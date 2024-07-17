@@ -1,5 +1,5 @@
-<img src="Docs/ArkVector_Logo.png" width="128">
+<img src="Docs/logo.png" width="128">
 
-# ArkVector
+# Fuse
 
-**ArkVector** is a 2D vector graphics library developed with audio plug-ins in mind.
+**Fuse** is a 2D cross-platform vector graphics library for audio plugin development.

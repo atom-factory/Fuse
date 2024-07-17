@@ -6,7 +6,7 @@
 
 #include "Traits.h"
 
-namespace ArkVector {
+namespace Fuse {
     class IBackend;
 
     class IComponent {
@@ -41,4 +41,4 @@ namespace ArkVector {
             }
         }
     };
-}  // namespace ArkVector
+}  // namespace Fuse

@@ -4,10 +4,10 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING = UTF-8
-PROJECT_NAME = ArkVector
+PROJECT_NAME = Fuse
 PROJECT_NUMBER = 0.0.1
 PROJECT_BRIEF = "2D cross-platform vector graphics library for audio plugin development"
-PROJECT_LOGO = Docs/ArkVector_Logo.png
+PROJECT_LOGO = Docs/logo.png
 OUTPUT_DIRECTORY = Docs
 CREATE_SUBDIRS = NO
 CREATE_SUBDIRS_LEVEL = 8
@@ -233,9 +233,9 @@ HTML_INDEX_NUM_ENTRIES = 100
 GENERATE_DOCSET = NO
 DOCSET_FEEDNAME = "Doxygen generated docs"
 DOCSET_FEEDURL =
-DOCSET_BUNDLE_ID = org.doxygen.ArkVector
-DOCSET_PUBLISHER_ID = org.doxygen.JakeRieger
-DOCSET_PUBLISHER_NAME = Jake Rieger
+DOCSET_BUNDLE_ID = org.doxygen.Fuse
+DOCSET_PUBLISHER_ID = org.doxygen.atom-factory
+DOCSET_PUBLISHER_NAME = ATOM Factory
 GENERATE_HTMLHELP = NO
 CHM_FILE =
 HHC_LOCATION =

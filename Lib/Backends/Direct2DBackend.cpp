@@ -8,7 +8,7 @@
 #include "Interfaces/PluginView.h"
 #include "Platform/Win32PluginView.h"
 
-namespace ArkVector {
+namespace Fuse {
     void Direct2DBackend::Init() {
         if (!m_OwningView) {
             throw std::runtime_error(
@@ -91,4 +91,4 @@ namespace ArkVector {
             m_Factory = nullptr;
         }
     }
-}  // namespace ArkVector
+}  // namespace Fuse

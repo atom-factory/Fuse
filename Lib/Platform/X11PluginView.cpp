@@ -10,7 +10,7 @@
 #include <cstring>
 #include <iostream>
 
-namespace ArkVector {
+namespace Fuse {
     X11Backend* g_Backend;
 
     void X11PluginView::Initialize(Display* display, const Window parent, const i32 screen) {
@@ -38,7 +38,7 @@ namespace ArkVector {
                                  CWBackPixel | CWEventMask,
                                  &childAttrs);
 
-        XStoreName(m_pDisplay, m_Window, "X11 Window - ArkVector");
+        XStoreName(m_pDisplay, m_Window, "X11 Window - Fuse");
         XSelectInput(m_pDisplay, m_Window, ExposureMask | KeyPressMask);
         XMapWindow(m_pDisplay, m_Window);
 
@@ -59,4 +59,4 @@ namespace ArkVector {
         delete g_Backend;
         XCloseDisplay(m_pDisplay);
     }
-}  // namespace ArkVector
+}  // namespace Fuse

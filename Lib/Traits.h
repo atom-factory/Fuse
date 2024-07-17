@@ -6,12 +6,12 @@
 
 #include <vector>
 
-namespace ArkVector {
+namespace Fuse {
     // Forward declaration
     class IComponent;
-}  // namespace ArkVector
+}  // namespace Fuse
 
-namespace ArkVector::Traits {
+namespace Fuse::Traits {
     class TSingleChild {
     public:
         IComponent* m_Child = nullptr;
@@ -23,4 +23,4 @@ namespace ArkVector::Traits {
     };
 
     class TNotify {};
-}  // namespace ArkVector::Traits
+}  // namespace Fuse::Traits

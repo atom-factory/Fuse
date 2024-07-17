@@ -14,7 +14,7 @@
     #include "Platform/NSAPluginView.h"
 #endif
 
-namespace ArkVector {
+namespace Fuse {
     void IPluginView::OnPaint(const Color& backgroundColor) const {
         const auto backend = GetBackend();
         backend->BeginDrawing(backgroundColor);
@@ -39,4 +39,4 @@ namespace ArkVector {
         return nullptr;
     }
 
-}  // namespace ArkVector
+}  // namespace Fuse

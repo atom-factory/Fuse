@@ -9,7 +9,7 @@
 #include <cassert>
 #include <complex>
 
-namespace ArkVector {
+namespace Fuse {
     Color::Color() {
         m_BaseColor.r = 0;
         m_BaseColor.g = 0;
@@ -126,4 +126,4 @@ namespace ArkVector {
 
         return std::pow((c + 0.055f) / 1.055f, 2.4f);
     }
-}  // namespace ArkVector
+}  // namespace Fuse

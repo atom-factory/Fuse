@@ -7,7 +7,7 @@
 #include "Platform.h"
 #include "Interfaces/PluginView.h"
 
-namespace ArkVector {
+namespace Fuse {
     class Win32PluginView final : public IPluginView {
     public:
         explicit Win32PluginView(HWND parent) : IPluginView(parent) {}
@@ -26,4 +26,4 @@ namespace ArkVector {
         HWND m_Handle        = nullptr;
         HINSTANCE m_Instance = nullptr;
     };
-}  // namespace ArkVector
+}  // namespace Fuse

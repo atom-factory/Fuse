@@ -9,4 +9,4 @@
 #include "Offset.h"
 #include "Size.h"
 
-namespace ArkVector {}  // namespace ArkVector
+namespace Fuse {}  // namespace Fuse

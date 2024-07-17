@@ -7,7 +7,7 @@
 #include "PluginView.h"
 #include "Platform.h"
 
-namespace ArkVector {
+namespace Fuse {
     class X11PluginView final : public IPluginView {
     public:
         explicit X11PluginView(const Size<u32>& windowSize)
@@ -39,4 +39,4 @@ namespace ArkVector {
         int m_Screen {};
     };
 
-}  // namespace ArkVector
+}  // namespace Fuse

@@ -4,5 +4,5 @@
 
 #include "NSAppWindow.h"
 
-namespace ArkVector {
-} // ArkVector
+namespace Fuse {
+} // Fuse

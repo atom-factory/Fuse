@@ -17,9 +17,9 @@
     #include "Platform/NSPluginView.h"
 #endif
 
-namespace ArkVector {
+namespace Fuse {
     /**
-     * @brief Root interface of an ArkVector-rendered plugin.
+     * @brief Root interface of an Fuse-rendered plugin.
      *
      * The constructor takes a void ptr to the parent window handle (`HWND` on Windows, `Window` on
      * X11, etc.)
@@ -76,4 +76,4 @@ namespace ArkVector {
     protected:
         IPluginView* m_View;
     };
-} // namespace ArkVector
+} // namespace Fuse

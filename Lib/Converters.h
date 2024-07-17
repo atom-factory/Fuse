@@ -10,7 +10,7 @@
 #include <codecvt>
 #include <locale>
 
-namespace ArkVector::Converters {
+namespace Fuse::Converters {
     inline void HexToRGBA(const u32 hex, f32& r, f32& g, f32& b, f32& a) {
         const unsigned char alphaByte = (hex >> 24) & 0xFF;
         const unsigned char redByte   = (hex >> 16) & 0xFF;
@@ -53,4 +53,4 @@ namespace ArkVector::Converters {
         std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
         converted = converter.from_bytes(value);
     }
-}  // namespace ArkVector::Converters
+}  // namespace Fuse::Converters

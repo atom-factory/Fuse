@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-namespace ArkVector {
+namespace Fuse {
     Offset Offset::Infinite = {Infinity<f32>(), Infinity<f32>()};
     Offset Offset::Zero     = {0, 0};
 
@@ -86,4 +86,4 @@ namespace ArkVector {
     Offset Offset::Translate(const f32 translateX, const f32 translateY) const {
         return {X + translateX, Y + translateY};
     }
-}  // namespace ArkVector
+}  // namespace Fuse

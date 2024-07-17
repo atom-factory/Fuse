@@ -10,4 +10,4 @@
 // #include <cairomm/refptr.h>
 // #include <cairomm/xlib_surface.h>
 
-namespace ArkVector {} // namespace ArkVector
+namespace Fuse {} // namespace Fuse

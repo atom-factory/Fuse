@@ -8,7 +8,7 @@
 #include "Size.h"
 #include "Offset.h"
 
-namespace ArkVector {
+namespace Fuse {
     class IPluginView;
 
     class IBackend {
@@ -46,4 +46,4 @@ namespace ArkVector {
 
         IPluginView* m_OwningView = nullptr;
     };
-}  // namespace ArkVector
+}  // namespace Fuse

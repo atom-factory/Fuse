@@ -7,7 +7,7 @@
 
 #include <cassert>
 
-namespace ArkVector {
+namespace Fuse {
     void Win32PluginView::Initialize(HWND parent, int nCmdShow) {
         RECT rc;
         ::GetClientRect(parent, &rc);
@@ -19,13 +19,13 @@ namespace ArkVector {
         WNDCLASSA wc     = {};
         wc.lpfnWndProc   = MessageHandler;
         wc.hInstance     = m_Instance;
-        wc.lpszClassName = "ArkVectorHWNDChild";
+        wc.lpszClassName = "FuseHWNDChild";
         wc.hbrBackground = static_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
         RegisterClassA(&wc);
 
         m_Handle = ::CreateWindowExA(0,
-                                     "ArkVectorHWNDChild",
-                                     "ArkVectorWindow",
+                                     "FuseHWNDChild",
+                                     "FuseWindow",
                                      WS_CHILD | WS_VISIBLE,
                                      0,
                                      0,
@@ -96,4 +96,4 @@ namespace ArkVector {
                 return DefWindowProc(hwnd, msg, wParam, lParam);
         }
     }
-}  // namespace ArkVector
+}  // namespace Fuse

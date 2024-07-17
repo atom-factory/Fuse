@@ -6,7 +6,7 @@
 
 #include "Types.h"
 
-namespace ArkVector {
+namespace Fuse {
     class Offset {
     public:
         Offset() = default;
@@ -40,4 +40,4 @@ namespace ArkVector {
         f32 X = 0;
         f32 Y = 0;
     };
-}  // namespace ArkVector
+}  // namespace Fuse
