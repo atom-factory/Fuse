@@ -19,7 +19,7 @@
 
 namespace Fuse {
     /**
-     * @brief Root interface of an Fuse-rendered plugin.
+     * @brief Root interface of a Fuse-rendered plugin.
      *
      * The constructor takes a void ptr to the parent window handle (`HWND` on Windows, `Window` on
      * X11, etc.)

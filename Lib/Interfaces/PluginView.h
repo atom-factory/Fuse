@@ -24,7 +24,7 @@ namespace Fuse {
             m_WindowSize = newSize;
         }
 
-        virtual void OnPaint(const Color& backgroundColor) const;
+        virtual void OnPaint() const;
 
         template<typename T>
         T* As() {

@@ -9,8 +9,8 @@ namespace Fuse {
     IComponent* CanvasHelloWorld::Draw() {
         const auto box = new Component::Box({200, 100},
                                             {50, 50},
-                                            Color(0xFF1A1C29),
-                                            Stroke(Color(0xFF363A55), 2.f, EStrokeStyle::Solid));
+                                            Color(0xFF363A55),
+                                            Stroke(Color(0xFF1A1C29), 2.f, EStrokeStyle::Solid));
 
         return box;
     }

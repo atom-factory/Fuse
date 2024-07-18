@@ -88,7 +88,7 @@ namespace Fuse {
                 view->m_Handle = nullptr;
                 return 0;
             case WM_PAINT: {
-                view->OnPaint(Color(0xFF1A1C29));
+                view->OnPaint();
                 return 0;
             }
             default:

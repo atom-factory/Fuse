@@ -9,6 +9,7 @@
 #include <optional>
 #include <string>
 #include <limits>
+#include <filesystem>
 
 using u8   = uint8_t;
 using u16  = uint16_t;
@@ -22,6 +23,9 @@ using f32  = float;
 using f64  = double;
 using wstr = std::wstring;
 using str  = std::string;
+
+namespace FileSystem = std::filesystem;
+using Path           = std::filesystem::path;
 
 template<class T>
 using Shared = std::shared_ptr<T>;

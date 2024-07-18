@@ -27,6 +27,7 @@ target_sources(Fuse PRIVATE
         Lib/Color.h
         Lib/Color.cpp
         Lib/Stroke.h
+        Lib/Font.h
         Lib/Platform/Platform.h
         # Interfaces
         ${INTERFACES}

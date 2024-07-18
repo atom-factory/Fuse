@@ -19,18 +19,21 @@
 #endif
 
 namespace Fuse {
-    void IPluginView::OnPaint(const Color& backgroundColor) const {
+    void IPluginView::OnPaint() const {
         if (const auto backend = GetBackend()) {
-            backend->BeginDrawing(backgroundColor);
-
             if (m_OwningCanvas) {
+                // Clear drawing area (canvas) with our specified background color
+                backend->BeginDrawing(m_OwningCanvas->BackgroundColor);
+
+                // Draw our component tree starting with the root returned from
+                // IPluginCanvas::Draw()
                 const auto root = m_OwningCanvas->Draw();
                 if (root) {
                     root->Draw(backend);
                 }
-            }
 
-            backend->EndDrawing();
+                backend->EndDrawing();
+            }
         }
     }
 
