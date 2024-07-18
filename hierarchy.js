@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "Fuse::BaseColor", "struct_fuse_1_1_base_color.html", null ],
     [ "Fuse::Color", "class_fuse_1_1_color.html", null ],
+    [ "Fuse::Font", "struct_fuse_1_1_font.html", null ],
     [ "Fuse::IBackend", "class_fuse_1_1_i_backend.html", [
       [ "Fuse::CairoBackend", "class_fuse_1_1_cairo_backend.html", null ],
       [ "Fuse::Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", null ]

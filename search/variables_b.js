@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width_359',['Width',['../class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71',1,'Fuse::Size']]]
+  ['thickness_368',['Thickness',['../struct_fuse_1_1_stroke.html#a169d79712adc97e7e55daf3a36c0c652',1,'Fuse::Stroke']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value_358',['value',['../struct_infinity_helper.html#a2713bc12f771e2df6c3370e4be4f97e3',1,'InfinityHelper']]]
+  ['size_366',['Size',['../struct_fuse_1_1_font.html#aed1473b64d0abd20c15cf0b4e3b1aaf8',1,'Fuse::Font']]],
+  ['style_367',['Style',['../struct_fuse_1_1_stroke.html#afc6084fb3768dfd0d2ca1ab7d673d5d9',1,'Fuse::Stroke']]]
 ];

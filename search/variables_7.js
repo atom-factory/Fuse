@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['r_355',['r',['../struct_fuse_1_1_base_color.html#a5aad55af5eed5f83c62bf3ed0a62f1bc',1,'Fuse::BaseColor']]]
+  ['name_363',['Name',['../struct_fuse_1_1_font.html#a91727b58c269fede93dc93e570b7f623',1,'Fuse::Font']]]
 ];

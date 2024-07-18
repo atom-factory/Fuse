@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['thickness_357',['Thickness',['../struct_fuse_1_1_stroke.html#a169d79712adc97e7e55daf3a36c0c652',1,'Fuse::Stroke']]]
+  ['r_365',['r',['../struct_fuse_1_1_base_color.html#a5aad55af5eed5f83c62bf3ed0a62f1bc',1,'Fuse::BaseColor']]]
 ];

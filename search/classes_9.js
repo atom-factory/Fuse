@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tmultichild_204',['TMultiChild',['../class_fuse_1_1_traits_1_1_t_multi_child.html',1,'Fuse::Traits']]],
-  ['tnotify_205',['TNotify',['../class_fuse_1_1_traits_1_1_t_notify.html',1,'Fuse::Traits']]],
-  ['tsinglechild_206',['TSingleChild',['../class_fuse_1_1_traits_1_1_t_single_child.html',1,'Fuse::Traits']]]
+  ['size_208',['Size',['../class_fuse_1_1_size.html',1,'Fuse']]],
+  ['size_3c_20u32_20_3e_209',['Size&lt; u32 &gt;',['../class_fuse_1_1_size.html',1,'Fuse']]],
+  ['stroke_210',['Stroke',['../struct_fuse_1_1_stroke.html',1,'Fuse']]]
 ];

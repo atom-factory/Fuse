@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['waylandpluginview_207',['WaylandPluginView',['../class_fuse_1_1_wayland_plugin_view.html',1,'Fuse']]],
-  ['win32pluginview_208',['Win32PluginView',['../class_fuse_1_1_win32_plugin_view.html',1,'Fuse']]]
+  ['tmultichild_211',['TMultiChild',['../class_fuse_1_1_traits_1_1_t_multi_child.html',1,'Fuse::Traits']]],
+  ['tnotify_212',['TNotify',['../class_fuse_1_1_traits_1_1_t_notify.html',1,'Fuse::Traits']]],
+  ['tsinglechild_213',['TSingleChild',['../class_fuse_1_1_traits_1_1_t_single_child.html',1,'Fuse::Traits']]]
 ];

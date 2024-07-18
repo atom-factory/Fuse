@@ -7,6 +7,9 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Color.cpp", "_color_8cpp.html", null ],
     [ "Color.h", "_color_8h.html", "_color_8h" ],
     [ "Converters.h", "_converters_8h.html", "_converters_8h" ],
+    [ "Font.h", "_font_8h.html", [
+      [ "Font", "struct_fuse_1_1_font.html", "struct_fuse_1_1_font" ]
+    ] ],
     [ "Fuse.h", "_fuse_8h.html", null ],
     [ "Maths.h", "_maths_8h.html", "_maths_8h" ],
     [ "Offset.cpp", "_offset_8cpp.html", null ],

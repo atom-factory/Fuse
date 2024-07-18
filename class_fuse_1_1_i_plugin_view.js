@@ -6,7 +6,7 @@ var class_fuse_1_1_i_plugin_view =
     [ "GetBackend", "class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca", null ],
     [ "GetSize", "class_fuse_1_1_i_plugin_view.html#a59cce5a2ea0d95ff13c8b721a6360486", null ],
     [ "Initialize", "class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40", null ],
-    [ "OnPaint", "class_fuse_1_1_i_plugin_view.html#a77ebe822e0446efc98da480f3c783571", null ],
+    [ "OnPaint", "class_fuse_1_1_i_plugin_view.html#a355504c927f26982ec61a332f500b81d", null ],
     [ "OnResize", "class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a", null ],
     [ "SetOwner", "class_fuse_1_1_i_plugin_view.html#a76d296eb34d924b647c65594dcfa9373", null ],
     [ "Shutdown", "class_fuse_1_1_i_plugin_view.html#acedfa14f026c1f9112f90b60db70ac7a", null ],

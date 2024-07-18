@@ -18,6 +18,7 @@ var namespace_fuse =
     [ "Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", "class_fuse_1_1_direct2_d_backend" ],
     [ "BaseColor", "struct_fuse_1_1_base_color.html", "struct_fuse_1_1_base_color" ],
     [ "Color", "class_fuse_1_1_color.html", "class_fuse_1_1_color" ],
+    [ "Font", "struct_fuse_1_1_font.html", "struct_fuse_1_1_font" ],
     [ "IBackend", "class_fuse_1_1_i_backend.html", "class_fuse_1_1_i_backend" ],
     [ "IComponent", "class_fuse_1_1_i_component.html", "class_fuse_1_1_i_component" ],
     [ "IPluginCanvas", "class_fuse_1_1_i_plugin_canvas.html", "class_fuse_1_1_i_plugin_canvas" ],

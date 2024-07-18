@@ -9,6 +9,7 @@ var _types_8h =
     [ "i64", "_types_8h.html#a86025ec3a0bc201ca893caac2cb2acbd", null ],
     [ "i8", "_types_8h.html#a196513547113c3f96a078ee3e658a6ef", null ],
     [ "Option", "_types_8h.html#a29f18a71c54462389b20eddc05831d10", null ],
+    [ "Path", "_types_8h.html#a43a47abff5619d41ebe5fc4c3a3ff4f6", null ],
     [ "Shared", "_types_8h.html#ab85a73a5af414b9d2136399ac7dc2a59", null ],
     [ "str", "_types_8h.html#a18ea49f06d5979901122a1600a36be74", null ],
     [ "u16", "_types_8h.html#a6dbf9516e516c901604625282c174aa4", null ],
