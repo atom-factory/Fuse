@@ -61,3 +61,9 @@ inline Display* GetDisplayFromWindow(const Window* window) {
     #endif
 #elif defined(__APPLE__)
 #endif
+
+inline void CheckNull(const void* ptr, const char* msg) {
+    if (ptr == nullptr) {
+        throw std::runtime_error(msg);
+    }
+}

@@ -40,9 +40,7 @@ namespace Fuse {
     public:
         explicit IPluginCanvas(void* parent) {
             m_View = IPluginView::Create(parent);
-            if (!m_View) {
-                throw std::runtime_error("Failed to create plugin view");
-            }
+            CheckNull(m_View, "Failed to create plugin view");
             m_View->SetOwner(this);
         }
 
