@@ -4,7 +4,7 @@ var dir_bb529883f3f23b824d8a8f7dea504bfc =
     [ "NSPluginView.h", "_n_s_plugin_view_8h.html", [
       [ "NSPluginView", "class_fuse_1_1_n_s_plugin_view.html", null ]
     ] ],
-    [ "Platform.h", "_platform_8h.html", null ],
+    [ "Platform.h", "_platform_8h.html", "_platform_8h" ],
     [ "WaylandPluginView.cpp", "_wayland_plugin_view_8cpp.html", null ],
     [ "WaylandPluginView.h", "_wayland_plugin_view_8h.html", [
       [ "WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", "class_fuse_1_1_wayland_plugin_view" ]

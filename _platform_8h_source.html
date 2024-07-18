@@ -152,6 +152,13 @@ $(document).ready(function(){initNavTree('_platform_8h_source.html',''); initRes
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#elif defined(__APPLE__)</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="_platform_8h.html#aeb2edbe2bfb9841a8047d7e16ecb9f6d">   65</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="_platform_8h.html#aeb2edbe2bfb9841a8047d7e16ecb9f6d">CheckNull</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> <span class="keywordtype">char</span>* msg) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (ptr == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(msg);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="ttc" id="a_platform_8h_html_aeb2edbe2bfb9841a8047d7e16ecb9f6d"><div class="ttname"><a href="_platform_8h.html#aeb2edbe2bfb9841a8047d7e16ecb9f6d">CheckNull</a></div><div class="ttdeci">void CheckNull(const void *ptr, const char *msg)</div><div class="ttdef"><b>Definition:</b> <a href="_platform_8h_source.html#l00065">Platform.h:65</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

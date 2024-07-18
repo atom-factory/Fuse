@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_fuse_1_1_x11_plugin_view.html#acf2d8c972397eae46dc85b6cc2f77b69":[2,0,0,15,0],
 "class_fuse_1_1_x11_plugin_view.html#ae99b6a044bb7fa6c9e1c7c4b8ddd15b1":[2,0,0,15,2],
 "class_fuse_1_1_x11_plugin_view.html#af97c8e63b482909287e6b5aa45d7b846":[2,0,0,15,1],
 "classes.html":[2,1],
