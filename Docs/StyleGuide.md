@@ -95,3 +95,9 @@ struct FColor; // or Color
 ```c++
 class PushButton final : public IComponent {};
 ```
+
+- `constexpr` variables have a `k` prefix, no underscore.
+
+```c++
+static constexpr unsigned kMouseLeft = 0;
+```

@@ -23,6 +23,8 @@ namespace Fuse {
 
         static LRESULT CALLBACK MessageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
+        void OnMouseMove(int x, int y) override;
+
     private:
         HWND m_Handle        = nullptr;
         HINSTANCE m_Instance = nullptr;

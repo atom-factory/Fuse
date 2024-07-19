@@ -64,11 +64,14 @@ namespace Fuse {
               m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
             CheckResult(hr, "Failed to create D2D brush.");
 
-            const auto rect = D2D1::RectF(position.X,
-                                          position.Y,
-                                          static_cast<f32>(size.Width),
-                                          static_cast<f32>(size.Height));
+            const auto width  = size.Width;
+            const auto height = size.Height;
+            const auto left   = position.X;
+            const auto top    = position.Y;
+            const auto right  = left + width;
+            const auto bottom = top + height;
 
+            const auto rect = D2D1::RectF(left, top, right, bottom);
             m_RenderTarget->FillRectangle(rect, brush);
 
             if (stroke.Thickness > 0) {
@@ -98,5 +101,13 @@ namespace Fuse {
             m_Factory->Release();
             m_Factory = nullptr;
         }
+    }
+
+    RECT Direct2DBackend::PrivateGetClientRect() const {
+        CheckNull(m_OwningView, "Owning view ptr null");
+        const auto view = m_OwningView->As<Win32PluginView>();
+        RECT rc;
+        ::GetClientRect(view->GetHandle(), &rc);
+        return rc;
     }
 }  // namespace Fuse

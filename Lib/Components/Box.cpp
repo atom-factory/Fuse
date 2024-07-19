@@ -18,4 +18,9 @@ namespace Fuse::Component {
     void Box::Draw(IBackend* backend) {
         backend->DrawRect(m_Size, m_Position, m_FillColor, m_Stroke, m_Rounded);
     }
+    void Box::OnPressed() {
+#if defined(PLATFORM_WINDOWS)
+        printf("OnPressed() called for this component.\n");
+#endif
+    }
 }  // namespace Fuse::Component

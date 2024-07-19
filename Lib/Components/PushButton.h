@@ -5,10 +5,9 @@
 #pragma once
 
 #include "Interfaces/Component.h"
-#include "Traits.h"
-
-using namespace Fuse::Traits;
+#include "Interfaces/Interactive.h"
 
 namespace Fuse::Component {
-    class PushButton {};
+    class PushButton : public IComponent,
+                       public IInteractive {};
 }  // namespace Fuse::Component

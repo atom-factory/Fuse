@@ -32,5 +32,7 @@ namespace Fuse {
     private:
         ID2D1Factory* m_Factory               = nullptr;
         ID2D1HwndRenderTarget* m_RenderTarget = nullptr;
+
+        RECT PrivateGetClientRect() const;
     };
 }  // namespace Fuse

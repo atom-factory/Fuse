@@ -3,6 +3,8 @@
 //
 
 #include "Win32PluginView.h"
+
+#include "Input.h"
 #include "Backends/Direct2DBackend.h"
 
 #include <cassert>
@@ -11,8 +13,8 @@ namespace Fuse {
     void Win32PluginView::Initialize(HWND parent, int nCmdShow) {
         RECT rc;
         ::GetClientRect(parent, &rc);
-        m_WindowSize.Width  = rc.right - rc.left;
-        m_WindowSize.Height = rc.bottom - rc.top;
+        m_ViewState.Size.Width  = rc.right - rc.left;
+        m_ViewState.Size.Height = rc.bottom - rc.top;
 
         m_Instance = ::GetModuleHandle(nullptr);
 
@@ -29,8 +31,8 @@ namespace Fuse {
                                      WS_CHILD | WS_VISIBLE,
                                      0,
                                      0,
-                                     static_cast<i32>(m_WindowSize.Width),
-                                     static_cast<i32>(m_WindowSize.Height),
+                                     static_cast<i32>(m_ViewState.Size.Width),
+                                     static_cast<i32>(m_ViewState.Size.Height),
                                      parent,
                                      nullptr,
                                      m_Instance,
@@ -87,12 +89,34 @@ namespace Fuse {
             case WM_CLOSE:
                 view->m_Handle = nullptr;
                 return 0;
-            case WM_PAINT: {
+            case WM_PAINT:
                 view->OnPaint();
                 return 0;
+            case WM_KEYDOWN:
+                view->OnKeyDown(0);
+                return 0;
+            case WM_KEYUP:
+                view->OnKeyUp(0);
+                return 0;
+            // WM_SIZE is handled by parent window
+            case WM_LBUTTONDOWN:
+                view->OnMouseButtonDown(Input::kMouseButtonLeft, 0, 0);
+                return 0;
+            case WM_LBUTTONUP:
+                view->OnMouseButtonUp(Input::kMouseButtonLeft, 0, 0);
+                return 0;
+            case WM_MOUSEMOVE: {
+                const auto xPos = GET_X_LPARAM(lParam);
+                const auto yPos = GET_Y_LPARAM(lParam);
+                view->OnMouseMove(xPos, yPos);
             }
+                return 0;
             default:
                 return DefWindowProc(hwnd, msg, wParam, lParam);
         }
+    }
+    void Win32PluginView::OnMouseMove(const int x, const int y) {
+        IPluginView::OnMouseMove(x, y);
+        DebugPrint("X: %d, Y: %d\n", x, y);
     }
 }  // namespace Fuse

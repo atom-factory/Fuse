@@ -9,12 +9,14 @@
 #include "Stroke.h"
 #include "Interfaces/Component.h"
 #include "Traits.h"
+#include "Interfaces/Interactive.h"
 
 using namespace Fuse::Traits;
 
 namespace Fuse::Component {
     class Box final : public IComponent,
-                      public TSingleChild {
+                      public TSingleChild,
+                      public IInteractive {
     public:
         explicit Box(const Size<u32>& size,
                      const Offset& position,
@@ -22,6 +24,8 @@ namespace Fuse::Component {
                      const Stroke& stroke = {},
                      bool rounded         = false);
         void Draw(IBackend* backend) override;
+
+        void OnPressed() override;
 
     private:
         Size<u32> m_Size;

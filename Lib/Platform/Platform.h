@@ -13,8 +13,18 @@
     #pragma comment(lib, "dwrite.lib")
 
     #include <Windows.h>
+    #include <windowsx.h>
     #include <d2d1.h>
     #include <dwrite.h>
+
+inline void DebugPrint(const char* fmt, ...) {
+    char buffer[256];
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf(buffer, sizeof(buffer), fmt, args);
+    va_end(args);
+    OutputDebugStringA(buffer);
+}
 
 template<class Interface>
 void SafeRelease(Interface** ppInterface) {

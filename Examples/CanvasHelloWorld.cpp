@@ -12,8 +12,8 @@ namespace Fuse {
                                             Color(0xFF363A55),
                                             Stroke(Color(0xFF1A1C29), 2.f, EStrokeStyle::Solid));
 
-        const auto secondBox = new Component::Box({200, 100}, {100, 10}, Color(0xFFFF0000));
-        const auto thirdBox  = new Component::Box({200, 300}, {150, 10}, Color(0xFFFF00FF));
+        const auto secondBox = new Component::Box({100, 50}, {300, 100}, Color(0xFFFF0000));
+        const auto thirdBox  = new Component::Box({100, 50}, {600, 200}, Color(0xFFFF00FF));
 
         secondBox->AddChild(thirdBox);
         box->AddChild(secondBox);
