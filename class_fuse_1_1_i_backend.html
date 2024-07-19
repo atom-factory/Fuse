@@ -130,8 +130,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeacc1f76d6001c5f6cd663dce11f01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af45cc2a1318ac7aebe2d6659c0457f23"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#af45cc2a1318ac7aebe2d6659c0457f23">DrawLine</a> ()</td></tr>
 <tr class="separator:af45cc2a1318ac7aebe2d6659c0457f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ebf96a611b592c48e6be907c964519"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#ad8ebf96a611b592c48e6be907c964519">DrawEllipse</a> ()</td></tr>
-<tr class="separator:ad8ebf96a611b592c48e6be907c964519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9da019e9b58cd722126be26716cb094"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#ad9da019e9b58cd722126be26716cb094">DrawEllipse</a> (const <a class="el" href="_types_8h.html#ad34d88453d37b65a09797bad37f2f527">f32</a> radius, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;fillColor, const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;stroke)</td></tr>
+<tr class="separator:ad9da019e9b58cd722126be26716cb094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61b9910cbbcbba7fc20da336fc14bd9a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#a61b9910cbbcbba7fc20da336fc14bd9a">DrawPath</a> ()</td></tr>
 <tr class="separator:a61b9910cbbcbba7fc20da336fc14bd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcae4a39f0ddddddb4b2a302fb8bcffb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#abcae4a39f0ddddddb4b2a302fb8bcffb">DrawString</a> ()</td></tr>
@@ -236,8 +236,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ad8ebf96a611b592c48e6be907c964519"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ebf96a611b592c48e6be907c964519">&#9670;&nbsp;</a></span>DrawEllipse()</h2>
+<a id="ad9da019e9b58cd722126be26716cb094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9da019e9b58cd722126be26716cb094">&#9670;&nbsp;</a></span>DrawEllipse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,8 +248,31 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">virtual void Fuse::IBackend::DrawEllipse </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="_types_8h.html#ad34d88453d37b65a09797bad37f2f527">f32</a>&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;&#160;</td>
+          <td class="paramname"><em>stroke</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -259,7 +282,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a57e1b203fb98488fd5852627dc130e66">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#a1142d985b526c62416e48fc37102e2b4">Fuse::CairoBackend</a>.</p>
+<p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a5cb3f18828c02722f55038a0569ee726">Fuse::Direct2DBackend</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00046">46</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
@@ -319,7 +342,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a585bc01ce5dcbcea4a5d615c81077c57">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#af3c4f757cae70bbb4d0246703c74d08c">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00047">47</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00050">50</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -406,7 +429,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a7d24011658401a6c441cadc2708cf2fb">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#a42425410e50f14b387c7fcd2833cf448">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00048">48</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00051">51</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -600,7 +623,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00053">53</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00056">56</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
