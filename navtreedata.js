@@ -30,7 +30,13 @@ var NAVTREE =
       [ "Prerequisites", "md__docs__quickstart.html#autotoc_md2", null ],
       [ "Acquire Fuse", "md__docs__quickstart.html#autotoc_md3", [
         [ "Building from source", "md__docs__quickstart.html#autotoc_md4", null ]
-      ] ]
+      ] ],
+      [ "Creating a project", "md__docs__quickstart.html#autotoc_md5", [
+        [ "With VST3 SDK", "md__docs__quickstart.html#autotoc_md6", null ],
+        [ "Without VST3 SDK", "md__docs__quickstart.html#autotoc_md7", null ]
+      ] ],
+      [ "\"Hello World\" Example", "md__docs__quickstart.html#autotoc_md8", null ],
+      [ "Troubleshooting", "md__docs__quickstart.html#autotoc_md9", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
