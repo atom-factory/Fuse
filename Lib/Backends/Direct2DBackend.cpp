@@ -84,7 +84,31 @@ namespace Fuse {
         }
     }
 
-    void Direct2DBackend::DrawEllipse() {}
+    void Direct2DBackend::DrawEllipse(const f32 radius,
+                                      const Offset& position,
+                                      const Color& fillColor,
+                                      const Stroke& stroke) {
+        if (m_RenderTarget) {
+            ID2D1SolidColorBrush* brush = nullptr;
+            auto hr =
+              m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(fillColor.Value()), &brush);
+            CheckResult(hr, "Failed to create D2D brush.");
+
+            const auto left = position.X;
+            const auto top  = position.Y;
+
+            const auto ellipse = D2D1::Ellipse(D2D1::Point2F(left, top), radius, radius);
+            m_RenderTarget->FillEllipse(ellipse, brush);
+
+            if (stroke.Thickness > 0) {
+                ID2D1SolidColorBrush* strokeBrush = nullptr;
+                hr = m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(stroke.Color.Value()),
+                                                           &strokeBrush);
+                CheckResult(hr, "Failed to create D2D brush.");
+                m_RenderTarget->DrawEllipse(ellipse, strokeBrush, stroke.Thickness, nullptr);
+            }
+        }
+    }
 
     void Direct2DBackend::DrawLine() {}
 

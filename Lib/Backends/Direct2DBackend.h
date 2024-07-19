@@ -21,7 +21,10 @@ namespace Fuse {
                       const Color& fillColor,
                       const Stroke& stroke,
                       bool rounded) override;
-        void DrawEllipse() override;
+        void DrawEllipse(f32 radius,
+                         const Offset& position,
+                         const Color& fillColor,
+                         const Stroke& stroke) override;
         void DrawLine() override;
         void DrawPath() override;
         void DrawString() override;

@@ -43,7 +43,10 @@ namespace Fuse {
                               const Stroke& stroke,
                               const bool rounded) {}
         virtual void DrawLine() {}
-        virtual void DrawEllipse() {}
+        virtual void DrawEllipse(const f32 radius,
+                                 const Offset& position,
+                                 const Color& fillColor,
+                                 const Stroke& stroke) {}
         virtual void DrawPath() {}
         virtual void DrawString() {}
 
