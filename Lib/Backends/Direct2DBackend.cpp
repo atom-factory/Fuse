@@ -13,11 +13,10 @@ namespace Fuse {
     void Direct2DBackend::Initialize(IPluginView* owner) {
         IBackend::Initialize(owner);
 
-        if (!m_OwningView) {
-            throw std::runtime_error("Direct2DBackend::Initialize: m_OwningView is null. Ensure "
-                                     "IBackend::Initialize(owner) "
-                                     "was called first in the Initialize() method.");
-        }
+        CheckNull(m_OwningView,
+                  "Direct2DBackend::Initialize: m_OwningView is null. Ensure "
+                  "IBackend::Initialize(owner) "
+                  "was called first in the Initialize() method.");
 
         auto hr = ::D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &m_Factory);
         CheckResult(hr, "Failed to create Direct2D Factory");

@@ -11,7 +11,7 @@ plug-ins with Fuse.
 3. [Creating a project](#creating-a-project)
     1. [With the VST3 SDK](#with-vst3-sdk)
     2. [Without the VST3 SDK](#without-vst3-sdk)
-4. ["Hello World" Plugin](#hello-world-plugin)
+4. ["Hello World" Example](#hello-world-example)
 5. [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
@@ -52,3 +52,23 @@ Doing this allows you to simply link Fuse like so:
 ```cmake
 target_link_libraries(MyVSTPlugin PRIVATE Fuse)
 ```
+
+## Creating a project
+
+TODO
+
+### With VST3 SDK
+
+TODO
+
+### Without VST3 SDK
+
+TODO
+
+## "Hello World" Example
+
+TODO
+
+## Troubleshooting
+
+TODO
