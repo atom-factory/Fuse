@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('class_fuse_1_1_i_component.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_fuse_1_1_i_component-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Fuse::IComponent Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -114,14 +115,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a21b2176245303c6ffbd6eeee18b126fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d260543559846f37acff597f9fb73a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#ab9d260543559846f37acff597f9fb73a">HasChildren</a> ()</td></tr>
 <tr class="separator:ab9d260543559846f37acff597f9fb73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacfb95a0f0141ab7b05fb2cd88991dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#aacfb95a0f0141ab7b05fb2cd88991dea">GetChild</a> ()</td></tr>
-<tr class="separator:aacfb95a0f0141ab7b05fb2cd88991dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46b7082f631209980c23e05164f0a15"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#ac46b7082f631209980c23e05164f0a15">GetChildren</a> ()</td></tr>
-<tr class="separator:ac46b7082f631209980c23e05164f0a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4476690d23a5ef902ce0c8a93353c843"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#a4476690d23a5ef902ce0c8a93353c843">AddChild</a> (<a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *component)</td></tr>
+<tr class="separator:a4476690d23a5ef902ce0c8a93353c843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f788475ad315d412738f4b9afc3e6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#a3f788475ad315d412738f4b9afc3e6fe">GetChild</a> () const</td></tr>
+<tr class="separator:a3f788475ad315d412738f4b9afc3e6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70000f42ba0f47bf59a2ffab9d291df9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_types_8h.html#a29f18a71c54462389b20eddc05831d10">Option</a>&lt; <a class="el" href="_types_8h.html#a81fe4d2f62958ae48f36d6a3beb16bb1">Vector</a>&lt; <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#a70000f42ba0f47bf59a2ffab9d291df9">GetChildren</a> ()</td></tr>
+<tr class="separator:a70000f42ba0f47bf59a2ffab9d291df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a9c03f468ac68b990437c51d70773f623"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_component.html#a9c03f468ac68b990437c51d70773f623">m_Children</a></td></tr>
+<tr class="separator:a9c03f468ac68b990437c51d70773f623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00012">12</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00013">13</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acdc59a1531ae01aee260cfba80370cb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acdc59a1531ae01aee260cfba80370cb9">&#9670;&nbsp;</a></span>~IComponent()</h2>
@@ -149,6 +157,34 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4476690d23a5ef902ce0c8a93353c843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4476690d23a5ef902ce0c8a93353c843">&#9670;&nbsp;</a></span>AddChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fuse::IComponent::AddChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *&#160;</td>
+          <td class="paramname"><em>component</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00029">29</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+
+</div>
+</div>
 <a id="a4e668a7095c6a238a00ae4c6eed890ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e668a7095c6a238a00ae4c6eed890ce">&#9670;&nbsp;</a></span>Draw()</h2>
 
@@ -177,8 +213,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aacfb95a0f0141ab7b05fb2cd88991dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacfb95a0f0141ab7b05fb2cd88991dea">&#9670;&nbsp;</a></span>GetChild()</h2>
+<a id="a3f788475ad315d412738f4b9afc3e6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f788475ad315d412738f4b9afc3e6fe">&#9670;&nbsp;</a></span>GetChild()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +226,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="class_fuse_1_1_i_component.html">IComponent</a>* Fuse::IComponent::GetChild </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -200,12 +236,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00028">28</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00033">33</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
 
 </div>
 </div>
-<a id="ac46b7082f631209980c23e05164f0a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac46b7082f631209980c23e05164f0a15">&#9670;&nbsp;</a></span>GetChildren()</h2>
+<a id="a70000f42ba0f47bf59a2ffab9d291df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70000f42ba0f47bf59a2ffab9d291df9">&#9670;&nbsp;</a></span>GetChildren()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +250,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="class_fuse_1_1_i_component.html">IComponent</a>*&gt;&amp; Fuse::IComponent::GetChildren </td>
+          <td class="memname"><a class="el" href="_types_8h.html#a29f18a71c54462389b20eddc05831d10">Option</a>&lt;<a class="el" href="_types_8h.html#a81fe4d2f62958ae48f36d6a3beb16bb1">Vector</a>&lt;<a class="el" href="class_fuse_1_1_i_component.html">IComponent</a>*&gt; &gt; Fuse::IComponent::GetChildren </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -227,7 +263,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00037">37</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00041">41</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +290,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00018">18</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00019">19</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +317,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00023">23</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00024">24</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9c03f468ac68b990437c51d70773f623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c03f468ac68b990437c51d70773f623">&#9670;&nbsp;</a></span>m_Children</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_fuse_1_1_i_component.html">IComponent</a>*&gt; Fuse::IComponent::m_Children</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_component_8h_source.html#l00050">50</a> of file <a class="el" href="_component_8h_source.html">Component.h</a>.</p>
 
 </div>
 </div>

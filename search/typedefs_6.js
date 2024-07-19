@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wstr_395',['wstr',['../_types_8h.html#ad4e272cc9cf89fa5396bd5396154bde4',1,'Types.h']]]
+  ['vector_391',['Vector',['../_types_8h.html#a81fe4d2f62958ae48f36d6a3beb16bb1',1,'Types.h']]]
 ];

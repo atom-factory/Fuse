@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_fuse_1_1_x11_plugin_view.html#acf2d8c972397eae46dc85b6cc2f77b69":[3,0,0,15,0],
-"class_fuse_1_1_x11_plugin_view.html#ae99b6a044bb7fa6c9e1c7c4b8ddd15b1":[3,0,0,15,2],
 "class_fuse_1_1_x11_plugin_view.html#af97c8e63b482909287e6b5aa45d7b846":[3,0,0,15,1],
 "classes.html":[3,1],
 "dir_5baf679cf4943df8904dce5d41d4d3dc.html":[4,0,0],
@@ -15,10 +13,8 @@ var NAVTREEINDEX1 =
 "functions_func.html":[3,3,1],
 "functions_vars.html":[3,3,2],
 "globals.html":[4,1,0],
-"globals_defs.html":[4,1,4],
 "globals_func.html":[4,1,1],
-"globals_type.html":[4,1,3],
-"globals_vars.html":[4,1,2],
+"globals_type.html":[4,1,2],
 "hierarchy.html":[3,2],
 "index.html":[],
 "md__docs__quickstart.html":[0],

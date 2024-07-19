@@ -7,8 +7,8 @@ var annotated_dup =
         [ "RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ]
       ] ],
       [ "Traits", "namespace_fuse_1_1_traits.html", [
-        [ "TSingleChild", "class_fuse_1_1_traits_1_1_t_single_child.html", "class_fuse_1_1_traits_1_1_t_single_child" ],
-        [ "TMultiChild", "class_fuse_1_1_traits_1_1_t_multi_child.html", "class_fuse_1_1_traits_1_1_t_multi_child" ],
+        [ "TSingleChild", "class_fuse_1_1_traits_1_1_t_single_child.html", null ],
+        [ "TMultiChild", "class_fuse_1_1_traits_1_1_t_multi_child.html", null ],
         [ "TNotify", "class_fuse_1_1_traits_1_1_t_notify.html", null ]
       ] ],
       [ "CairoBackend", "class_fuse_1_1_cairo_backend.html", "class_fuse_1_1_cairo_backend" ],

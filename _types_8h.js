@@ -1,7 +1,6 @@
 var _types_8h =
 [
     [ "InfinityHelper", "struct_infinity_helper.html", null ],
-    [ "None", "_types_8h.html#af4e8bc2d192090ff502229b33c24a389", null ],
     [ "f32", "_types_8h.html#ad34d88453d37b65a09797bad37f2f527", null ],
     [ "f64", "_types_8h.html#abc2f107791bd7c1d49ecf0f168c085a3", null ],
     [ "i16", "_types_8h.html#a977685259fe8059c48e92450967d46a8", null ],
@@ -17,8 +16,7 @@ var _types_8h =
     [ "u64", "_types_8h.html#a1af9f95651e921615e75917a6dd1b574", null ],
     [ "u8", "_types_8h.html#a987e4d6cf789cb59dbb390728271e4d6", null ],
     [ "Unique", "_types_8h.html#a3f5fee7f23d83d72c847dc16c50ee0ce", null ],
+    [ "Vector", "_types_8h.html#a81fe4d2f62958ae48f36d6a3beb16bb1", null ],
     [ "wstr", "_types_8h.html#ad4e272cc9cf89fa5396bd5396154bde4", null ],
-    [ "Infinity", "_types_8h.html#a4f512f1ba76fc3f548550130e2b22798", null ],
-    [ "MAX_SIZE", "_types_8h.html#a7ac765bdfaf6654021b9f3617c459087", null ],
-    [ "MAX_SIZE_F", "_types_8h.html#a4fd99c81932c5929817dcdda10b0a9e5", null ]
+    [ "Infinity", "_types_8h.html#a4f512f1ba76fc3f548550130e2b22798", null ]
 ];
