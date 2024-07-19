@@ -7,7 +7,7 @@ DOXYFILE_ENCODING = UTF-8
 PROJECT_NAME = Fuse
 PROJECT_NUMBER = 0.0.1
 PROJECT_BRIEF = "2D cross-platform vector graphics library for audio plugin development"
-PROJECT_LOGO = Docs/logo.png
+PROJECT_LOGO = Docs/Res/logo.png
 OUTPUT_DIRECTORY = Docs
 CREATE_SUBDIRS = NO
 CREATE_SUBDIRS_LEVEL = 8
@@ -124,7 +124,7 @@ WARN_LOGFILE =
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 INPUT = ./Lib \
-        Docs/Quickstart.md
+        ./Docs
 INPUT_ENCODING = UTF-8
 FILE_PATTERNS = *.c \
                 *.cc \
@@ -155,6 +155,7 @@ FILE_PATTERNS = *.c \
                 *.inc \
                 *.m \
                 *.mm \
+                *.md \
                 *.dox \
                 *.py \
                 *.pyw \
@@ -222,7 +223,7 @@ HTML_FILE_EXTENSION = .html
 HTML_HEADER =
 HTML_FOOTER =
 HTML_STYLESHEET =
-HTML_EXTRA_STYLESHEET = Docs/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET = Docs/Res/doxygen-awesome.css
 HTML_EXTRA_FILES =
 HTML_COLORSTYLE_HUE = 220
 HTML_COLORSTYLE_SAT = 100

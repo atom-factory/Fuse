@@ -48,8 +48,8 @@ int main() {
 - Arguments are `camelCase`.
 
 ```c++
-int Add(const int& valA, const int& valB, out* outVal) {
-    *c = a + b;
+int Add(const int& valA, const int& valB, int* outVal) {
+    *outVal = valA + valB;
 }
 ```
 
@@ -73,7 +73,7 @@ struct FColor; // or Color
 - Class headers and definitions are placed in the same directory.
 
 ```
-- Lib
+▼ Lib
   - Color.h
   - Color.cpp
 ```
@@ -82,11 +82,12 @@ struct FColor; // or Color
 - Interfaces are typically saved in their own subdirectory.
 
 ```
-- Lib
-  - Interfaces
+▼ Lib
+  ▼ Interfaces
     - Object.h
   - Color.h
   - Color.cpp
+  - Helpers.inl
 ```
 
 - All classes that implement an interface should be marked `final`.

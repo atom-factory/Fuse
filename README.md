@@ -1,4 +1,4 @@
-<img src="Docs/logo.png" width="128">
+<img src="Docs/Res/logo.png" width="128">
 
 # Fuse
 
