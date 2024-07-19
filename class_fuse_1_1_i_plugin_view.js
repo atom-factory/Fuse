@@ -12,7 +12,7 @@ var class_fuse_1_1_i_plugin_view =
     [ "OnMouseButtonDown", "class_fuse_1_1_i_plugin_view.html#a085395d7709254ffb5247b19f824f8bd", null ],
     [ "OnMouseButtonUp", "class_fuse_1_1_i_plugin_view.html#a7c0b4bab5a4484f345325f80d76ecccd", null ],
     [ "OnMouseMove", "class_fuse_1_1_i_plugin_view.html#a24b84c79786761608883598480c0e39b", null ],
-    [ "OnPaint", "class_fuse_1_1_i_plugin_view.html#a355504c927f26982ec61a332f500b81d", null ],
+    [ "OnPaint", "class_fuse_1_1_i_plugin_view.html#a6d680a8a83bd6e0ac3e20e771f54ac03", null ],
     [ "OnResize", "class_fuse_1_1_i_plugin_view.html#a647c6de9561b87ff5c37b6c632ab820a", null ],
     [ "SetOwner", "class_fuse_1_1_i_plugin_view.html#a76d296eb34d924b647c65594dcfa9373", null ],
     [ "Shutdown", "class_fuse_1_1_i_plugin_view.html#acedfa14f026c1f9112f90b60db70ac7a", null ],
