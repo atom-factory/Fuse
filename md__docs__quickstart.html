@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fuse: README</title>
+<title>Fuse: Quickstart Guide</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__docs__quickstart.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,16 +86,52 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">README </div>  </div>
+<div class="title">Quickstart Guide </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><img src="Docs/logo.png" alt="" width="128" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md0"></a>
-Fuse</h1>
-<p><b><a class="el" href="namespace_fuse.html">Fuse</a></b> is a 2D cross-platform vector graphics library for audio plugin development.</p>
-<h3><a class="anchor" id="autotoc_md1"></a>
-@ref /home/runner/work/Fuse/Fuse/Docs/Quickstart.md "Quickstart Guide"</h3>
-</div></div><!-- contents -->
+<div class="textblock"><p>This guide should help you get up and running with writing VST3 plug-ins with <a class="el" href="namespace_fuse.html">Fuse</a>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Table of Contents</h1>
+<ol type="1">
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#acquire-fuse">Acquire Fuse</a><ol type="a">
+<li><a href="#building-from-source">Building from source</a></li>
+</ol>
+</li>
+<li><a href="#creating-a-project">Creating a project</a><ol type="a">
+<li><a href="#with-vst3-sdk">With the VST3 SDK</a></li>
+<li><a href="#without-vst3-sdk">Without the VST3 SDK</a></li>
+</ol>
+</li>
+<li><a href="#hello-world-plugin">"Hello World" Plugin</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Prerequisites</h1>
+<p>Let's go over some prerequisites first:</p>
+<ol type="1">
+<li><b>VST3 SDK</b> from Steinberg (<a href="https://steinberg.net/vst3sdk">Download</a>) <blockquote class="doxtable">
+<p>See our VST3 SDK Quickstart guide for setting this up <a href="https://github.com/atom-factory/vst3-sdk-quickstart">here</a>. </p>
+</blockquote>
+The SDK isn't <em>required</em> to compile <a class="el" href="namespace_fuse.html">Fuse</a> and run the examples, but <a class="el" href="namespace_fuse.html">Fuse</a> is intended to be used in a VST3 project by design.</li>
+<li><b>A C/C++ compiler</b>. Recommendations below:<ul>
+<li>Windows: MSVC</li>
+<li>Linux: Clang or GCC</li>
+<li>macOS: Clang or GCC</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Acquire Fuse</h1>
+<p>You can get <a class="el" href="namespace_fuse.html">Fuse</a> either by cloning the <code>master</code> branch source and building yourself or by downloading one of the pre-compiled binaries over at <a href="https://github.com/atom-factory/Fuse/releases/latest">releases</a>.</p>
+<p><a class="el" href="namespace_fuse.html">Fuse</a> in required to be statically linked when used in a VST3 SDK project. This requirement doesn't exist if being used outside of this context.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Building from source</h2>
+<p>If building <a class="el" href="namespace_fuse.html">Fuse</a> from source, we recommend simply cloning the repo to the root of your project directory and adding it as a subdirectory to your <code>CMakeLists.txt</code>:</p>
+<div class="fragment"><div class="line">add_subdirectory(Fuse)</div>
+</div><!-- fragment --><p>This will build <a class="el" href="namespace_fuse.html">Fuse</a> along with your project and updates can be acquired by simply pulling the repo. Doing this allows you to simply link <a class="el" href="namespace_fuse.html">Fuse</a> like so:</p>
+<div class="fragment"><div class="line">target_link_libraries(MyVSTPlugin PRIVATE Fuse)</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,5 @@
 var namespace_fuse =
 [
-    [ "@ref /home/runner/work/Fuse/Fuse/Docs/Quickstart.md \"Quickstart Guide\"", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
     [ "Colors", "namespace_fuse_1_1_colors.html", null ],
     [ "Component", "namespace_fuse_1_1_component.html", "namespace_fuse_1_1_component" ],
     [ "Converters", "namespace_fuse_1_1_converters.html", [

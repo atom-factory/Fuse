@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme_399',['README',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['quickstart_20guide_399',['Quickstart Guide',['../md__docs__quickstart.html',1,'']]]
 ];
