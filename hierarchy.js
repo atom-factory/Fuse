@@ -23,6 +23,7 @@ var hierarchy =
     ] ],
     [ "Fuse::NSPluginView", "class_fuse_1_1_n_s_plugin_view.html", null ],
     [ "Fuse::Offset", "class_fuse_1_1_offset.html", null ],
+    [ "Fuse::Rectangle", "class_fuse_1_1_rectangle.html", null ],
     [ "Fuse::Component::RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ],
     [ "Fuse::Size< T >", "class_fuse_1_1_size.html", null ],
     [ "Fuse::Size< u32 >", "class_fuse_1_1_size.html", null ],

@@ -17,6 +17,10 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Offset.h", "_offset_8h.html", [
       [ "Offset", "class_fuse_1_1_offset.html", "class_fuse_1_1_offset" ]
     ] ],
+    [ "Rectangle.cpp", "_rectangle_8cpp.html", null ],
+    [ "Rectangle.h", "_rectangle_8h.html", [
+      [ "Rectangle", "class_fuse_1_1_rectangle.html", "class_fuse_1_1_rectangle" ]
+    ] ],
     [ "Size.h", "_size_8h.html", [
       [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
     ] ],

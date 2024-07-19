@@ -31,6 +31,7 @@ var namespace_fuse =
     [ "WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", "class_fuse_1_1_wayland_plugin_view" ],
     [ "Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", "class_fuse_1_1_win32_plugin_view" ],
     [ "X11PluginView", "class_fuse_1_1_x11_plugin_view.html", "class_fuse_1_1_x11_plugin_view" ],
+    [ "Rectangle", "class_fuse_1_1_rectangle.html", "class_fuse_1_1_rectangle" ],
     [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ],
     [ "Stroke", "struct_fuse_1_1_stroke.html", "struct_fuse_1_1_stroke" ],
     [ "EStrokeStyle", "namespace_fuse.html#ac51b7873bb04126bdf64a7facaec76ea", [
