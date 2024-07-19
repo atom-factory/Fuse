@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_373',['X',['../class_fuse_1_1_offset.html#aae9e0eeb782bd28042e3b6ff8e5fe8e1',1,'Fuse::Offset']]]
+  ['weight_415',['Weight',['../struct_fuse_1_1_font.html#afcc0ac02e789dff9c80c82933929d6dc',1,'Fuse::Font']]],
+  ['width_416',['Width',['../class_fuse_1_1_size.html#a5994d0f8f4141b6fd41f655d9ad53c71',1,'Fuse::Size']]]
 ];

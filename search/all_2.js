@@ -10,5 +10,6 @@ var searchData=
   ['component_2eh_24',['Component.h',['../_component_8h.html',1,'']]],
   ['converters_2eh_25',['Converters.h',['../_converters_8h.html',1,'']]],
   ['copy_26',['Copy',['../class_fuse_1_1_size.html#a3269e0203f19f373007f7a280e14423e',1,'Fuse::Size']]],
-  ['create_27',['Create',['../class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9',1,'Fuse::IPluginView']]]
+  ['create_27',['Create',['../class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9',1,'Fuse::IPluginView']]],
+  ['currentmousepos_28',['CurrentMousePos',['../struct_fuse_1_1_view_state.html#a035958572a6c48a50443c103a0ac6f8e',1,'Fuse::ViewState']]]
 ];

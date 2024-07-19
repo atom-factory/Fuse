@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pathondisk_365',['PathOnDisk',['../struct_fuse_1_1_font.html#aeb20adc4bdf485b9bd076496f934ada6',1,'Fuse::Font']]]
+  ['name_408',['Name',['../struct_fuse_1_1_font.html#a91727b58c269fede93dc93e570b7f623',1,'Fuse::Font']]]
 ];

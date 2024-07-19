@@ -9,6 +9,7 @@ var namespace_fuse =
       [ "RGBAToHex", "namespace_fuse_1_1_converters.html#abcf91497cd2f8cf9ee2221b2ba8fe3cb", null ],
       [ "WideToANSI", "namespace_fuse_1_1_converters.html#a55bdafbd19c27dafecb10bd11ceb3a35", null ]
     ] ],
+    [ "Input", "namespace_fuse_1_1_input.html", null ],
     [ "Math", "namespace_fuse_1_1_math.html", [
       [ "IsFinite", "namespace_fuse_1_1_math.html#a46c6a7f4a0f31958e5742bbe1113cdd5", null ],
       [ "Lerp", "namespace_fuse_1_1_math.html#a93b07e91cc74886c4dfc8c609a589748", null ]
@@ -21,7 +22,9 @@ var namespace_fuse =
     [ "Font", "struct_fuse_1_1_font.html", "struct_fuse_1_1_font" ],
     [ "IBackend", "class_fuse_1_1_i_backend.html", "class_fuse_1_1_i_backend" ],
     [ "IComponent", "class_fuse_1_1_i_component.html", "class_fuse_1_1_i_component" ],
+    [ "IInteractive", "class_fuse_1_1_i_interactive.html", "class_fuse_1_1_i_interactive" ],
     [ "IPluginCanvas", "class_fuse_1_1_i_plugin_canvas.html", "class_fuse_1_1_i_plugin_canvas" ],
+    [ "ViewState", "struct_fuse_1_1_view_state.html", "struct_fuse_1_1_view_state" ],
     [ "IPluginView", "class_fuse_1_1_i_plugin_view.html", "class_fuse_1_1_i_plugin_view" ],
     [ "Offset", "class_fuse_1_1_offset.html", "class_fuse_1_1_offset" ],
     [ "NSPluginView", "class_fuse_1_1_n_s_plugin_view.html", null ],

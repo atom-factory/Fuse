@@ -96,18 +96,18 @@ $(document).ready(function(){initNavTree('_push_button_8h_source.html',''); init
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Interfaces/Component.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_traits_8h.html">Traits.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_interactive_8h.html">Interfaces/Interactive.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespace_fuse_1_1_traits.html">Fuse::Traits</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse_1_1_component.html">Fuse::Component</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_fuse_1_1_component_1_1_push_button.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_fuse_1_1_component_1_1_push_button.html">PushButton</a> {};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}  <span class="comment">// namespace Fuse::Component</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_fuse_1_1_component.html">Fuse::Component</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_fuse_1_1_component_1_1_push_button.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_fuse_1_1_component_1_1_push_button.html">PushButton</a> : <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_i_component.html">IComponent</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                       <span class="keyword">public</span> <a class="code" href="class_fuse_1_1_i_interactive.html">IInteractive</a> {};</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}  <span class="comment">// namespace Fuse::Component</span></div>
 <div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
-<div class="ttc" id="a_traits_8h_html"><div class="ttname"><a href="_traits_8h.html">Traits.h</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_component_1_1_push_button_html"><div class="ttname"><a href="class_fuse_1_1_component_1_1_push_button.html">Fuse::Component::PushButton</a></div><div class="ttdef"><b>Definition:</b> <a href="_push_button_8h_source.html#l00013">PushButton.h:13</a></div></div>
+<div class="ttc" id="a_interactive_8h_html"><div class="ttname"><a href="_interactive_8h.html">Interactive.h</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_component_1_1_push_button_html"><div class="ttname"><a href="class_fuse_1_1_component_1_1_push_button.html">Fuse::Component::PushButton</a></div><div class="ttdef"><b>Definition:</b> <a href="_push_button_8h_source.html#l00011">PushButton.h:12</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_component_html"><div class="ttname"><a href="class_fuse_1_1_i_component.html">Fuse::IComponent</a></div><div class="ttdef"><b>Definition:</b> <a href="_component_8h_source.html#l00013">Component.h:13</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_interactive_html"><div class="ttname"><a href="class_fuse_1_1_i_interactive.html">Fuse::IInteractive</a></div><div class="ttdef"><b>Definition:</b> <a href="_interactive_8h_source.html#l00008">Interactive.h:8</a></div></div>
 <div class="ttc" id="anamespace_fuse_1_1_component_html"><div class="ttname"><a href="namespace_fuse_1_1_component.html">Fuse::Component</a></div><div class="ttdef"><b>Definition:</b> <a href="_box_8cpp_source.html#l00009">Box.cpp:9</a></div></div>
-<div class="ttc" id="anamespace_fuse_1_1_traits_html"><div class="ttname"><a href="namespace_fuse_1_1_traits.html">Fuse::Traits</a></div><div class="ttdef"><b>Definition:</b> <a href="_traits_8h_source.html#l00014">Traits.h:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

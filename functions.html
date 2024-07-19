@@ -145,6 +145,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>Create()
 : <a class="el" href="class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9">Fuse::IPluginView</a>
 </li>
+<li>CurrentMousePos
+: <a class="el" href="struct_fuse_1_1_view_state.html#a035958572a6c48a50443c103a0ac6f8e">Fuse::ViewState</a>
+</li>
 </ul>
 
 
@@ -254,6 +257,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>GetView()
 : <a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a3250e1b6382d064a47c2b13529071951">Fuse::IPluginCanvas</a>
 </li>
+<li>GetViewState()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#a5baafbda69c57a02305ef7f8162feb92">Fuse::IPluginView</a>
+</li>
 <li>GetWindow()
 : <a class="el" href="class_fuse_1_1_x11_plugin_view.html#ae99b6a044bb7fa6c9e1c7c4b8ddd15b1">Fuse::X11PluginView</a>
 </li>
@@ -307,6 +313,21 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
+<li>LastKeyDown
+: <a class="el" href="struct_fuse_1_1_view_state.html#a5ec876e93c13b52dab30c8a73b446b9c">Fuse::ViewState</a>
+</li>
+<li>LastKeyUp
+: <a class="el" href="struct_fuse_1_1_view_state.html#aa9fa3803bf513f0c77ef2a9be840cc31">Fuse::ViewState</a>
+</li>
+<li>LastMouseDown
+: <a class="el" href="struct_fuse_1_1_view_state.html#ac1ff3b31040c18d066eb825bbcae4bff">Fuse::ViewState</a>
+</li>
+<li>LastMousePos
+: <a class="el" href="struct_fuse_1_1_view_state.html#afe98ed79119c13ddd8f4660d511001af">Fuse::ViewState</a>
+</li>
+<li>LastMouseUp
+: <a class="el" href="struct_fuse_1_1_view_state.html#a6cb510373a59155c33b24bc92d6da847">Fuse::ViewState</a>
+</li>
 <li>Lerp()
 : <a class="el" href="class_fuse_1_1_color.html#a988686bb6fb085e94d0be95ad41a9de0">Fuse::Color</a>
 , <a class="el" href="class_fuse_1_1_offset.html#af75219ee99b3b43f5e4671899eb5b428">Fuse::Offset</a>
@@ -339,8 +360,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>m_View
 : <a class="el" href="class_fuse_1_1_i_plugin_canvas.html#ae4aa36d9b1fb5e87c0d1e4f89ee3e4ce">Fuse::IPluginCanvas</a>
 </li>
-<li>m_WindowSize
-: <a class="el" href="class_fuse_1_1_i_plugin_view.html#ab08f266b25bbd1fd80b9e6b6e989bf6e">Fuse::IPluginView</a>
+<li>m_ViewState
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#acfc3ff3a6636a7f51c32fda0bc270291">Fuse::IPluginView</a>
 </li>
 <li>MessageHandler()
 : <a class="el" href="class_fuse_1_1_win32_plugin_view.html#a64f1b10f7ff0d2c94227e3101da9507a">Fuse::Win32PluginView</a>
@@ -359,8 +380,37 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>Offset()
 : <a class="el" href="class_fuse_1_1_offset.html#a12243b34c20e2e21f9eea77387535237">Fuse::Offset</a>
 </li>
+<li>OnEnter()
+: <a class="el" href="class_fuse_1_1_i_interactive.html#af6e2f23924591e648f2862d944db6491">Fuse::IInteractive</a>
+</li>
+<li>OnExit()
+: <a class="el" href="class_fuse_1_1_i_interactive.html#ae96e1d3f1e66524faea660d5a768c50c">Fuse::IInteractive</a>
+</li>
+<li>OnKeyDown()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#a45d758f25e3495c1e2d8db4d90a3442b">Fuse::IPluginView</a>
+</li>
+<li>OnKeyUp()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#af741f90cdf20fed54c04df38c6a4d6af">Fuse::IPluginView</a>
+</li>
+<li>OnMouseButtonDown()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#a085395d7709254ffb5247b19f824f8bd">Fuse::IPluginView</a>
+</li>
+<li>OnMouseButtonUp()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#a7c0b4bab5a4484f345325f80d76ecccd">Fuse::IPluginView</a>
+</li>
+<li>OnMouseMove()
+: <a class="el" href="class_fuse_1_1_i_plugin_view.html#a24b84c79786761608883598480c0e39b">Fuse::IPluginView</a>
+, <a class="el" href="class_fuse_1_1_win32_plugin_view.html#ae544731c7792c6843f328fc1824bbd3f">Fuse::Win32PluginView</a>
+</li>
 <li>OnPaint()
 : <a class="el" href="class_fuse_1_1_i_plugin_view.html#a355504c927f26982ec61a332f500b81d">Fuse::IPluginView</a>
+</li>
+<li>OnPressed()
+: <a class="el" href="class_fuse_1_1_component_1_1_box.html#a8a882a44a41cb047c5b466d7cbe74290">Fuse::Component::Box</a>
+, <a class="el" href="class_fuse_1_1_i_interactive.html#a05b781ff3c3165e8fb099c26bffe4164">Fuse::IInteractive</a>
+</li>
+<li>OnReleased()
+: <a class="el" href="class_fuse_1_1_i_interactive.html#a6c7d6833b3799b10a19c6864b0b24bb7">Fuse::IInteractive</a>
 </li>
 <li>OnResize()
 : <a class="el" href="class_fuse_1_1_cairo_backend.html#a601e7dc7a974216e52b64bd9f7c202f6">Fuse::CairoBackend</a>
@@ -431,6 +481,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>Size
 : <a class="el" href="struct_fuse_1_1_font.html#aed1473b64d0abd20c15cf0b4e3b1aaf8">Fuse::Font</a>
 , <a class="el" href="class_fuse_1_1_size.html#ac64ac80eea151ea3dc714467afb9d6cb">Fuse::Size&lt; T &gt;</a>
+, <a class="el" href="struct_fuse_1_1_view_state.html#a0409673b8916fbd17ec951434bfdd391">Fuse::ViewState</a>
 </li>
 <li>Square()
 : <a class="el" href="class_fuse_1_1_size.html#a11488d7e007535ba2fcf2e6a58411582">Fuse::Size&lt; T &gt;</a>
@@ -525,6 +576,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~IComponent()
 : <a class="el" href="class_fuse_1_1_i_component.html#acdc59a1531ae01aee260cfba80370cb9">Fuse::IComponent</a>
+</li>
+<li>~IInteractive()
+: <a class="el" href="class_fuse_1_1_i_interactive.html#a5516cd73a274d4e27e93728a088625d2">Fuse::IInteractive</a>
 </li>
 <li>~IPluginCanvas()
 : <a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a14fac8d1b2b2a2216757375d5bb30bd8">Fuse::IPluginCanvas</a>

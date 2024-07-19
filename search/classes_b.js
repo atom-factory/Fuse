@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['waylandpluginview_215',['WaylandPluginView',['../class_fuse_1_1_wayland_plugin_view.html',1,'Fuse']]],
-  ['win32pluginview_216',['Win32PluginView',['../class_fuse_1_1_win32_plugin_view.html',1,'Fuse']]]
+  ['viewstate_238',['ViewState',['../struct_fuse_1_1_view_state.html',1,'Fuse']]]
 ];

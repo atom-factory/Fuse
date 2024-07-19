@@ -8,7 +8,12 @@ var hierarchy =
       [ "Fuse::Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", null ]
     ] ],
     [ "Fuse::IComponent", "class_fuse_1_1_i_component.html", [
-      [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ]
+      [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ],
+      [ "Fuse::Component::PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ]
+    ] ],
+    [ "Fuse::IInteractive", "class_fuse_1_1_i_interactive.html", [
+      [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ],
+      [ "Fuse::Component::PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ]
     ] ],
     [ "InfinityHelper< T >", "struct_infinity_helper.html", null ],
     [ "Fuse::IPluginView", "class_fuse_1_1_i_plugin_view.html", [
@@ -18,7 +23,6 @@ var hierarchy =
     ] ],
     [ "Fuse::NSPluginView", "class_fuse_1_1_n_s_plugin_view.html", null ],
     [ "Fuse::Offset", "class_fuse_1_1_offset.html", null ],
-    [ "Fuse::Component::PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ],
     [ "Fuse::Component::RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ],
     [ "Fuse::Size< T >", "class_fuse_1_1_size.html", null ],
     [ "Fuse::Size< u32 >", "class_fuse_1_1_size.html", null ],
@@ -29,5 +33,6 @@ var hierarchy =
     ] ],
     [ "Fuse::Traits::TSingleChild", "class_fuse_1_1_traits_1_1_t_single_child.html", [
       [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ]
-    ] ]
+    ] ],
+    [ "Fuse::ViewState", "struct_fuse_1_1_view_state.html", null ]
 ];

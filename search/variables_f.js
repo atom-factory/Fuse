@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_374',['Y',['../class_fuse_1_1_offset.html#ad674bc1109f618f7fd3c3c49776af92a',1,'Fuse::Offset']]]
+  ['x_417',['X',['../class_fuse_1_1_offset.html#aae9e0eeb782bd28042e3b6ff8e5fe8e1',1,'Fuse::Offset']]]
 ];

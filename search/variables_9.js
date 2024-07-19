@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['r_366',['r',['../struct_fuse_1_1_base_color.html#a5aad55af5eed5f83c62bf3ed0a62f1bc',1,'Fuse::BaseColor']]]
+  ['pathondisk_409',['PathOnDisk',['../struct_fuse_1_1_font.html#aeb20adc4bdf485b9bd076496f934ada6',1,'Fuse::Font']]]
 ];
