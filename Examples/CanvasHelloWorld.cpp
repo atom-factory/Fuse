@@ -6,18 +6,13 @@
 #include "Components/Box.h"
 
 namespace Fuse {
-    IComponent* CanvasHelloWorld::Draw() {
-        const auto box = new Component::Box({200, 100},
-                                            {50, 50},
-                                            Color(0xFF363A55),
-                                            Stroke(Color(0xFF1A1C29), 2.f, EStrokeStyle::Solid));
+    IComponent* CanvasHelloWorld::Draw(IPluginView* viewContext) {
+        auto viewSize    = viewContext->GetSize();
+        const auto bgBox = new Component::Box(viewSize,
+                                              Offset::Zero,
+                                              Color(0x1a1c29),
+                                              Stroke(Color(0x0a0b10), 16.f, EStrokeStyle::Solid));
 
-        const auto secondBox = new Component::Box({100, 50}, {300, 100}, Color(0xFFFF0000));
-        const auto thirdBox  = new Component::Box({100, 50}, {600, 200}, Color(0xFFFF00FF));
-
-        secondBox->AddChild(thirdBox);
-        box->AddChild(secondBox);
-
-        return box;
+        return bgBox;
     }
 }  // namespace Fuse

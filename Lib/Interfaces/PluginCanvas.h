@@ -66,7 +66,7 @@ namespace Fuse {
             return -1;
         }
 
-        virtual IComponent* Draw() = 0;
+        virtual IComponent* Draw(IPluginView* viewContext) = 0;
 
         [[nodiscard]] IPluginView* GetView() const {
             return m_View;

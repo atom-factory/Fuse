@@ -35,7 +35,7 @@ namespace Fuse {
             m_ViewState.Size = newSize;
         }
 
-        virtual void OnPaint() const;
+        virtual void OnPaint();
 
         virtual void OnKeyDown(const i32 keyCode) {
             m_ViewState.LastKeyDown = keyCode;

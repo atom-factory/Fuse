@@ -23,7 +23,7 @@ namespace Fuse {
         }
 #endif
 
-        IComponent* Draw() override;
+        IComponent* Draw(IPluginView* viewContext) override;
     };
 
 }  // namespace Fuse

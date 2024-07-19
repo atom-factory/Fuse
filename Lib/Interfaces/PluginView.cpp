@@ -21,7 +21,7 @@
 #endif
 
 namespace Fuse {
-    void IPluginView::OnPaint() const {
+    void IPluginView::OnPaint() {
         if (const auto backend = GetBackend()) {
             if (m_OwningCanvas) {
                 // Clear drawing area (canvas) with our specified background color
@@ -30,7 +30,7 @@ namespace Fuse {
                 // Draw our component tree starting with the root returned from
                 // IPluginCanvas::Draw() using a breadth-first search
                 {
-                    const auto root = m_OwningCanvas->Draw();
+                    const auto root = m_OwningCanvas->Draw(this);
                     std::queue<IComponent*> queue;
                     queue.push(root);
 

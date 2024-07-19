@@ -7,6 +7,7 @@
 #include "Types.h"
 #include "Platform/Platform.h"
 #include "Platform/Win32PluginView.h"
+#include "../Examples/Res/resource.h"
 
 namespace HWNDParent {
     static inline HINSTANCE g_Instance;
@@ -16,7 +17,8 @@ namespace HWNDParent {
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
     static int CreateParentWindow(HINSTANCE instance, const i32 width, const i32 height) {
-        g_Instance = instance;
+        g_Instance          = instance;
+        const HICON appIcon = ::LoadIcon(g_Instance, MAKEINTRESOURCE(APPICON));
 
         WNDCLASSEXA wndClass   = {};
         wndClass.cbSize        = sizeof(WNDCLASSEXA);
@@ -25,7 +27,7 @@ namespace HWNDParent {
         wndClass.cbClsExtra    = 0;
         wndClass.cbWndExtra    = 0;
         wndClass.hInstance     = g_Instance;
-        wndClass.hIcon         = ::LoadIcon(nullptr, IDI_APPLICATION);
+        wndClass.hIcon         = appIcon;
         wndClass.hIconSm       = wndClass.hIcon;
         wndClass.hCursor       = ::LoadCursor(nullptr, IDC_ARROW);
         wndClass.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);

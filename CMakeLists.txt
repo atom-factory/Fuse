@@ -56,6 +56,8 @@ if (WIN32)
             Examples/HWNDParent.h
             Examples/HelloWorld_Win32.cpp
             ${EXAMPLE_SOURCE}
+            Examples/Res/app.rc
+            Examples/Res/resource.h
     )
     target_link_libraries(HelloWorld.Win32 PRIVATE Fuse)
 elseif (UNIX AND NOT APPLE)

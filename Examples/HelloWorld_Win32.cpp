@@ -8,13 +8,13 @@
 
 using namespace Fuse;
 
-static constexpr int WINDOW_WIDTH  = 800;
-static constexpr int WINDOW_HEIGHT = 600;
+static constexpr int kWindowWidth  = 600;
+static constexpr int kWindowHeight = 300;
 
 static CanvasHelloWorld* g_Canvas;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
-    HWNDParent::CreateParentWindow(hInstance, WINDOW_WIDTH, WINDOW_HEIGHT);
+    HWNDParent::CreateParentWindow(hInstance, kWindowWidth, kWindowHeight);
 
     // Create our canvas
     g_Canvas           = new CanvasHelloWorld(HWNDParent::g_Window);
