@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['checknull_270',['CheckNull',['../_platform_8h.html#aeb2edbe2bfb9841a8047d7e16ecb9f6d',1,'Platform.h']]],
-  ['color_271',['Color',['../class_fuse_1_1_color.html#abcf3701ccf044be2c6ca655c29fb32ff',1,'Fuse::Color::Color()'],['../class_fuse_1_1_color.html#a608c94eb9ca7ac8d1fba89e4b38a9fe1',1,'Fuse::Color::Color(f32 r, f32 g, f32 b, f32 a=1.0)'],['../class_fuse_1_1_color.html#a3274f923bf804e9276121c56019abebd',1,'Fuse::Color::Color(u32 color)']]],
-  ['copy_272',['Copy',['../class_fuse_1_1_size.html#a3269e0203f19f373007f7a280e14423e',1,'Fuse::Size']]],
-  ['create_273',['Create',['../class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9',1,'Fuse::IPluginView']]]
+  ['checknull_273',['CheckNull',['../_platform_8h.html#aeb2edbe2bfb9841a8047d7e16ecb9f6d',1,'Platform.h']]],
+  ['color_274',['Color',['../class_fuse_1_1_color.html#abcf3701ccf044be2c6ca655c29fb32ff',1,'Fuse::Color::Color()'],['../class_fuse_1_1_color.html#a608c94eb9ca7ac8d1fba89e4b38a9fe1',1,'Fuse::Color::Color(f32 r, f32 g, f32 b, f32 a=1.0)'],['../class_fuse_1_1_color.html#a3274f923bf804e9276121c56019abebd',1,'Fuse::Color::Color(u32 color)']]],
+  ['copy_275',['Copy',['../class_fuse_1_1_size.html#a3269e0203f19f373007f7a280e14423e',1,'Fuse::Size']]],
+  ['create_276',['Create',['../class_fuse_1_1_i_plugin_view.html#a4066c5384b9dac5ca61a1ac73f0c08c9',1,'Fuse::IPluginView']]]
 ];

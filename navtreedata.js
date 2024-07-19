@@ -38,6 +38,7 @@ var NAVTREE =
       [ "\"Hello World\" Example", "md__docs__quickstart.html#autotoc_md8", null ],
       [ "Troubleshooting", "md__docs__quickstart.html#autotoc_md9", null ]
     ] ],
+    [ "Fuse C++ Style Guide", "md__docs__style_guide.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

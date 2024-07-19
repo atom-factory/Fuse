@@ -12,7 +12,8 @@ var searchData=
   ['fromradius_53',['FromRadius',['../class_fuse_1_1_size.html#a78f28536125b56ec45ec51d581478aea',1,'Fuse::Size']]],
   ['fromwidth_54',['FromWidth',['../class_fuse_1_1_size.html#aeb8b9a4b87796a8f9d8b637028daec3d',1,'Fuse::Size']]],
   ['fuse_55',['Fuse',['../namespace_fuse.html',1,'']]],
-  ['fuse_2eh_56',['Fuse.h',['../_fuse_8h.html',1,'']]],
-  ['math_57',['Math',['../namespace_fuse_1_1_math.html',1,'Fuse']]],
-  ['traits_58',['Traits',['../namespace_fuse_1_1_traits.html',1,'Fuse']]]
+  ['fuse_20c_2b_2b_20style_20guide_56',['Fuse C++ Style Guide',['../md__docs__style_guide.html',1,'']]],
+  ['fuse_2eh_57',['Fuse.h',['../_fuse_8h.html',1,'']]],
+  ['math_58',['Math',['../namespace_fuse_1_1_math.html',1,'Fuse']]],
+  ['traits_59',['Traits',['../namespace_fuse_1_1_traits.html',1,'Fuse']]]
 ];

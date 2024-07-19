@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quickstart_20guide_399',['Quickstart Guide',['../md__docs__quickstart.html',1,'']]]
+  ['fuse_20c_2b_2b_20style_20guide_402',['Fuse C++ Style Guide',['../md__docs__style_guide.html',1,'']]]
 ];
