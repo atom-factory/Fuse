@@ -8,8 +8,8 @@
 
 using namespace Fuse;
 
-static constexpr int WINDOW_WIDTH  = 600;
-static constexpr int WINDOW_HEIGHT = 300;
+static constexpr int WINDOW_WIDTH  = 800;
+static constexpr int WINDOW_HEIGHT = 600;
 
 static CanvasHelloWorld* g_Canvas;
 

@@ -6,6 +6,8 @@
 #include "PluginView.h"
 #include "PluginCanvas.h"
 
+#include <queue>
+
 #if defined(PLATFORM_WINDOWS)
     #include "Platform/Win32PluginView.h"
 #elif defined(PLATFORM_LINUX)
@@ -26,10 +28,26 @@ namespace Fuse {
                 backend->BeginDrawing(m_OwningCanvas->BackgroundColor);
 
                 // Draw our component tree starting with the root returned from
-                // IPluginCanvas::Draw()
-                const auto root = m_OwningCanvas->Draw();
-                if (root) {
-                    root->Draw(backend);
+                // IPluginCanvas::Draw() using a breadth-first search
+                {
+                    const auto root = m_OwningCanvas->Draw();
+                    std::queue<IComponent*> queue;
+                    queue.push(root);
+
+                    while (!queue.empty()) {
+                        IComponent* component = queue.front();
+                        queue.pop();
+
+                        component->Draw(backend);
+
+                        auto result = component->GetChildren();
+                        if (result.has_value()) {
+                            auto children = result.value();
+                            for (const auto& child : children) {
+                                queue.push(child);
+                            }
+                        }
+                    }
                 }
 
                 backend->EndDrawing();

@@ -10,6 +10,7 @@
 #include <string>
 #include <limits>
 #include <filesystem>
+#include <optional>
 
 using u8   = uint8_t;
 using u16  = uint16_t;
@@ -28,6 +29,11 @@ namespace FileSystem = std::filesystem;
 using Path           = std::filesystem::path;
 
 template<class T>
+using Option = std::optional<T>;
+
+static constexpr std::nullopt_t kNone = std::nullopt;
+
+template<class T>
 using Shared = std::shared_ptr<T>;
 
 template<class T>
@@ -35,6 +41,9 @@ using Option = std::optional<T>;
 
 template<class T>
 using Unique = std::unique_ptr<T>;
+
+template<class T>
+using Vector = std::vector<T>;
 
 template<typename T>
 struct InfinityHelper {
@@ -46,9 +55,5 @@ constexpr T Infinity() {
     return InfinityHelper<T>::value;
 }
 
-constexpr i64 MAX_SIZE   = 100000;
-constexpr f32 MAX_SIZE_F = 100000.f;
-
-#ifndef None
-    #define None nullptr
-#endif
+static constexpr i64 MAX_SIZE   = 100000;
+static constexpr f32 MAX_SIZE_F = 100000.f;

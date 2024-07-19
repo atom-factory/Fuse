@@ -12,15 +12,9 @@ namespace Fuse {
 }  // namespace Fuse
 
 namespace Fuse::Traits {
-    class TSingleChild {
-    public:
-        IComponent* m_Child = nullptr;
-    };
+    class TSingleChild {};
 
-    class TMultiChild {
-    public:
-        std::vector<IComponent*> m_Children = {};
-    };
+    class TMultiChild {};
 
     class TNotify {};
 }  // namespace Fuse::Traits

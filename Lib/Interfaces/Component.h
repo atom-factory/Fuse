@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "Types.h"
 #include "Traits.h"
 
 namespace Fuse {
@@ -25,24 +26,27 @@ namespace Fuse {
             return thisPtr != nullptr;
         }
 
-        IComponent* GetChild() {
-            if (HasChild()) {
-                const auto thisPtr = dynamic_cast<Traits::TSingleChild*>(this);
-                return thisPtr->m_Child;
-            }
-
-            return nullptr;
+        void AddChild(IComponent* component) {
+            m_Children.push_back(component);
         }
 
-        std::vector<IComponent*>& GetChildren() {
-            if (HasChildren()) {
-                const auto thisPtr = dynamic_cast<Traits::TMultiChild*>(this);
-                return thisPtr->m_Children;
+        IComponent* GetChild() const {
+            if (m_Children.empty()) {
+                return nullptr;
             }
 
-            // Probably just gonna switch this function to return std::optional...
-            static std::vector<IComponent*> empty;
-            return empty;
+            return m_Children.front();
         }
+
+        Option<Vector<IComponent*>> GetChildren() {
+            if (m_Children.empty()) {
+                return kNone;
+            }
+
+            return m_Children;
+        }
+
+    protected:
+        std::vector<IComponent*> m_Children;
     };
 }  // namespace Fuse
