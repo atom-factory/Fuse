@@ -29,6 +29,8 @@ target_sources(Fuse PRIVATE
         Lib/Stroke.h
         Lib/Font.h
         Lib/Input.h
+        Lib/Rectangle.h
+        Lib/Rectangle.cpp
         Lib/Platform/Platform.h
         # Interfaces
         ${INTERFACES}
