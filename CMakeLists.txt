@@ -36,13 +36,6 @@ target_sources(Fuse PRIVATE
         ${COMPONENTS}
 )
 
-file(GLOB EXAMPLE_SOURCE
-        Examples/CanvasHelloWorld.cpp
-        Examples/CanvasHelloWorld.h
-        Examples/CustomComponent.h
-        Examples/CustomComponent.cpp
-)
-
 if (WIN32)
     add_definitions(-DPLATFORM_WINDOWS)
     target_sources(Fuse PRIVATE
@@ -51,15 +44,6 @@ if (WIN32)
             Lib/Backends/Direct2DBackend.cpp
             Lib/Backends/Direct2DBackend.h
     )
-
-    add_executable(HelloWorld.Win32 WIN32
-            Examples/HWNDParent.h
-            Examples/HelloWorld_Win32.cpp
-            ${EXAMPLE_SOURCE}
-            Examples/Res/app.rc
-            Examples/Res/resource.h
-    )
-    target_link_libraries(HelloWorld.Win32 PRIVATE Fuse)
 elseif (UNIX AND NOT APPLE)
     add_definitions(-DPLATFORM_LINUX)
     # Check for X11
@@ -96,10 +80,6 @@ elseif (UNIX AND NOT APPLE)
         pkg_check_modules(WAYLAND_PROTO REQUIRED wayland-protocols)
         pkg_check_modules(EGL REQUIRED egl)
         target_link_libraries(Fuse PRIVATE wayland-client wayland-egl wayland-protocols egl)
-
-        add_executable(HelloWorld.Wayland ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_Wayland.cpp
-                Examples/WaylandParent.h)
-        target_link_libraries(HelloWorld.Wayland PRIVATE Fuse)
     elseif (DEFINED ENV{DISPLAY})
         message(STATUS "X11 is the active windowing system")
         add_definitions(-DUSE_X11)
@@ -111,10 +91,6 @@ elseif (UNIX AND NOT APPLE)
                 Lib/Backends/CairoBackend.h
         )
         target_link_libraries(Fuse PRIVATE X11)
-
-        add_executable(HelloWorld.X11 ${EXAMPLE_SOURCE} Examples/HelloWorld_Linux_X11.cpp
-                Examples/X11Parent.h)
-        target_link_libraries(HelloWorld.X11 PRIVATE Fuse)
     else ()
         message(STATUS "No active windowing system detected")
     endif ()
@@ -131,3 +107,5 @@ if (MSVC)
     # Disable warning C4996
     target_compile_options(Fuse PRIVATE /wd4996)
 endif ()
+
+add_subdirectory(Examples)

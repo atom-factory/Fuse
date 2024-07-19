@@ -3,7 +3,7 @@
 //
 
 #include "Platform/Platform.h"
-#include "CanvasHelloWorld.h"
+#include "Shared/CanvasHelloWorld.h"
 #include "HWNDParent.h"
 
 using namespace Fuse;
