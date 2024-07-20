@@ -7,6 +7,12 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Color.cpp", "_color_8cpp.html", null ],
     [ "Color.h", "_color_8h.html", "_color_8h" ],
     [ "Converters.h", "_converters_8h.html", "_converters_8h" ],
+    [ "Dimension.h", "_dimension_8h.html", [
+      [ "IUnit", "struct_fuse_1_1_i_unit.html", "struct_fuse_1_1_i_unit" ],
+      [ "PercentUnit", "struct_fuse_1_1_percent_unit.html", "struct_fuse_1_1_percent_unit" ],
+      [ "PixelUnit", "struct_fuse_1_1_pixel_unit.html", "struct_fuse_1_1_pixel_unit" ],
+      [ "Dimension", "class_fuse_1_1_dimension.html", "class_fuse_1_1_dimension" ]
+    ] ],
     [ "Font.h", "_font_8h.html", [
       [ "Font", "struct_fuse_1_1_font.html", "struct_fuse_1_1_font" ]
     ] ],
@@ -17,11 +23,15 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Offset.h", "_offset_8h.html", [
       [ "Offset", "class_fuse_1_1_offset.html", "class_fuse_1_1_offset" ]
     ] ],
+    [ "OldSize.h", "_old_size_8h.html", [
+      [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
+    ] ],
     [ "Polygon.h", "_polygon_8h.html", "_polygon_8h" ],
     [ "Rectangle.cpp", "_rectangle_8cpp.html", null ],
     [ "Rectangle.h", "_rectangle_8h.html", [
       [ "Rectangle", "class_fuse_1_1_rectangle.html", "class_fuse_1_1_rectangle" ]
     ] ],
+    [ "Size.cpp", "_size_8cpp.html", null ],
     [ "Size.h", "_size_8h.html", [
       [ "Size", "class_fuse_1_1_size.html", "class_fuse_1_1_size" ]
     ] ],

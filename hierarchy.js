@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "Fuse::BaseColor", "struct_fuse_1_1_base_color.html", null ],
     [ "Fuse::Color", "class_fuse_1_1_color.html", null ],
+    [ "Fuse::Dimension< Unit >", "class_fuse_1_1_dimension.html", null ],
     [ "Fuse::Font", "struct_fuse_1_1_font.html", null ],
     [ "Fuse::IBackend", "class_fuse_1_1_i_backend.html", [
       [ "Fuse::CairoBackend", "class_fuse_1_1_cairo_backend.html", null ],
@@ -22,6 +23,10 @@ var hierarchy =
       [ "Fuse::WaylandPluginView", "class_fuse_1_1_wayland_plugin_view.html", null ],
       [ "Fuse::Win32PluginView", "class_fuse_1_1_win32_plugin_view.html", null ],
       [ "Fuse::X11PluginView", "class_fuse_1_1_x11_plugin_view.html", null ]
+    ] ],
+    [ "Fuse::IUnit", "struct_fuse_1_1_i_unit.html", [
+      [ "Fuse::PercentUnit", "struct_fuse_1_1_percent_unit.html", null ],
+      [ "Fuse::PixelUnit", "struct_fuse_1_1_pixel_unit.html", null ]
     ] ],
     [ "Fuse::NSPluginView", "class_fuse_1_1_n_s_plugin_view.html", null ],
     [ "Fuse::Offset", "class_fuse_1_1_offset.html", null ],
