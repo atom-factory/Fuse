@@ -7,6 +7,6 @@
 #include "Converters.h"
 #include "Maths.h"
 #include "Offset.h"
-#include "Size.h"
+#include "OldSize.h"
 
 namespace Fuse {}  // namespace Fuse

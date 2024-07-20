@@ -5,7 +5,7 @@
 #pragma once
 
 #include "Color.h"
-#include "Size.h"
+#include "OldSize.h"
 #include "Stroke.h"
 #include "Interfaces/Component.h"
 #include "Traits.h"

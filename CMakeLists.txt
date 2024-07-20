@@ -16,26 +16,29 @@ file(GLOB COMPONENTS ${SOURCE_DIR}/Components/*.cpp ${SOURCE_DIR}/Components/*.h
 
 target_sources(Fuse PRIVATE
         # Universal sources
-        Lib/Fuse.h
-        Lib/Types.h
-        Lib/Traits.h
-        Lib/Converters.h
-        Lib/Maths.h
-        Lib/Size.h
-        Lib/Offset.h
-        Lib/Offset.cpp
-        Lib/Color.h
         Lib/Color.cpp
-        Lib/Stroke.h
+        Lib/Color.h
+        Lib/Converters.h
+        Lib/Dimension.h
         Lib/Font.h
+        Lib/Fuse.h
         Lib/Input.h
-        Lib/Rectangle.h
-        Lib/Rectangle.cpp
-        Lib/Polygon.h
+        Lib/Maths.h
+        Lib/Offset.cpp
+        Lib/Offset.h
+        Lib/OldSize.h
         Lib/Platform/Platform.h
-        # Interfaces
+        Lib/Polygon.h
+        Lib/Rectangle.cpp
+        Lib/Rectangle.h
+        Lib/Size.cpp
+        Lib/Size.h
+        Lib/Stroke.h
+        Lib/Traits.h
+        Lib/Types.h
+        #
         ${INTERFACES}
-        # Components
+        #
         ${COMPONENTS}
 )
 

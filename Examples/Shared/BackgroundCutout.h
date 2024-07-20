@@ -12,13 +12,13 @@
 namespace Fuse {
     using namespace Traits;
 
-    class CustomComponent final : public IComponent,
-                                  public TSingleChild {
+    class BackgroundCutout final : public IComponent,
+                                   public TSingleChild {
     public:
-        explicit CustomComponent(const Offset& position,
-                                 const Vector<Offset>& points,
-                                 const Color& fillColor,
-                                 const Stroke& stroke);
+        explicit BackgroundCutout(const Offset& position,
+                                  const Vector<Offset>& points,
+                                  const Color& fillColor,
+                                  const Stroke& stroke);
         void Draw(IBackend* backend) override;
 
     private:

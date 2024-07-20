@@ -6,7 +6,7 @@
 
 #include "Types.h"
 #include "Offset.h"
-#include "Size.h"
+#include "OldSize.h"
 
 namespace Fuse {
     class Rectangle {

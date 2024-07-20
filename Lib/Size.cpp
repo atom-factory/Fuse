@@ -2,12 +2,7 @@
 // Created: 7/20/2024.
 //
 
-#pragma once
+#include "Size.h"
 
 namespace Fuse {
-
-class Size {
-
-};
-
 } // Fuse

@@ -5,7 +5,7 @@
 #pragma once
 
 #include "Color.h"
-#include "Size.h"
+#include "OldSize.h"
 #include "Offset.h"
 
 namespace Fuse {

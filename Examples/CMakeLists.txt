@@ -11,8 +11,8 @@ include_directories(
 file(GLOB SHARED_SOURCE
         Shared/CanvasHelloWorld.cpp
         Shared/CanvasHelloWorld.h
-        Shared/CustomComponent.h
-        Shared/CustomComponent.cpp
+        Shared/BackgroundCutout.h
+        Shared/BackgroundCutout.cpp
 )
 
 if (WIN32)
