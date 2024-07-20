@@ -26,7 +26,10 @@ namespace Fuse {
                          const Color& fillColor,
                          const Stroke& stroke) override;
         void DrawLine() override;
-        void DrawPath() override;
+        void DrawPath(const Offset& position,
+                      Vector<Offset> points,
+                      const Color& fillColor,
+                      const Stroke& stroke) override;
         void DrawString() override;
 
     protected:
@@ -37,5 +40,6 @@ namespace Fuse {
         ID2D1HwndRenderTarget* m_RenderTarget = nullptr;
 
         RECT PrivateGetClientRect() const;
+        static Vector<D2D1_POINT_2F> PrivateOffsetVecToD2DPointVec(const Vector<Offset>& points);
     };
 }  // namespace Fuse

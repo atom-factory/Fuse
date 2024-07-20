@@ -12,7 +12,11 @@ namespace Fuse {
 
     class IComponent {
     public:
-        virtual ~IComponent() = default;
+        virtual ~IComponent() {
+            for (const auto child : m_Children) {
+                delete child;
+            }
+        }
 
         virtual void Draw(IBackend* backend) = 0;
 

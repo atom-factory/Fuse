@@ -59,6 +59,41 @@ namespace Fuse {
         return {Math::Lerp(a.X, b.X, t), Math::Lerp(a.Y, b.Y, t)};
     }
 
+    /**
+     *
+     * @param points A list of 2D points in Cartesian space
+     * @return The center point of that shape
+     *
+     * @link
+     * https://stackoverflow.com/questions/75699024/finding-the-centroid-of-a-polygon-in-python
+     * @endlink
+     */
+    Offset Offset::Centroid(const Vector<Offset>& points) {
+        f32 signedArea = 0.f;
+        f32 Cx         = 0.f;
+        f32 Cy         = 0.f;
+        const size_t n = points.size();
+
+        for (size_t i = 0; i < n; i++) {
+            const i32 next = (i + 1) % n;
+            const f32 x0   = points.at(i).X;
+            const f32 y0   = points.at(i).Y;
+            const f32 x1   = points.at(next).X;
+            const f32 y1   = points.at(next).Y;
+
+            const f32 a = x0 * y1 - x1 * y0;
+            signedArea += a;
+            Cx += (x0 * x1) * a;
+            Cy += (y0 * y1) * a;
+        }
+
+        signedArea *= 0.5f;
+        Cx = (Cx / (6.0f * signedArea));
+        Cy = (Cy / (6.0f * signedArea));
+
+        return {Cx, Cy};
+    }
+
     f64 Offset::Direction() const {
         return std::atan2(static_cast<f64>(X), static_cast<f64>(Y));
     }

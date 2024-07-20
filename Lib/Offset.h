@@ -7,6 +7,11 @@
 #include "Types.h"
 
 namespace Fuse {
+    /**
+     * @brief Represents a 2D point in Cartesian coordinate space.
+     *
+     * Functionally equivalent to a 2D vector.
+     */
     class Offset {
     public:
         Offset() = default;
@@ -25,6 +30,7 @@ namespace Fuse {
 
         static Offset FromDirection(f32 direction, f32 distance);
         static Offset Lerp(const Offset& a, const Offset& b, f64 t);
+        static Offset Centroid(const Vector<Offset>& points);
 
         [[nodiscard]] f64 Direction() const;
         [[nodiscard]] f64 Distance() const;

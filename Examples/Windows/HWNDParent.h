@@ -9,14 +9,19 @@
 #include "Platform/Win32PluginView.h"
 #include "../Examples/Res/resource.h"
 
+#include <iostream>
+
 namespace HWNDParent {
     static inline HINSTANCE g_Instance;
     static inline HWND g_Window;
     static inline Fuse::Win32PluginView* g_View;
+    inline i32 g_InitialWidth, g_InitialHeight;
 
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
     static int CreateParentWindow(HINSTANCE instance, const i32 width, const i32 height) {
+        g_InitialWidth      = width;
+        g_InitialHeight     = height;
         g_Instance          = instance;
         const HICON appIcon = ::LoadIcon(g_Instance, MAKEINTRESOURCE(APPICON));
 
@@ -44,7 +49,7 @@ namespace HWNDParent {
         g_Window = ::CreateWindowExA(NULL,
                                      "FuseParentWindowClass",
                                      "Win32 Window - Fuse",
-                                     WS_OVERLAPPEDWINDOW | WS_CAPTION | WS_SYSMENU,
+                                     WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
                                      static_cast<i32>(posX),
                                      static_cast<i32>(posY),
                                      width,
@@ -83,6 +88,44 @@ namespace HWNDParent {
                     auto width  = static_cast<u32>(rect.right - rect.left);
                     auto height = static_cast<u32>(rect.bottom - rect.top);
                     g_View->OnResize({width, height});
+                }
+            }
+            case WM_KEYDOWN: {
+                auto keyCode = static_cast<u32>(wParam);
+
+                RECT position;
+                ::GetWindowRect(g_Window, &position);
+
+                switch (keyCode) {
+                    case VK_NUMPAD1:
+                        ::SetWindowPos(g_Window,
+                                       nullptr,
+                                       position.left,
+                                       position.top,
+                                       g_InitialWidth,
+                                       g_InitialHeight,
+                                       SWP_NOZORDER | SWP_NOACTIVATE);
+                        break;
+                    case VK_NUMPAD2:
+                        ::SetWindowPos(g_Window,
+                                       nullptr,
+                                       position.left,
+                                       position.top,
+                                       g_InitialWidth * 1.5,
+                                       g_InitialHeight * 1.5,
+                                       SWP_NOZORDER | SWP_NOACTIVATE);
+                        break;
+                    case VK_NUMPAD3:
+                        ::SetWindowPos(g_Window,
+                                       nullptr,
+                                       position.left,
+                                       position.top,
+                                       g_InitialWidth * 2,
+                                       g_InitialHeight * 2,
+                                       SWP_NOZORDER | SWP_NOACTIVATE);
+                        break;
+                    default:
+                        break;
                 }
             }
                 return 0;

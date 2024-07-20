@@ -47,7 +47,10 @@ namespace Fuse {
                                  const Offset& position,
                                  const Color& fillColor,
                                  const Stroke& stroke) {}
-        virtual void DrawPath() {}
+        virtual void DrawPath(const Offset& position,
+                              Vector<Offset> points,
+                              const Color& fillColor,
+                              const Stroke& stroke) {}
         virtual void DrawString() {}
 
     protected:

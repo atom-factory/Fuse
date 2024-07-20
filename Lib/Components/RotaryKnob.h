@@ -15,8 +15,8 @@ using namespace Fuse::Traits;
 
 namespace Fuse::Component {
     class RotaryKnob final : public IComponent,
-                             TSingleChild,
-                             IInteractive {
+                             public TSingleChild,
+                             public IInteractive {
     public:
         explicit RotaryKnob(f32 radius,
                             const Offset& position,

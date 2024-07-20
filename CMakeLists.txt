@@ -31,6 +31,7 @@ target_sources(Fuse PRIVATE
         Lib/Input.h
         Lib/Rectangle.h
         Lib/Rectangle.cpp
+        Lib/Polygon.h
         Lib/Platform/Platform.h
         # Interfaces
         ${INTERFACES}
