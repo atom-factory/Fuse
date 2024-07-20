@@ -142,10 +142,14 @@ namespace Fuse {
 
                 // TODO: Calculate the center point of the shape and make that the origin point for
                 // applying transformations.
+                // Each point X gets transformed by taking Cx + X, same for Y.
                 const auto center = Polygon::CalculateCenter(points);
 
                 for (size_t i = 1; i < points.size(); ++i) {
-                    sink->AddLine(d2dPoints.at(i));
+                    const auto x = center.X + d2dPoints.at(i).x;
+                    const auto y = center.Y + d2dPoints.at(i).y;
+
+                    sink->AddLine(D2D1::Point2F(x, y));
                 }
 
                 sink->EndFigure(D2D1_FIGURE_END_CLOSED);
