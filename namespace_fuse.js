@@ -14,6 +14,10 @@ var namespace_fuse =
       [ "IsFinite", "namespace_fuse_1_1_math.html#a46c6a7f4a0f31958e5742bbe1113cdd5", null ],
       [ "Lerp", "namespace_fuse_1_1_math.html#a93b07e91cc74886c4dfc8c609a589748", null ]
     ] ],
+    [ "Polygon", "namespace_fuse_1_1_polygon.html", [
+      [ "CalculateArea", "namespace_fuse_1_1_polygon.html#a3a018038c9725c02a07d8ec1bfc3b921", null ],
+      [ "CalculateCenter", "namespace_fuse_1_1_polygon.html#a1e6fcf241860b14c8ae9f81c23a9b5f1", null ]
+    ] ],
     [ "Traits", "namespace_fuse_1_1_traits.html", "namespace_fuse_1_1_traits" ],
     [ "CairoBackend", "class_fuse_1_1_cairo_backend.html", "class_fuse_1_1_cairo_backend" ],
     [ "Direct2DBackend", "class_fuse_1_1_direct2_d_backend.html", "class_fuse_1_1_direct2_d_backend" ],

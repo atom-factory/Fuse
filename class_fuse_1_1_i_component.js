@@ -1,6 +1,6 @@
 var class_fuse_1_1_i_component =
 [
-    [ "~IComponent", "class_fuse_1_1_i_component.html#acdc59a1531ae01aee260cfba80370cb9", null ],
+    [ "~IComponent", "class_fuse_1_1_i_component.html#a021e754a5356cd153bb0ec08531eddc5", null ],
     [ "AddChild", "class_fuse_1_1_i_component.html#a4476690d23a5ef902ce0c8a93353c843", null ],
     [ "Draw", "class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce", null ],
     [ "GetChild", "class_fuse_1_1_i_component.html#a3f788475ad315d412738f4b9afc3e6fe", null ],
