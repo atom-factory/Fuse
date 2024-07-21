@@ -51,7 +51,7 @@ namespace Fuse {
                               Vector<Offset> points,
                               const Color& fillColor,
                               const Stroke& stroke) {}
-        virtual void DrawString() {}
+        virtual void DrawString(const str& value, const Offset& position, const f32 size, const Color& color) {}
 
     protected:
         virtual void Shutdown() = 0;

@@ -3,7 +3,7 @@
 //
 
 #include "BackgroundCutout.h"
-
+#include "Components/Text.h"
 #include "Interfaces/Backend.h"
 
 namespace Fuse {

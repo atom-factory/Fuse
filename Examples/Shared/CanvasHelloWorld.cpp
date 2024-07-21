@@ -7,6 +7,7 @@
 #include "BackgroundCutout.h"
 #include "Components/Box.h"
 #include "Components/RotaryKnob.h"
+#include "Components/Text.h"
 
 namespace Fuse {
     IComponent* CanvasHelloWorld::Draw(IPluginView* viewContext) {
@@ -19,16 +20,16 @@ namespace Fuse {
                              Color(0x1a1c29),
                              Stroke(Color(0x0a0b10), viewSize.Width * 0.03f, EStrokeStyle::Solid));
 
-        const auto knobGain =
-          new Component::RotaryKnob(viewSize.Height * 0.3f,
-                                    {120, 140},
-                                    Color(0x363a55),
-                                    Stroke(Color(0x11121b), 8.f, EStrokeStyle::Solid));
-        const auto knobBalance =
-          new Component::RotaryKnob(viewSize.Height * 0.3f,
-                                    {static_cast<float>(viewSize.Width - 120), 140},
-                                    Color(0x363a55),
-                                    Stroke(Color(0x11121b), 8.f, EStrokeStyle::Solid));
+        const auto knobGain = new Component::RotaryKnob(
+          viewSize.Height * 0.3f,
+          {viewSize.Width * 0.21f, viewSize.Height * 0.54f},
+          Color(0x363a55),
+          Stroke(Color(0x11121b), viewSize.Width * 0.015f, EStrokeStyle::Solid));
+        const auto knobBalance = new Component::RotaryKnob(
+          viewSize.Height * 0.3f,
+          {viewSize.Width * 0.79f, viewSize.Height * 0.54f},
+          Color(0x363a55),
+          Stroke(Color(0x11121b), viewSize.Width * 0.015f, EStrokeStyle::Solid));
 
         const auto topCutout =
           new BackgroundCutout(Offset::Zero,
@@ -55,13 +56,21 @@ namespace Fuse {
         const auto centerCutout = new BackgroundCutout(
           Offset::Zero,
           {
-            {viewSize.Width / 2.f - 8.f, viewSize.Height * 0.18f},
-            {viewSize.Width / 2.f + 8.f, viewSize.Height * 0.18f},
-            {viewSize.Width / 2.f + 8.f, viewSize.Height - (viewSize.Height * 0.18f)},
-            {viewSize.Width / 2.f - 8.f, viewSize.Height - (viewSize.Height * 0.18f)},
+            {viewSize.Width / 2.f - (viewSize.Width * 0.014f), viewSize.Height * 0.18f},
+            {viewSize.Width / 2.f + (viewSize.Width * 0.014f), viewSize.Height * 0.18f},
+            {viewSize.Width / 2.f + (viewSize.Width * 0.014f),
+             viewSize.Height - (viewSize.Height * 0.18f)},
+            {viewSize.Width / 2.f - (viewSize.Width * 0.014f),
+             viewSize.Height - (viewSize.Height * 0.18f)},
           },
           Color(0x0a0b10),
           {});
+
+        const auto pluginName = new Component::Text("ARKGain",
+                                                    {viewSize.Width * 1.f, viewSize.Height * 0.18f},
+                                                    20.f,
+                                                    Color(0x22AACC));
+        topCutout->AddChild(pluginName);
 
         // Add everything as a child to our root since this example doesn't take advantage of nested
         // components.

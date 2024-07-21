@@ -111,8 +111,8 @@ namespace HWNDParent {
                                        nullptr,
                                        position.left,
                                        position.top,
-                                       g_InitialWidth * 1.5,
-                                       g_InitialHeight * 1.5,
+                                       g_InitialWidth * 1.25,
+                                       g_InitialHeight * 1.25,
                                        SWP_NOZORDER | SWP_NOACTIVATE);
                         break;
                     case VK_NUMPAD3:
@@ -120,8 +120,8 @@ namespace HWNDParent {
                                        nullptr,
                                        position.left,
                                        position.top,
-                                       g_InitialWidth * 2,
-                                       g_InitialHeight * 2,
+                                       g_InitialWidth * 1.5,
+                                       g_InitialHeight * 1.5,
                                        SWP_NOZORDER | SWP_NOACTIVATE);
                         break;
                     default:

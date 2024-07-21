@@ -5,12 +5,16 @@
 #include "Direct2DBackend.h"
 
 #include "Color.h"
+#include "Converters.h"
 #include "Polygon.h"
 #include "Interfaces/PluginView.h"
 #include "Platform/Win32PluginView.h"
 #include "Stroke.h"
 
 namespace Fuse {
+    /**
+     * @todo Move this to the constructor
+     */
     void Direct2DBackend::Initialize(IPluginView* owner) {
         IBackend::Initialize(owner);
 
@@ -32,6 +36,11 @@ namespace Fuse {
           &m_RenderTarget);
 
         CheckResult(hr, "Failed to create render target");
+
+        hr = DWriteCreateFactory(DWRITE_FACTORY_TYPE_SHARED,
+                                 __uuidof(IDWriteFactory),
+                                 reinterpret_cast<IUnknown**>(&m_WriteFactory));
+        CheckResult(hr, "Failed to create DWriteFactory");
     }
 
     void Direct2DBackend::OnResize(const Size<u32>& size) {
@@ -146,8 +155,8 @@ namespace Fuse {
                 const auto center = Polygon::CalculateCenter(points);
 
                 for (size_t i = 1; i < points.size(); ++i) {
-                    const auto x = center.X + d2dPoints.at(i).x;
-                    const auto y = center.Y + d2dPoints.at(i).y;
+                    const auto x = position.X + d2dPoints.at(i).x;
+                    const auto y = position.Y + d2dPoints.at(i).y;
 
                     sink->AddLine(D2D1::Point2F(x, y));
                 }
@@ -185,7 +194,40 @@ namespace Fuse {
         }
     }
 
-    void Direct2DBackend::DrawString() {}
+    void Direct2DBackend::DrawString(const str& value,
+                                     const Offset& position,
+                                     const f32 size,
+                                     const Color& color) {
+        if (m_RenderTarget && m_WriteFactory) {
+            IDWriteTextFormat* textFormat = nullptr;
+            auto hr                       = m_WriteFactory->CreateTextFormat(L"Orbitron",
+                                                       nullptr,
+                                                       DWRITE_FONT_WEIGHT_MEDIUM,
+                                                       DWRITE_FONT_STYLE_NORMAL,
+                                                       DWRITE_FONT_STRETCH_EXPANDED,
+                                                       size,
+                                                       L"en-us",
+                                                       &textFormat);
+            CheckResult(hr, "Failed to create text format.");
+
+            hr = textFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+            CheckResult(hr, "Failed to set text alignment.");
+            hr = textFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
+            CheckResult(hr, "Failed to set paragraph alignment.");
+
+            ID2D1SolidColorBrush* fillBrush = nullptr;
+            hr = m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(color.Value()), &fillBrush);
+            CheckResult(hr, "Failed to create D2D brush.");
+
+            wstr text;
+            Converters::ANSIToWide(value, text);
+            m_RenderTarget->DrawTextA(text.c_str(),
+                                      wcslen(text.c_str()),
+                                      textFormat,
+                                      D2D1::RectF(0, 0, position.X, position.Y),
+                                      fillBrush);
+        }
+    }
 
     void Direct2DBackend::Shutdown() {
         if (m_RenderTarget) {

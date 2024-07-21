@@ -30,13 +30,15 @@ namespace Fuse {
                       Vector<Offset> points,
                       const Color& fillColor,
                       const Stroke& stroke) override;
-        void DrawString() override;
+        void
+        DrawString(const str& value, const Offset& position, f32 size, const Color& color) override;
 
     protected:
         void Shutdown() override;
 
     private:
         ID2D1Factory* m_Factory               = nullptr;
+        IDWriteFactory* m_WriteFactory        = nullptr;
         ID2D1HwndRenderTarget* m_RenderTarget = nullptr;
 
         RECT PrivateGetClientRect() const;

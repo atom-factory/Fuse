@@ -117,6 +117,5 @@ namespace Fuse {
     }
     void Win32PluginView::OnMouseMove(const int x, const int y) {
         IPluginView::OnMouseMove(x, y);
-        DebugPrint("X: %d, Y: %d\n", x, y);
     }
 }  // namespace Fuse

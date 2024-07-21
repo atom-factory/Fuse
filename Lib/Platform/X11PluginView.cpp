@@ -44,6 +44,8 @@ namespace Fuse {
 
         m_Backend = new CairoBackend();
         m_Backend->Initialize(this);
+
+        this->m_ActiveView = this;
     }
 
     void X11PluginView::Shutdown() {
