@@ -11,5 +11,9 @@ var dir_78cd394daf4d361f9ee3833bf6ffe12f =
     [ "RotaryKnob.cpp", "_rotary_knob_8cpp.html", null ],
     [ "RotaryKnob.h", "_rotary_knob_8h.html", [
       [ "RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", "class_fuse_1_1_component_1_1_rotary_knob" ]
+    ] ],
+    [ "Text.cpp", "_text_8cpp.html", null ],
+    [ "Text.h", "_text_8h.html", [
+      [ "Text", "class_fuse_1_1_component_1_1_text.html", "class_fuse_1_1_component_1_1_text" ]
     ] ]
 ];

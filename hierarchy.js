@@ -11,7 +11,8 @@ var hierarchy =
     [ "Fuse::IComponent", "class_fuse_1_1_i_component.html", [
       [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ],
       [ "Fuse::Component::PushButton", "class_fuse_1_1_component_1_1_push_button.html", null ],
-      [ "Fuse::Component::RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ]
+      [ "Fuse::Component::RotaryKnob", "class_fuse_1_1_component_1_1_rotary_knob.html", null ],
+      [ "Fuse::Component::Text", "class_fuse_1_1_component_1_1_text.html", null ]
     ] ],
     [ "Fuse::IInteractive", "class_fuse_1_1_i_interactive.html", [
       [ "Fuse::Component::Box", "class_fuse_1_1_component_1_1_box.html", null ],

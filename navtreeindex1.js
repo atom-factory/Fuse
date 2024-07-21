@@ -1,5 +1,12 @@
 var NAVTREEINDEX1 =
 {
+"class_fuse_1_1_offset.html#a496c4594f93f8e57d3771ba1f16f9702":[4,0,0,17,2],
+"class_fuse_1_1_offset.html#a59fd28690208ce8548a7931b06b1da5d":[4,0,0,17,11],
+"class_fuse_1_1_offset.html#a6dac6d0520683100d879fc1eadf74f84":[4,0,0,17,4],
+"class_fuse_1_1_offset.html#a7170bf43aa5ab48265543aa2a6357ed7":[4,0,0,17,13],
+"class_fuse_1_1_offset.html#a7aff2bc7ee54596727ee72b35b7c7acb":[4,0,0,17,0],
+"class_fuse_1_1_offset.html#a829675262a45c1a699dd2c5654828b57":[4,0,0,17,7],
+"class_fuse_1_1_offset.html#a8b2162d11360e3b33f61dfdac01e4457":[4,0,0,17,8],
 "class_fuse_1_1_offset.html#aa1a6580d4e050df8fbbf3bdd7e350d91":[4,0,0,17,10],
 "class_fuse_1_1_offset.html#aae9e0eeb782bd28042e3b6ff8e5fe8e1":[4,0,0,17,19],
 "class_fuse_1_1_offset.html#abc0f5ba255d4897073bb35f213e8b78e":[4,0,0,17,5],

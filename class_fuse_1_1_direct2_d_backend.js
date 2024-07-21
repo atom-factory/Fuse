@@ -5,7 +5,7 @@ var class_fuse_1_1_direct2_d_backend =
     [ "DrawLine", "class_fuse_1_1_direct2_d_backend.html#ab0b951a6642e7e419cf1cdb33e883f8d", null ],
     [ "DrawPath", "class_fuse_1_1_direct2_d_backend.html#abe45aa985d4b97aad2678fcbe205c260", null ],
     [ "DrawRect", "class_fuse_1_1_direct2_d_backend.html#a3b9f870d549948391e9f513305509425", null ],
-    [ "DrawString", "class_fuse_1_1_direct2_d_backend.html#a7d24011658401a6c441cadc2708cf2fb", null ],
+    [ "DrawString", "class_fuse_1_1_direct2_d_backend.html#a803760191c39fd95fe26f55ce21b4c18", null ],
     [ "EndDrawing", "class_fuse_1_1_direct2_d_backend.html#a2f87e9a8b6618b36ff6431f0ab5871b7", null ],
     [ "Initialize", "class_fuse_1_1_direct2_d_backend.html#a130530a11bb1a6c138044dc6cc466006", null ],
     [ "OnResize", "class_fuse_1_1_direct2_d_backend.html#a8664f17cdb8ba735d03747aa2972fa79", null ],
