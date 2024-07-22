@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('class_fuse_1_1_dimension.html',''); in
 </div><!--header-->
 <div class="contents">
 
-<p>A template class for size and position dimensions.  
+<p>Returns a coordinate value positioned by a percentage of a screen axis.  
  <a href="class_fuse_1_1_dimension.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_dimension_8h_source.html">Dimension.h</a>&gt;</code></p>
@@ -112,10 +112,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adac26bbb9202db0b21d7236742c8e8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A template class for size and position dimensions. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Actually implement this across the rest of the library classes. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00016">16</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<div class="textblock"><p>Returns a coordinate value positioned by a percentage of a screen axis. </p>
+<p>It is functionally equivalent to CSS's <code>vw</code> and <code>vh</code> units.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Percent values are specified in range [0, 100], NOT [0.0, 1.0]</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> dim = <a class="code" href="class_fuse_1_1_dimension.html#aca51945802ab59e937a00dd8b9d82f85">Dimension</a>(viewSize);</div>
+<div class="line"><span class="comment">// 20% of the screen width</span></div>
+<div class="line"><span class="keyword">auto</span> boxWidth = dim.Height(20.f);</div>
+<div class="line"><span class="comment">// Position the box 90% across the screen from the left side (10% from the right).</span></div>
+<div class="line"><span class="keyword">auto</span> boxPosX = dim.WidthRight(10.f);</div>
+<div class="ttc" id="aclass_fuse_1_1_dimension_html_aca51945802ab59e937a00dd8b9d82f85"><div class="ttname"><a href="class_fuse_1_1_dimension.html#aca51945802ab59e937a00dd8b9d82f85">Fuse::Dimension::Dimension</a></div><div class="ttdeci">Dimension(const Size&lt; u32 &gt; &amp;viewSize)</div><div class="ttdef"><b>Definition:</b> <a href="_dimension_8h_source.html#l00030">Dimension.h:30</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00028">28</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aca51945802ab59e937a00dd8b9d82f85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca51945802ab59e937a00dd8b9d82f85">&#9670;&nbsp;</a></span>Dimension()</h2>
@@ -141,7 +148,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00018">18</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00030">30</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +177,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00024">24</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00036">36</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 
 </div>
 </div>
@@ -198,7 +205,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00033">33</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00045">45</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 
 </div>
 </div>
@@ -226,7 +233,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00020">20</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00032">32</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 
 </div>
 </div>
@@ -254,7 +261,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00028">28</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_dimension_8h_source.html#l00040">40</a> of file <a class="el" href="_dimension_8h_source.html">Dimension.h</a>.</p>
 
 </div>
 </div>
