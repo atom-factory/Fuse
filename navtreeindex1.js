@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"class_fuse_1_1_i_plugin_view.html#acedfa14f026c1f9112f90b60db70ac7a":[4,0,0,13,16],
+"class_fuse_1_1_i_plugin_view.html#acfc3ff3a6636a7f51c32fda0bc270291":[4,0,0,13,20],
+"class_fuse_1_1_i_plugin_view.html#aebcc2e260e8b51f48335820ba988f7b4":[4,0,0,13,5],
+"class_fuse_1_1_i_plugin_view.html#af741f90cdf20fed54c04df38c6a4d6af":[4,0,0,13,9],
+"class_fuse_1_1_n_s_plugin_view.html":[4,0,0,16],
+"class_fuse_1_1_offset.html":[4,0,0,14],
 "class_fuse_1_1_offset.html#a0fb5b4e87b02329bc8157d0b817aaf31":[4,0,0,14,16],
 "class_fuse_1_1_offset.html#a12243b34c20e2e21f9eea77387535237":[4,0,0,14,1],
 "class_fuse_1_1_offset.html#a1f04dc8285a58eaec1c78b3efa81da54":[4,0,0,14,18],
@@ -88,8 +94,8 @@ var NAVTREEINDEX1 =
 "dir_bb529883f3f23b824d8a8f7dea504bfc.html":[5,0,1,3],
 "dir_d4b5106c91502fbd840a5357c642b335.html":[5,0,1,0],
 "files.html":[5,0],
-"functions.html":[4,3,0],
 "functions.html":[4,3,0,0],
+"functions.html":[4,3,0],
 "functions_b.html":[4,3,0,1],
 "functions_c.html":[4,3,0,2],
 "functions_d.html":[4,3,0,3],

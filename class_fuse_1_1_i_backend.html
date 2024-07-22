@@ -139,6 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afcd0bc48136483db99cb05a9df1025de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908c31a166802fecf597b8eb05631fd3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#a908c31a166802fecf597b8eb05631fd3">DrawString</a> (const <a class="el" href="_types_8h.html#a18ea49f06d5979901122a1600a36be74">str</a> &amp;value, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="_types_8h.html#ad34d88453d37b65a09797bad37f2f527">f32</a> size, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;color)</td></tr>
 <tr class="separator:a908c31a166802fecf597b8eb05631fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d3232541963ee9be5ee01a0d4bdb4e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#ab4d3232541963ee9be5ee01a0d4bdb4e">DrawBoundingBox</a> (const <a class="el" href="class_fuse_1_1_rectangle.html">Rectangle</a> &amp;box)</td></tr>
+<tr class="separator:ab4d3232541963ee9be5ee01a0d4bdb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -154,7 +156,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Base interface of a rendering backend. </p>
 <p>Platform-specific frameworks like Direct2D and OpenGL are implemented in classes implementing this interface. </p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00022">22</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00023">23</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a87b310a3130fb4a8766d280fc17e3fa7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87b310a3130fb4a8766d280fc17e3fa7">&#9670;&nbsp;</a></span>~IBackend()</h2>
@@ -207,7 +209,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00034">34</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00035">35</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +239,37 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a3d803bbf7a036481a6ac8236a0aceb2a">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#a6b92398b585437af95afbf406c937e4c">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00030">30</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00031">31</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4d3232541963ee9be5ee01a0d4bdb4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d3232541963ee9be5ee01a0d4bdb4e">&#9670;&nbsp;</a></span>DrawBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Fuse::IBackend::DrawBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_fuse_1_1_rectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a8a96614747fc4ba2fa69bdcfc2c07fe4">Fuse::Direct2DBackend</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00065">65</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -289,7 +321,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a5cb3f18828c02722f55038a0569ee726">Fuse::Direct2DBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00053">53</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00054">54</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -318,7 +350,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#ab0b951a6642e7e419cf1cdb33e883f8d">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#a197f3e6c0a0eb06747320c66233166a2">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00052">52</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00053">53</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -370,7 +402,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#abe45aa985d4b97aad2678fcbe205c260">Fuse::Direct2DBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00057">57</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00058">58</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +460,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a3b9f870d549948391e9f513305509425">Fuse::Direct2DBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00047">47</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00048">48</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -480,7 +512,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a803760191c39fd95fe26f55ce21b4c18">Fuse::Direct2DBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00062">62</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00063">63</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -509,7 +541,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a2f87e9a8b6618b36ff6431f0ab5871b7">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#aeac960c645a8663826b83f88a47fb823">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00031">31</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00032">32</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -536,7 +568,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00043">43</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00044">44</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -566,7 +598,7 @@ template&lt;typename T &gt; </div>
 
 <p>Reimplemented in <a class="el" href="class_fuse_1_1_direct2_d_backend.html#a130530a11bb1a6c138044dc6cc466006">Fuse::Direct2DBackend</a>, and <a class="el" href="class_fuse_1_1_cairo_backend.html#aaac3f203a03626233da2389dd4f1b4dd">Fuse::CairoBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00025">25</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00026">26</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -622,7 +654,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00039">39</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00040">40</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>
@@ -674,7 +706,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00067">67</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_backend_8h_source.html#l00070">70</a> of file <a class="el" href="_backend_8h_source.html">Backend.h</a>.</p>
 
 </div>
 </div>

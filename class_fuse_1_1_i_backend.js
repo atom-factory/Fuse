@@ -3,6 +3,7 @@ var class_fuse_1_1_i_backend =
     [ "~IBackend", "class_fuse_1_1_i_backend.html#a87b310a3130fb4a8766d280fc17e3fa7", null ],
     [ "As", "class_fuse_1_1_i_backend.html#a26dd0ba2076a9788cfea4779b3f606f2", null ],
     [ "BeginDrawing", "class_fuse_1_1_i_backend.html#a6be4fa40ec1e45f2e542fc74014389d7", null ],
+    [ "DrawBoundingBox", "class_fuse_1_1_i_backend.html#ab4d3232541963ee9be5ee01a0d4bdb4e", null ],
     [ "DrawEllipse", "class_fuse_1_1_i_backend.html#ad9da019e9b58cd722126be26716cb094", null ],
     [ "DrawLine", "class_fuse_1_1_i_backend.html#af45cc2a1318ac7aebe2d6659c0457f23", null ],
     [ "DrawPath", "class_fuse_1_1_i_backend.html#afcd0bc48136483db99cb05a9df1025de", null ],

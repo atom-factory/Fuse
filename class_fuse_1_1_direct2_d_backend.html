@@ -125,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abe45aa985d4b97aad2678fcbe205c260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a803760191c39fd95fe26f55ce21b4c18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_direct2_d_backend.html#a803760191c39fd95fe26f55ce21b4c18">DrawString</a> (const <a class="el" href="_types_8h.html#a18ea49f06d5979901122a1600a36be74">str</a> &amp;value, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, <a class="el" href="_types_8h.html#ad34d88453d37b65a09797bad37f2f527">f32</a> size, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;color) override</td></tr>
 <tr class="separator:a803760191c39fd95fe26f55ce21b4c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a96614747fc4ba2fa69bdcfc2c07fe4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_direct2_d_backend.html#a8a96614747fc4ba2fa69bdcfc2c07fe4">DrawBoundingBox</a> (const <a class="el" href="class_fuse_1_1_rectangle.html">Rectangle</a> &amp;box) override</td></tr>
+<tr class="separator:a8a96614747fc4ba2fa69bdcfc2c07fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_fuse_1_1_i_backend"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_fuse_1_1_i_backend')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_fuse_1_1_i_backend.html">Fuse::IBackend</a></td></tr>
 <tr class="memitem:a87b310a3130fb4a8766d280fc17e3fa7 inherit pub_methods_class_fuse_1_1_i_backend"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_backend.html#a87b310a3130fb4a8766d280fc17e3fa7">~IBackend</a> ()=default</td></tr>
 <tr class="separator:a87b310a3130fb4a8766d280fc17e3fa7 inherit pub_methods_class_fuse_1_1_i_backend"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,7 +179,37 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#a6be4fa40ec1e45f2e542fc74014389d7">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00053">53</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00054">54</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a96614747fc4ba2fa69bdcfc2c07fe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a96614747fc4ba2fa69bdcfc2c07fe4">&#9670;&nbsp;</a></span>DrawBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fuse::Direct2DBackend::DrawBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_fuse_1_1_rectangle.html">Rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#ab4d3232541963ee9be5ee01a0d4bdb4e">Fuse::IBackend</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00235">235</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +261,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#ad9da019e9b58cd722126be26716cb094">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00099">99</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00102">102</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#af45cc2a1318ac7aebe2d6659c0457f23">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00127">127</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00130">130</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +342,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#afcd0bc48136483db99cb05a9df1025de">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00129">129</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00132">132</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#aeacc1f76d6001c5f6cd663dce11f01c1">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00066">66</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00067">67</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +452,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#a908c31a166802fecf597b8eb05631fd3">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00197">197</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00200">200</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +481,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#a3b3ee33f6572d68e4c7fcb9b9440712a">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00060">60</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00061">61</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -480,7 +512,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_fuse_1_1_i_backend.html#ac407cb37af19df4e4f307bb084af98b6">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00018">18</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00019">19</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -510,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_backend.html#a64fa5922282795a6257aeb4542c5bc38">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00046">46</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00047">47</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
@@ -539,7 +571,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_backend.html#acdbe5458f41bf6c4bc97da0e46865c1d">Fuse::IBackend</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00232">232</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_direct2_d_backend_8cpp_source.html#l00245">245</a> of file <a class="el" href="_direct2_d_backend_8cpp_source.html">Direct2DBackend.cpp</a>.</p>
 
 </div>
 </div>
