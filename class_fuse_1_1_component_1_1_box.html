@@ -100,9 +100,9 @@ Inheritance diagram for Fuse::Component::Box:</div>
  <div class="center">
   <img src="class_fuse_1_1_component_1_1_box.png" usemap="#Fuse::Component::Box_map" alt=""/>
   <map id="Fuse::Component::Box_map" name="Fuse::Component::Box_map">
-<area href="class_fuse_1_1_i_component.html" alt="Fuse::IComponent" shape="rect" coords="0,0,154,24"/>
+<area href="class_fuse_1_1_i_component.html" title="Base interface of a render-able object." alt="Fuse::IComponent" shape="rect" coords="0,0,154,24"/>
 <area href="class_fuse_1_1_traits_1_1_t_single_child.html" alt="Fuse::Traits::TSingleChild" shape="rect" coords="164,0,318,24"/>
-<area href="class_fuse_1_1_i_interactive.html" alt="Fuse::IInteractive" shape="rect" coords="328,0,482,24"/>
+<area href="class_fuse_1_1_i_interactive.html" title="Base interface component classes can implement to signal that they should receive input events." alt="Fuse::IInteractive" shape="rect" coords="328,0,482,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -111,6 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a119eede5489bf68138da38cc2bb1f930"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#a119eede5489bf68138da38cc2bb1f930">Box</a> (const <a class="el" href="class_fuse_1_1_size.html">Size</a>&lt; <a class="el" href="_types_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> &gt; &amp;size, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;fillColor, const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;stroke={}, bool rounded=false)</td></tr>
 <tr class="separator:a119eede5489bf68138da38cc2bb1f930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e31a5f581b57e448ee315dd9ba391cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#a0e31a5f581b57e448ee315dd9ba391cd">Draw</a> (<a class="el" href="class_fuse_1_1_i_backend.html">IBackend</a> *backend) override</td></tr>
+<tr class="memdesc:a0e31a5f581b57e448ee315dd9ba391cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The only required method classes implementing this interface must define. It's what describes the actual visuals of the component.  <a href="class_fuse_1_1_component_1_1_box.html#a0e31a5f581b57e448ee315dd9ba391cd">More...</a><br /></td></tr>
 <tr class="separator:a0e31a5f581b57e448ee315dd9ba391cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a882a44a41cb047c5b466d7cbe74290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_box.html#a8a882a44a41cb047c5b466d7cbe74290">OnPressed</a> () override</td></tr>
 <tr class="separator:a8a882a44a41cb047c5b466d7cbe74290"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,6 +228,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The only required method classes implementing this interface must define. It's what describes the actual visuals of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backend</td><td>Provided to allow interfacing with the renderer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce">Fuse::IComponent</a>.</p>
 

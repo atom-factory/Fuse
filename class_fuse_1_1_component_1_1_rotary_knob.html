@@ -100,9 +100,9 @@ Inheritance diagram for Fuse::Component::RotaryKnob:</div>
  <div class="center">
   <img src="class_fuse_1_1_component_1_1_rotary_knob.png" usemap="#Fuse::Component::RotaryKnob_map" alt=""/>
   <map id="Fuse::Component::RotaryKnob_map" name="Fuse::Component::RotaryKnob_map">
-<area href="class_fuse_1_1_i_component.html" alt="Fuse::IComponent" shape="rect" coords="0,0,181,24"/>
+<area href="class_fuse_1_1_i_component.html" title="Base interface of a render-able object." alt="Fuse::IComponent" shape="rect" coords="0,0,181,24"/>
 <area href="class_fuse_1_1_traits_1_1_t_single_child.html" alt="Fuse::Traits::TSingleChild" shape="rect" coords="191,0,372,24"/>
-<area href="class_fuse_1_1_i_interactive.html" alt="Fuse::IInteractive" shape="rect" coords="382,0,563,24"/>
+<area href="class_fuse_1_1_i_interactive.html" title="Base interface component classes can implement to signal that they should receive input events." alt="Fuse::IInteractive" shape="rect" coords="382,0,563,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -111,6 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b51b66f8fd4022ab332b12ea65a1011"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_rotary_knob.html#a1b51b66f8fd4022ab332b12ea65a1011">RotaryKnob</a> (<a class="el" href="_types_8h.html#ad34d88453d37b65a09797bad37f2f527">f32</a> radius, const <a class="el" href="class_fuse_1_1_offset.html">Offset</a> &amp;position, const <a class="el" href="class_fuse_1_1_color.html">Color</a> &amp;fillColor, const <a class="el" href="struct_fuse_1_1_stroke.html">Stroke</a> &amp;stroke)</td></tr>
 <tr class="separator:a1b51b66f8fd4022ab332b12ea65a1011"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b924d6190838b293112e25f50b65b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_rotary_knob.html#a3b924d6190838b293112e25f50b65b8b">Draw</a> (<a class="el" href="class_fuse_1_1_i_backend.html">IBackend</a> *backend) override</td></tr>
+<tr class="memdesc:a3b924d6190838b293112e25f50b65b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The only required method classes implementing this interface must define. It's what describes the actual visuals of the component.  <a href="class_fuse_1_1_component_1_1_rotary_knob.html#a3b924d6190838b293112e25f50b65b8b">More...</a><br /></td></tr>
 <tr class="separator:a3b924d6190838b293112e25f50b65b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6eb1bc0d8d3273ec2e184c28e00bed13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_component_1_1_rotary_knob.html#a6eb1bc0d8d3273ec2e184c28e00bed13">OnPressed</a> () override</td></tr>
 <tr class="separator:a6eb1bc0d8d3273ec2e184c28e00bed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,6 +222,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The only required method classes implementing this interface must define. It's what describes the actual visuals of the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backend</td><td>Provided to allow interfacing with the renderer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_fuse_1_1_i_component.html#a4e668a7095c6a238a00ae4c6eed890ce">Fuse::IComponent</a>.</p>
 
