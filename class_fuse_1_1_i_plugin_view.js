@@ -5,6 +5,7 @@ var class_fuse_1_1_i_plugin_view =
     [ "As", "class_fuse_1_1_i_plugin_view.html#a69141441129bd545c10e58d488e95c53", null ],
     [ "GetBackend", "class_fuse_1_1_i_plugin_view.html#a7fab01758f216c1d1b7ef6fdf8d04eca", null ],
     [ "GetSize", "class_fuse_1_1_i_plugin_view.html#a59cce5a2ea0d95ff13c8b721a6360486", null ],
+    [ "GetViewRect", "class_fuse_1_1_i_plugin_view.html#aebcc2e260e8b51f48335820ba988f7b4", null ],
     [ "GetViewState", "class_fuse_1_1_i_plugin_view.html#a5baafbda69c57a02305ef7f8162feb92", null ],
     [ "Initialize", "class_fuse_1_1_i_plugin_view.html#acde5b6e9e6019524947f594ecce46e40", null ],
     [ "OnKeyDown", "class_fuse_1_1_i_plugin_view.html#a45d758f25e3495c1e2d8db4d90a3442b", null ],

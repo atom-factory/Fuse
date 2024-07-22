@@ -117,8 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a14fac8d1b2b2a2216757375d5bb30bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b66cbb6b91770f089e4abeb53349b74"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_types_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a8b66cbb6b91770f089e4abeb53349b74">AttachToParent</a> (void *parent)</td></tr>
 <tr class="separator:a8b66cbb6b91770f089e4abeb53349b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accf9f9c4e2deed3def46d3aee8a7b87f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_canvas.html#accf9f9c4e2deed3def46d3aee8a7b87f">Draw</a> (<a class="el" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a> *viewContext)=0</td></tr>
-<tr class="separator:accf9f9c4e2deed3def46d3aee8a7b87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e6001273b233deb36585072705a61f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a15e6001273b233deb36585072705a61f">Draw</a> (<a class="el" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a> *viewContext, <a class="el" href="class_fuse_1_1_dimension.html">Dimension</a> dim)=0</td></tr>
+<tr class="separator:a15e6001273b233deb36585072705a61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3250e1b6382d064a47c2b13529071951"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a3250e1b6382d064a47c2b13529071951">GetView</a> () const</td></tr>
 <tr class="separator:a3250e1b6382d064a47c2b13529071951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a809f0eaf2bdee99a349957146a30e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_fuse_1_1_i_backend.html">IBackend</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_fuse_1_1_i_plugin_canvas.html#a22a809f0eaf2bdee99a349957146a30e">GetBackend</a> () const</td></tr>
@@ -143,14 +143,14 @@ Protected Attributes</h2></td></tr>
 <div class="line">        this-&gt;<a class="code" href="class_fuse_1_1_i_plugin_canvas.html#a6aa85fea76c382d36c60b28f4dcc4aca">BackgroundColor</a> = Color(0xFF000000); <span class="comment">// black background</span></div>
 <div class="line">        this-&gt;<a class="code" href="class_fuse_1_1_i_plugin_canvas.html#a8b66cbb6b91770f089e4abeb53349b74">IPluginCanvas::AttachToParent</a>(parent); <span class="comment">// attach canvas to parent</span></div>
 <div class="line">    }</div>
-<div class="line">    IComponent* <a class="code" href="class_fuse_1_1_i_plugin_canvas.html#accf9f9c4e2deed3def46d3aee8a7b87f">Draw</a>() <span class="keyword">override</span>;</div>
+<div class="line">    IComponent* <a class="code" href="class_fuse_1_1_i_plugin_canvas.html#a15e6001273b233deb36585072705a61f">Draw</a>() <span class="keyword">override</span>;</div>
 <div class="line">};</div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a6aa85fea76c382d36c60b28f4dcc4aca"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a6aa85fea76c382d36c60b28f4dcc4aca">Fuse::IPluginCanvas::BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00079">PluginCanvas.h:79</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a8b3e9b0629031727edffc45760ed6e92"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a8b3e9b0629031727edffc45760ed6e92">Fuse::IPluginCanvas::IPluginCanvas</a></div><div class="ttdeci">IPluginCanvas(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00041">PluginCanvas.h:41</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a8b66cbb6b91770f089e4abeb53349b74"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a8b66cbb6b91770f089e4abeb53349b74">Fuse::IPluginCanvas::AttachToParent</a></div><div class="ttdeci">virtual i32 AttachToParent(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00049">PluginCanvas.h:49</a></div></div>
-<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_accf9f9c4e2deed3def46d3aee8a7b87f"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#accf9f9c4e2deed3def46d3aee8a7b87f">Fuse::IPluginCanvas::Draw</a></div><div class="ttdeci">virtual IComponent * Draw(IPluginView *viewContext)=0</div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a15e6001273b233deb36585072705a61f"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a15e6001273b233deb36585072705a61f">Fuse::IPluginCanvas::Draw</a></div><div class="ttdeci">virtual IComponent * Draw(IPluginView *viewContext, Dimension dim)=0</div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a6aa85fea76c382d36c60b28f4dcc4aca"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a6aa85fea76c382d36c60b28f4dcc4aca">Fuse::IPluginCanvas::BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00080">PluginCanvas.h:80</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a8b3e9b0629031727edffc45760ed6e92"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a8b3e9b0629031727edffc45760ed6e92">Fuse::IPluginCanvas::IPluginCanvas</a></div><div class="ttdeci">IPluginCanvas(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00042">PluginCanvas.h:42</a></div></div>
+<div class="ttc" id="aclass_fuse_1_1_i_plugin_canvas_html_a8b66cbb6b91770f089e4abeb53349b74"><div class="ttname"><a href="class_fuse_1_1_i_plugin_canvas.html#a8b66cbb6b91770f089e4abeb53349b74">Fuse::IPluginCanvas::AttachToParent</a></div><div class="ttdeci">virtual i32 AttachToParent(void *parent)</div><div class="ttdef"><b>Definition:</b> <a href="_plugin_canvas_8h_source.html#l00050">PluginCanvas.h:50</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00039">39</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00040">40</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8b3e9b0629031727edffc45760ed6e92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b3e9b0629031727edffc45760ed6e92">&#9670;&nbsp;</a></span>IPluginCanvas()</h2>
@@ -176,7 +176,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00041">41</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00042">42</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>
@@ -230,12 +230,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00049">49</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00050">50</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>
-<a id="accf9f9c4e2deed3def46d3aee8a7b87f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accf9f9c4e2deed3def46d3aee8a7b87f">&#9670;&nbsp;</a></span>Draw()</h2>
+<a id="a15e6001273b233deb36585072705a61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e6001273b233deb36585072705a61f">&#9670;&nbsp;</a></span>Draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,8 +247,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual <a class="el" href="class_fuse_1_1_i_component.html">IComponent</a>* Fuse::IPluginCanvas::Draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_fuse_1_1_i_plugin_view.html">IPluginView</a> *&#160;</td>
-          <td class="paramname"><em>viewContext</em></td><td>)</td>
+          <td class="paramname"><em>viewContext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_fuse_1_1_dimension.html">Dimension</a>&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -283,7 +293,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00075">75</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00076">76</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>
@@ -310,7 +320,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00071">71</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00072">72</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +337,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00079">79</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00080">80</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +361,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00082">82</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_plugin_canvas_8h_source.html#l00083">83</a> of file <a class="el" href="_plugin_canvas_8h_source.html">PluginCanvas.h</a>.</p>
 
 </div>
 </div>

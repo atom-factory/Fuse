@@ -8,9 +8,6 @@ var dir_8f3de2ae926fecfe6abd5379fd2b6eb1 =
     [ "Color.h", "_color_8h.html", "_color_8h" ],
     [ "Converters.h", "_converters_8h.html", "_converters_8h" ],
     [ "Dimension.h", "_dimension_8h.html", [
-      [ "IUnit", "struct_fuse_1_1_i_unit.html", "struct_fuse_1_1_i_unit" ],
-      [ "PercentUnit", "struct_fuse_1_1_percent_unit.html", "struct_fuse_1_1_percent_unit" ],
-      [ "PixelUnit", "struct_fuse_1_1_pixel_unit.html", "struct_fuse_1_1_pixel_unit" ],
       [ "Dimension", "class_fuse_1_1_dimension.html", "class_fuse_1_1_dimension" ]
     ] ],
     [ "Font.h", "_font_8h.html", [
