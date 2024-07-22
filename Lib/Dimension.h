@@ -8,11 +8,23 @@
 #include "Types.h"
 
 namespace Fuse {
+    // clang-format off
     /**
-     * @brief A template class for size and position dimensions
+     * @brief Returns a coordinate value positioned by a percentage of a screen axis.
      *
-     * @todo Actually implement this across the rest of the library classes.
+     * It is functionally equivalent to CSS's `vw` and `vh` units.
+     *
+     * @warning Percent values are specified in range [0, 100], NOT [0.0, 1.0]
+     *
+     * @code{.cpp}
+     * auto dim = Dimension(viewSize);
+     * // 20% of the screen width
+     * auto boxWidth = dim.Height(20.f);
+     * // Position the box 90% across the screen from the left side (10% from the right).
+     * auto boxPosX = dim.WidthRight(10.f);
+     * @endcode
      */
+    // clang-format on
     class Dimension {
     public:
         explicit Dimension(const Size<u32>& viewSize) : m_Size(viewSize) {}
