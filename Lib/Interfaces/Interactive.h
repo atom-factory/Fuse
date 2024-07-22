@@ -5,6 +5,10 @@
 #pragma once
 
 namespace Fuse {
+    /**
+     * @brief Base interface component classes can implement to signal that they should receive
+     * input events.
+     */
     class IInteractive {
     public:
         virtual ~IInteractive() = default;

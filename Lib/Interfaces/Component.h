@@ -8,8 +8,16 @@
 #include "Traits.h"
 
 namespace Fuse {
+    // Forward decs
     class IBackend;
 
+    /**
+     * @brief Base interface of a render-able object.
+     *
+     * Components are analogous to components in web frameworks like React and Flutter.
+     * Components can have any number of children and the renderer traverses breadth-first the UI
+     * from a root component as a tree of n components.
+     */
     class IComponent {
     public:
         virtual ~IComponent() {
@@ -18,6 +26,12 @@ namespace Fuse {
             }
         }
 
+        /**
+         * @brief The only required method classes implementing this interface must define. It's
+         * what describes the actual visuals of the component.
+         *
+         * @param backend Provided to allow interfacing with the renderer.
+         */
         virtual void Draw(IBackend* backend) = 0;
 
         bool HasChild() {

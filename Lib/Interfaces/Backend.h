@@ -9,9 +9,16 @@
 #include "Offset.h"
 
 namespace Fuse {
+    // Forward decs
     class IPluginView;
     struct Stroke;
 
+    /**
+     * @brief Base interface of a rendering backend.
+     *
+     * Platform-specific frameworks like Direct2D and OpenGL are implemented in classes implementing
+     * this interface.
+     */
     class IBackend {
     public:
         virtual ~IBackend() = default;
@@ -51,7 +58,8 @@ namespace Fuse {
                               Vector<Offset> points,
                               const Color& fillColor,
                               const Stroke& stroke) {}
-        virtual void DrawString(const str& value, const Offset& position, const f32 size, const Color& color) {}
+        virtual void
+        DrawString(const str& value, const Offset& position, const f32 size, const Color& color) {}
 
     protected:
         virtual void Shutdown() = 0;

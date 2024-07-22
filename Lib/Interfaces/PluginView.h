@@ -23,6 +23,13 @@ namespace Fuse {
         i32 LastMouseUp        = -1;
     };
 
+    /**
+     * @brief Base interface for classes managing windows and other platform-native functionality
+     * (i.e. input handling)
+     *
+     * The plugin view holds references to the associated rendering backend and its owning canvas
+     * (see `PluginCanvas`).
+     */
     class IPluginView {
     public:
         explicit IPluginView(void* parent)
