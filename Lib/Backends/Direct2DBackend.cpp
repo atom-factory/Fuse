@@ -10,6 +10,7 @@
 #include "Interfaces/PluginView.h"
 #include "Platform/Win32PluginView.h"
 #include "Stroke.h"
+#include "Rectangle.h"
 
 namespace Fuse {
     /**
@@ -80,10 +81,12 @@ namespace Fuse {
             const auto top    = position.Y;
             const auto right  = left + width;
             const auto bottom = top + height;
+            const auto rect   = D2D1::RectF(left, top, right, bottom);
 
-            const auto rect = D2D1::RectF(left, top, right, bottom);
-            m_RenderTarget->FillRectangle(rect, fillBrush);
-            fillBrush->Release();
+            if (fillColor.Value() != Colors::Transparent.Value()) {
+                m_RenderTarget->FillRectangle(rect, fillBrush);
+                fillBrush->Release();
+            }
 
             if (stroke.Thickness > 0) {
                 ID2D1SolidColorBrush* strokeBrush = nullptr;
@@ -227,6 +230,16 @@ namespace Fuse {
                                       D2D1::RectF(0, 0, position.X, position.Y),
                                       fillBrush);
         }
+    }
+
+    void Direct2DBackend::DrawBoundingBox(const Rectangle& box) {
+        const auto rect             = D2D1::RectF(box.Left(), box.Top(), box.Right(), box.Bottom());
+        ID2D1SolidColorBrush* brush = nullptr;
+        const auto hr =
+          m_RenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red), &brush);
+        CheckResult(hr, "Failed to create D2D brush.");
+        m_RenderTarget->DrawRectangle(rect, brush, 1.f, nullptr);
+        brush->Release();
     }
 
     void Direct2DBackend::Shutdown() {

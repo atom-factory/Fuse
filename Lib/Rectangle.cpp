@@ -21,11 +21,11 @@ namespace Fuse {
         : m_Left(left), m_Top(top), m_Right(right), m_Bottom(bottom) {}
 
     Rectangle Rectangle::FromCenter(const Offset& center, const f32 width, const f32 height) {
-        const auto left   = center.X - width / 2;
-        const auto top    = center.Y - height / 2;
-        const auto right  = center.X + width / 2;
-        const auto bottom = center.Y + height / 2;
-        return Rectangle {left, top, right, bottom};
+        const auto left   = center.X - (width / 2);
+        const auto top    = center.Y - (height / 2);
+        const auto right  = center.X + (width / 2);
+        const auto bottom = center.Y + (height / 2);
+        return {left, top, right, bottom};
     }
 
     Rectangle Rectangle::FromCircle(const Offset& center, const f32 radius) {
@@ -34,14 +34,11 @@ namespace Fuse {
 
     Rectangle
     Rectangle::FromLTWH(const f32 left, const f32 top, const f32 width, const f32 height) {
-        return Rectangle {left, top, left + width, top + height};
+        return {left, top, left + width, top + height};
     }
 
     Rectangle Rectangle::FromPoints(const Offset& a, const Offset& b) {
-        return Rectangle {std::min(a.X, b.X),
-                          std::min(a.Y, b.Y),
-                          std::max(a.X, b.X),
-                          std::max(a.Y, b.Y)};
+        return {std::min(a.X, b.X), std::min(a.Y, b.Y), std::max(a.X, b.X), std::max(a.Y, b.Y)};
     }
 
     Rectangle Rectangle::Copy(const Rectangle& other) {

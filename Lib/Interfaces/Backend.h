@@ -12,6 +12,7 @@ namespace Fuse {
     // Forward decs
     class IPluginView;
     struct Stroke;
+    class Rectangle;
 
     /**
      * @brief Base interface of a rendering backend.
@@ -60,6 +61,8 @@ namespace Fuse {
                               const Stroke& stroke) {}
         virtual void
         DrawString(const str& value, const Offset& position, const f32 size, const Color& color) {}
+
+        virtual void DrawBoundingBox(const Rectangle& box) {}
 
     protected:
         virtual void Shutdown() = 0;

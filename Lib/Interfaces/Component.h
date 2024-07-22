@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "OldSize.h"
+#include "Rectangle.h"
 #include "Types.h"
 #include "Traits.h"
 
@@ -20,6 +22,16 @@ namespace Fuse {
      */
     class IComponent {
     public:
+        IComponent() : m_Rect({}) {}
+
+        explicit IComponent(const Rectangle& rect) : m_Rect(rect) {}
+        explicit IComponent(const Size<u32>& size, const Offset& position) : m_Rect({}) {
+            const auto origin = position;
+            const auto width  = origin.X + size.Width;
+            const auto height = origin.Y + size.Height;
+            m_Rect            = Rectangle(origin.X, origin.Y, width, height);
+        }
+
         virtual ~IComponent() {
             for (const auto child : m_Children) {
                 delete child;
@@ -66,5 +78,6 @@ namespace Fuse {
 
     protected:
         std::vector<IComponent*> m_Children;
+        Rectangle m_Rect;
     };
 }  // namespace Fuse

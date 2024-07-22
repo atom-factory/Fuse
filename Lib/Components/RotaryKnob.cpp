@@ -11,10 +11,12 @@ namespace Fuse::Component {
                            const Offset& position,
                            const Color& fillColor,
                            const Stroke& stroke)
-        : m_Radius(radius), m_Position(position), m_FillColor(fillColor), m_Stroke(stroke) {}
+        : IComponent(Rectangle::FromCircle(position, radius)), m_Radius(radius),
+          m_Position(position), m_FillColor(fillColor), m_Stroke(stroke) {}
 
     void RotaryKnob::Draw(IBackend* backend) {
         backend->DrawEllipse(m_Radius, m_Position, m_FillColor, m_Stroke);
+        backend->DrawBoundingBox(m_Rect);
     }
 
     void RotaryKnob::OnPressed() {

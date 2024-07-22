@@ -73,6 +73,16 @@ namespace Fuse {
                                                     Color(0x22AACC));
         topCutout->AddChild(pluginName);
 
+        /** @todo: Fix text height being center-aligned */
+        // const auto version = new Component::Text("V1.0",
+        //                                          {
+        //                                            dim.Width(100.f),
+        //                                            dim.HeightBottom(18.f),
+        //                                          },
+        //                                          12.f,
+        //                                          Color(0x22AACC));
+        // bottomCutout->AddChild(version);
+
         root->AddChild(knobGain);
         root->AddChild(knobBalance);
         root->AddChild(topCutout);

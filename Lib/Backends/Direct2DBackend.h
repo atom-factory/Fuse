@@ -33,6 +33,8 @@ namespace Fuse {
         void
         DrawString(const str& value, const Offset& position, f32 size, const Color& color) override;
 
+        void DrawBoundingBox(const Rectangle& box) override;
+
     protected:
         void Shutdown() override;
 
