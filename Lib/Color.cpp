@@ -11,32 +11,32 @@
 
 namespace Fuse {
     Color::Color() {
-        m_BaseColor.r = 0;
-        m_BaseColor.g = 0;
-        m_BaseColor.b = 0;
-        m_BaseColor.a = 0;
+        Red   = 0;
+        Green = 0;
+        Blue  = 0;
+        Alpha = 0;
     }
 
     Color::Color(const f32 r, const f32 g, const f32 b, const f32 a) {
-        m_BaseColor.r = r;
-        m_BaseColor.g = g;
-        m_BaseColor.b = b;
-        m_BaseColor.a = a;
+        Red   = r;
+        Green = g;
+        Blue  = b;
+        Alpha = a;
     }
 
     Color::Color(const u32 color) {
-        Converters::HexToRGBA(color, m_BaseColor.r, m_BaseColor.g, m_BaseColor.b, m_BaseColor.a);
+        Converters::HexToRGBA(color, Red, Green, Blue, Alpha);
     }
 
     u32 Color::Value() const {
-        return Converters::RGBAToHex(Red(), Green(), Blue(), Alpha());
+        return Converters::RGBAToHex(Red, Green, Blue, Alpha);
     }
 
     f32 Color::Luminance() const {
         // See <https://www.w3.org/TR/WCAG20/#relativeluminancedef>
-        const auto uRed   = static_cast<u32>(Red() * 255);
-        const auto uGreen = static_cast<u32>(Green() * 255);
-        const auto uBlue  = static_cast<u32>(Blue() * 255);
+        const auto uRed   = static_cast<u32>(Red * 255);
+        const auto uGreen = static_cast<u32>(Green * 255);
+        const auto uBlue  = static_cast<u32>(Blue * 255);
 
         const auto R = LinearizeComponent(static_cast<f32>(uRed) / 0xFF);
         const auto G = LinearizeComponent(static_cast<f32>(uGreen) / 0xFF);
@@ -46,63 +46,63 @@ namespace Fuse {
     }
 
     Color Color::WithAlpha(const u32 a) const {
-        return {Red(), Green(), Blue(), static_cast<f32>(a) / 255.f};
+        return {Red, Green, Blue, static_cast<f32>(a) / 255.f};
     }
 
     Color Color::WithAlpha(f32 a) const {
-        return {Red(), Green(), Blue(), a};
+        return {Red, Green, Blue, a};
     }
 
     Color Color::WithRed(const u32 r) const {
-        return {static_cast<f32>(r) / 255.f, Green(), Blue(), Alpha()};
+        return {static_cast<f32>(r) / 255.f, Green, Blue, Alpha};
     }
 
     Color Color::WithRed(f32 r) const {
-        return {r, Green(), Blue(), Alpha()};
+        return {r, Green, Blue, Alpha};
     }
 
     Color Color::WithGreen(const u32 g) const {
-        return {Red(), static_cast<f32>(g) / 255.f, Blue(), Alpha()};
+        return {Red, static_cast<f32>(g) / 255.f, Blue, Alpha};
     }
 
     Color Color::WithGreen(f32 g) const {
-        return {Red(), g, Blue(), Alpha()};
+        return {Red, g, Blue, Alpha};
     }
 
     Color Color::WithBlue(const u32 b) const {
-        return {Red(), Green(), static_cast<f32>(b) / 255.f, Alpha()};
+        return {Red, Green, static_cast<f32>(b) / 255.f, Alpha};
     }
 
     Color Color::WithBlue(f32 b) const {
-        return {Red(), Green(), b, Alpha()};
+        return {Red, Green, b, Alpha};
     }
 
     Color Color::Greyscale() const {
         auto lum = Luminance();
-        return {lum, lum, lum, Alpha()};
+        return {lum, lum, lum, Alpha};
     }
 
     Color Color::AlphaBlend(const Color& foreground, const Color& background) {
-        const f32 alpha = foreground.Alpha();
+        const f32 alpha = foreground.Alpha;
         if (alpha == 0.f) {
             return background;
         }
         const f32 invAlpha = 1.f - alpha;
 
-        f32 backAlpha = background.Alpha();
+        f32 backAlpha = background.Alpha;
         if (backAlpha == 1.f) {
-            return {alpha * foreground.Red() + invAlpha * background.Red(),
-                    alpha * foreground.Green() + invAlpha * background.Green(),
-                    alpha * foreground.Blue() + invAlpha * background.Blue(),
+            return {alpha * foreground.Red + invAlpha * background.Red,
+                    alpha * foreground.Green + invAlpha * background.Green,
+                    alpha * foreground.Blue + invAlpha * background.Blue,
                     1.f};
         }
 
         backAlpha          = (backAlpha * invAlpha) / 1.f;
         const f32 outAlpha = alpha + backAlpha;
         assert(outAlpha != 0.f);
-        return {alpha * foreground.Red() + invAlpha * background.Red() / outAlpha,
-                alpha * foreground.Green() + invAlpha * background.Green() / outAlpha,
-                alpha * foreground.Blue() + invAlpha * background.Blue() / outAlpha,
+        return {alpha * foreground.Red + invAlpha * background.Red / outAlpha,
+                alpha * foreground.Green + invAlpha * background.Green / outAlpha,
+                alpha * foreground.Blue + invAlpha * background.Blue / outAlpha,
                 1.f};
     }
 
@@ -111,10 +111,10 @@ namespace Fuse {
     }
 
     Color Color::Lerp(const Color& a, const Color& b, const f32 t) {
-        return {Math::Lerp(a.Red(), b.Red(), t),
-                Math::Lerp(a.Green(), b.Green(), t),
-                Math::Lerp(a.Blue(), b.Blue(), t),
-                Math::Lerp(a.Alpha(), b.Alpha(), t)};
+        return {Math::Lerp(a.Red, b.Red, t),
+                Math::Lerp(a.Green, b.Green, t),
+                Math::Lerp(a.Blue, b.Blue, t),
+                Math::Lerp(a.Alpha, b.Alpha, t)};
     }
 
     f32 Color::LinearizeComponent(const f32 c) {
@@ -125,5 +125,21 @@ namespace Fuse {
         }
 
         return std::pow((c + 0.055f) / 1.055f, 2.4f);
+    }
+
+    Color Color::GammaCorrect() const {
+        auto r = LinearizeComponent(Red);
+        auto g = LinearizeComponent(Green);
+        auto b = LinearizeComponent(Blue);
+        auto a = LinearizeComponent(Alpha);
+
+        return {r, g, b, a};
+    }
+
+    f32 Color::LinearToSRGB(const f32 c) {
+        if (c <= 0.0031308f) {
+            return c * 12.92f;
+        }
+        return 1.055f - c * std::pow(1.055f, 2.4f);
     }
 }  // namespace Fuse

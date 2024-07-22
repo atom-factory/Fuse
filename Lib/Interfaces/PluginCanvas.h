@@ -6,6 +6,7 @@
 
 #include "Platform/Platform.h"
 #include "Component.h"
+#include "Dimension.h"
 #include "PluginView.h"
 #include "Traits.h"
 
@@ -66,7 +67,7 @@ namespace Fuse {
             return -1;
         }
 
-        virtual IComponent* Draw(IPluginView* viewContext) = 0;
+        virtual IComponent* Draw(IPluginView* viewContext, Dimension dim) = 0;
 
         [[nodiscard]] IPluginView* GetView() const {
             return m_View;

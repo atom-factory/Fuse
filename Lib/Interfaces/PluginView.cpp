@@ -30,7 +30,8 @@ namespace Fuse {
                 // Draw our component tree starting with the root returned from
                 // IPluginCanvas::Draw() using a breadth-first search
                 {
-                    const auto root = m_OwningCanvas->Draw(this);
+                    const auto dimension = Dimension(m_ViewState.Size);
+                    const auto root      = m_OwningCanvas->Draw(this, dimension);
                     std::queue<IComponent*> queue;
                     queue.push(root);
 

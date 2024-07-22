@@ -97,6 +97,8 @@ namespace HWNDParent {
                 ::GetWindowRect(g_Window, &position);
 
                 switch (keyCode) {
+                    case VK_ESCAPE:
+                        ::PostQuitMessage(0);
                     case VK_NUMPAD1:
                         ::SetWindowPos(g_Window,
                                        nullptr,
@@ -111,8 +113,8 @@ namespace HWNDParent {
                                        nullptr,
                                        position.left,
                                        position.top,
-                                       g_InitialWidth * 1.25,
-                                       g_InitialHeight * 1.25,
+                                       static_cast<i32>(g_InitialWidth * 1.25),
+                                       static_cast<i32>(g_InitialHeight * 1.25),
                                        SWP_NOZORDER | SWP_NOACTIVATE);
                         break;
                     case VK_NUMPAD3:
@@ -120,8 +122,8 @@ namespace HWNDParent {
                                        nullptr,
                                        position.left,
                                        position.top,
-                                       g_InitialWidth * 1.5,
-                                       g_InitialHeight * 1.5,
+                                       static_cast<i32>(g_InitialWidth * 1.5),
+                                       static_cast<i32>(g_InitialHeight * 1.5),
                                        SWP_NOZORDER | SWP_NOACTIVATE);
                         break;
                     default:

@@ -4,45 +4,38 @@
 
 #pragma once
 
+#include "OldSize.h"
 #include "Types.h"
 
 namespace Fuse {
-    struct IUnit {
-        virtual ~IUnit()                    = default;
-        virtual f32 Convert(f32 value, f32) = 0;
-    };
-
-    struct PercentUnit : IUnit {
-        f32 Convert(const f32 value, const f32 screenSize) override {
-            return screenSize * value;
-        }
-    };
-
-    struct PixelUnit : IUnit {
-        f32 Convert(const f32 value, f32) override {
-            return value;
-        }
-    };
-
     /**
      * @brief A template class for size and position dimensions
      *
-     * @tparam Unit Type of unit to use, either `PercentUnit` or `PixelUnit`. Default is
-     * `PercentUnit`.
-     *
      * @todo Actually implement this across the rest of the library classes.
      */
-    template<typename Unit = PercentUnit>
     class Dimension {
     public:
-        explicit Dimension(const f32 val) : Value(val) {
-            static_assert(std::is_base_of_v<IUnit, Unit>, "Unit must implement IUnit");
+        explicit Dimension(const Size<u32>& viewSize) : m_Size(viewSize) {}
+
+        f32 Width(const f32 value) const {
+            return (value / 100.f) * m_Size.Width;
         }
 
-        f32 Value;
-
-        f32 ToScreenPixels(f32 screenSize) const {
-            return Unit::Convert(Value, screenSize);
+        f32 Height(const f32 value) const {
+            return (value / 100.f) * m_Size.Height;
         }
+
+        f32 WidthRight(const f32 value) const {
+            const auto width = Width(value);
+            return m_Size.Width - width;
+        }
+
+        f32 HeightBottom(const f32 value) const {
+            const auto height = Height(value);
+            return m_Size.Height - height;
+        }
+
+    private:
+        Size<u32> m_Size;
     };
 }  // namespace Fuse

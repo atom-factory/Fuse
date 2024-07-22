@@ -60,25 +60,15 @@ namespace Fuse {
         /// Gamma corrects specified color component `c`
         static f32 LinearizeComponent(f32 c);
 
-        /// Returns red component
-        [[nodiscard]] f32 Red() const {
-            return m_BaseColor.r;
-        }
-        /// Returns green component
-        [[nodiscard]] f32 Green() const {
-            return m_BaseColor.g;
-        }
-        /// Returns blue component
-        [[nodiscard]] f32 Blue() const {
-            return m_BaseColor.g;
-        }
-        /// Returns alpha component
-        [[nodiscard]] f32 Alpha() const {
-            return m_BaseColor.a;
-        }
+        Color GammaCorrect() const;
+
+        f32 Red;
+        f32 Green;
+        f32 Blue;
+        f32 Alpha;
 
     private:
-        BaseColor m_BaseColor;
+        static f32 LinearToSRGB(f32 c);
     };
 
     namespace Colors {

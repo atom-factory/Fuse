@@ -8,6 +8,7 @@
 #include "OldSize.h"
 #include "Backend.h"
 #include "Offset.h"
+#include "Rectangle.h"
 
 namespace Fuse {
     class IPluginCanvas;
@@ -71,6 +72,10 @@ namespace Fuse {
 
         Size<u32>& GetSize() {
             return m_ViewState.Size;
+        }
+
+        Rectangle GetViewRect() {
+            return Rectangle::FromPoints({0, 0}, m_ViewState.Size.AsOffset());
         }
 
         ViewState& GetViewState() {
